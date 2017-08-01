@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 					'upload/css/styles.min.css': ['src/build/css/styles.css']
 				}
 			}
-		}
+		},
 
 		htmlmin: {
 			home: {
@@ -49,24 +49,22 @@ module.exports = function(grunt) {
 					dest: 'upload/index.html',
 				}
 			},
-		}
+		},
 
-		grunt.initConfig({
-			uglify: {
-			  options: {
-			    mangle: false
-			  },
-			  homejs: {
-			    files: {
-			      src: [
-							'src/js/app.js',
-							'src/js/route.js'
-						],
-						dest: 'upload/js/scripts.min.js',
-			    }
-			  }
-			}
-		});
+		uglify: {
+		  options: {
+		    mangle: false
+		  },
+		  homejs: {
+		    files: {
+		      src: [
+						'src/js/app.js',
+						'src/js/route.js'
+					],
+					dest: 'upload/js/scripts.min.js',
+		    }
+		  }
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
@@ -87,7 +85,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('compile', ['htmlmin','less','cssmin','uglify']);
 
 	// Watchers
-	grunt.registerTask('watch', ['watch']);
+	grunt.registerTask('watchall', ['watch']);
 	grunt.registerTask('watchhtml', ['watch:homehtml']);
 	grunt.registerTask('watchcss', ['watch:homecss']);
 	grunt.registerTask('watchjs', ['watch:homejs']);
