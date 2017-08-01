@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		less: {
 			homeLess: {
 				src: ["src/less/general.less"],
-				dest: "src/css/styles.css",
+				dest: "src/build/css/styles.css",
 			}
 		},
 
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
 			target: {
 				files: {
-					'upload/css/styles.min.css': ['src/css/styles.css']
+					'upload/css/styles.min.css': ['src/build/css/styles.css']
 				}
 			}
 		}
@@ -58,8 +58,11 @@ module.exports = function(grunt) {
 			  },
 			  homejs: {
 			    files: {
-			      src: ['src/js/.js'],
-						dest: 'src/build/scripts.min.js',
+			      src: [
+							'src/js/app.js',
+							'src/js/route.js'
+						],
+						dest: 'upload/js/scripts.min.js',
 			    }
 			  }
 			}
