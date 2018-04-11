@@ -1,0 +1,28 @@
+// Variables
+@brand_main : #D1A93D;
+
+// Mixins
+.transition {
+  transition: all 0.2s ease-out;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+// Scroll
+.scroll {
+  &::-webkit-scrollbar-button{ display: none; height: 13px; border-radius: 0px; background-color: #AAA; }
+  &::-webkit-scrollbar-button:hover{ background-color:rgba(255,255,255,.3); }
+  &::-webkit-scrollbar-thumb:hover{ background-color: rgba(255,255,255,.8); }
+  &::-webkit-scrollbar-thumb{ background-color: rgba(255,255,255,.8); }
+  &::-webkit-scrollbar-track{ background-color: rgba(255,255,255,.3); }
+  &::-webkit-scrollbar-track:hover{ background-color: rgba(255,255,255,.3); }
+  &::-webkit-scrollbar{ width: 5px; }
+}

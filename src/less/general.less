@@ -1,0 +1,252 @@
+@import '_config.less';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  .noselect;
+}
+
+body {
+  padding: 100px 0 0;
+  background: #343b47 url('../img/bg.jpg') no-repeat center center;
+  background-attachment: fixed;
+
+  aside {
+    padding: 20px 0 0!important;
+    border-top: 1px solid #FFF;
+  }
+
+  .popover {
+    background: #333;
+
+    .arrow:after {
+      border-top-color: #333;
+    }
+
+    .popover-body {
+      color: #FFF;
+    }
+  }
+
+  #main-content {
+    padding: 0 30px 0;
+
+    #profile-header {
+
+      .image-container {
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          border: 3px solid @brand_main;
+          border-radius: 100%;
+        }
+      }
+
+      .basic-info {
+        padding-left: 40px;
+
+        h3 {
+          margin: 0 auto 40px;
+          color: @brand_main;
+          font-weight: 500;
+          cursor: default;
+          text-transform: uppercase;
+        }
+
+        h4 {
+          margin: 0 auto 10px;
+          color: @brand_main;
+          font-size: 1.2rem;
+          font-weight: 300;
+          cursor: default;
+          text-transform: uppercase;
+
+          &.location {
+          color: #FFF;
+          }
+        }
+      }
+    }
+
+    #profile-content {
+      max-height: ~"calc(100vh - 272px)";
+      padding: 20px 0 0;
+      overflow-y: auto;
+      .scroll;
+
+      @media all and (min-width: 980px) {
+        max-height: ~"calc(100vh - 300px)";
+      }
+
+      p {
+        color: #FFF;
+        font-size: 1rem;
+        font-weight: 300;
+
+        strong {
+          font-weight: 700;
+        }
+
+        span {
+          color: @brand_main;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+
+      #projects-container {
+        min-height: 150px;
+      }
+
+      #skills-container {
+        padding: 20px 26px;
+
+        .col-md-2 {
+          padding: 0 5px 5px;
+
+          .single-skill {
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: .6;
+            .transition;
+
+            &:hover {
+              transform: scale(1.2);
+              opacity: 1;
+            }
+
+            object, object svg {
+              width: 100%;
+              height: auto;
+              font-family: FontAwesome;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #sidebar {
+
+    nav {
+      margin: 0 auto;
+      padding: 0;
+      text-align: right;
+      list-style: none;
+
+      li {
+        margin: 0 auto;
+        padding: 10px;
+        color: #FFF;
+        font-size: 1.2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        display: inline-block;
+        cursor: pointer;
+        .transition;
+
+        &:hover {
+          color: @brand_main;
+        }
+
+        &.active {
+          color: @brand_main;
+          font-size: 1.4rem;
+          font-weight: 500;
+          cursor: default;
+        }
+      }
+    }
+
+    #contact-form-container {
+      margin: 40px auto 0;
+
+      h4 {
+        color: @brand_main;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: center;
+        cursor: default;
+        text-transform: uppercase;
+      }
+
+      hr {
+        margin: 10px auto 20px;
+        width: 30%;
+        border-top: 2px solid #FFF;
+      }
+
+      form {
+
+        .form-group {
+          position: relative;
+
+          &.focused, &.not-empty {
+
+            label {
+              top: 5px;
+              font-size: .6rem;
+            }
+          }
+
+          label {
+            position: absolute;
+            top:15px;
+            left: 15px;
+            color: #FFF;
+            font-size: .8rem;
+            font-weight: lighter;
+            .transition;
+          }
+
+          input, textarea {
+            width: 100%;
+            padding: 18px 15px 12px;
+            background: #333;
+            color: #FFF;
+            font-size: .8rem;
+            border: 2px solid transparent;
+            outline: none;
+            .transition;
+
+            &.error {
+              border-color: #A74949;
+            }
+
+            &:focus {
+              border-color: @brand_main;
+            }
+          }
+
+          textarea {
+            resize: none;
+          }
+
+          button {
+            width: 100%;
+            padding: 15px;
+            background: @brand_main;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+
+            &:disabled {
+              cursor: not-allowed;
+              opacity: .6;
+            }
+
+            i {
+              margin-right: 5px;
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

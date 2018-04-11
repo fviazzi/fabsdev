@@ -4,28 +4,34 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		watch: {
+
 			homehtml: {
 				files: ['src/html/*.html','src/html/*.php'],
-				tasks: ['homeHtml'],
+				tasks: ['concat','minhtml'],
 			},
+
 			homecss: {
-				files: ['less/*.less'],
-				tasks: ['homeCss'],
+				files: ['src/less/**/*.less'],
+				tasks: ['mincss'],
 			},
+
 			homejs: {
 				files: ['src/js/*.js'],
-				tasks: ['homeJs'],
+				tasks: ['minjs'],
 			},
 		},
 
 		less: {
-			homeLess: {
-				src: ["src/less/general.less"],
+
+			home: {
+				src: ["src/less/general.less","src/less/**/*.less"],
 				dest: "src/build/css/styles.css",
 			}
+
 		},
 
 		cssmin: {
+
 			options: {
 				mergeIntoShorthands: false,
 				roundingPrecision: -1
@@ -38,24 +44,35 @@ module.exports = function(grunt) {
 			}
 		},
 
-		htmlmin: {
+		concat: {
+
 			home: {
-				options: {
-				  removeComments: true,
-				  collapseWhitespace: true
-				},
-				files: {
-				  src: ['src/html/header.html','src/html/index.html'],
-					dest: 'upload/index.html',
-				}
+				src: ['src/html/header.html', 'src/html/index.html', 'src/html/footer.html'],
+				dest: 'src/build/html/index.html',
 			},
 		},
 
+		htmlmin: {
+
+			options: {
+			  removeComments: true,
+			  collapseWhitespace: true
+			},
+
+			home: {
+				files: { 'upload/index.html' : 'src/build/html/index.html' },
+			},
+
+		},
+
 		uglify: {
+
 		  options: {
 		    mangle: false
 		  },
+
 		  homejs: {
+
 		    files: {
 		      src: [
 						'src/js/app.js',
@@ -67,26 +84,27 @@ module.exports = function(grunt) {
 		},
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
 	grunt.registerTask('default', ['watch']);
 
 	// Minificators
-	grunt.registerTask('minhtml', ['htmlmin']);
-	grunt.registerTask('mincss', ['cssmin']);
+	grunt.registerTask('minhtml', ['htmlmin:home']);
+	grunt.registerTask('mincss', ['less:home', 'cssmin']);
 	grunt.registerTask('minjs', ['uglify']);
 
 	// Compilers
-	grunt.registerTask('compile', ['htmlmin','less','cssmin','uglify']);
+	grunt.registerTask('compile', ['concat:home','minhtml','mincss','minjs']);
 
 	// Watchers
-	grunt.registerTask('watchall', ['watch']);
-	grunt.registerTask('watchhtml', ['watch:homehtml']);
-	grunt.registerTask('watchcss', ['watch:homecss']);
-	grunt.registerTask('watchjs', ['watch:homejs']);
+	grunt.registerTask('watchall', ['concat:home','minhtml','mincss','minjs','watch']);
+	grunt.registerTask('watchhtml', ['concat:home','minhtml','watch:homehtml']);
+	grunt.registerTask('watchcss', ['mincss','watch:homecss']);
+	grunt.registerTask('watchjs', ['minjs','watch:homejs']);
 };
