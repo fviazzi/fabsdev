@@ -23,6 +23,7 @@
     "grunt-contrib-htmlmin": "^2.4.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-tinyimg": "^1.0.0"
   }
 }

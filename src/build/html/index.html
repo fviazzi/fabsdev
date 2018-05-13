@@ -24,7 +24,54 @@
   </head>
   <body>
 
-<div class="container">
+<!-- Loader -->
+<div id="loader">
+  <div class="dot"></div>
+</div>
+
+<!-- Background Image Container -->
+<div id="background-container"></div>
+
+<!-- Welcome Message -->
+<div id="welcome">
+  <h1>Welcome</h1>
+
+  <div class="tap-container">
+    <div class="tap"></div>
+    <h5>Click Anywhere</h5>
+  </div>
+</div>
+
+<!-- Cookies Policy -->
+<div id="cookies-policy-container">
+  <i id="close-cookies-policy" class="fa fa-times"></i>
+  <h4>
+    Yes, I also do the cookies thing. <br />
+    <span data-toggle="modal" data-target="#cookies-policy-modal">Learn more here.</span>
+  </h4>
+</div>
+
+<!-- Cookies Policy Modal -->
+<div id="cookies-policy-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cookies Policy</h5>
+        <i class="fa fa-times close" data-dismiss="modal" aria-label="Close"></i>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni error illo dolor quod nulla at expedita, consectetur, porro vel assumenda eaque? Vel odit fuga illum omnis dicta, quisquam maxime repudiandae!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">I Agree</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div id="main-container" class="container">
 
   <div class="row">
 
@@ -34,15 +81,22 @@
       <!-- Profile Header -->
       <header id="profile-header" class="row">
 
-        <div class="image-container col-lg-3">
+        <div id="profile-image" class="image-container col-lg-3">
           <img src="img/profile.jpg" alt="Fabricio Viazzi">
         </div>
 
         <div class="basic-info col-lg-9">
           <h3>Fabricio Viazzi</h3>
           <h4 class="location">Barcelona, Spain</h4>
-          <h4>Web Designer</h4>
-          <h4>Frontend Developer</h4>
+          <h4 class="job-title">Web Designer</h4>
+          <h4 class="job-speciality">Frontend Developer</h4>
+        </div>
+
+        <div class="mobile-menu ">
+          <button id="mobile-button" class="btn btn-secondary" type="button">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+          </button>
         </div>
       </header>
 
@@ -67,6 +121,49 @@
           <!-- Projects -->
           <div id="projects-container">
 
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Alltec Bio">
+              <a href="https://alltecbio.com/" target="_blank">
+                <img src="img/projects/alltec.png" alt="Alltec Bio" />
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Budatown">
+              <a href="https://www.budatown.com.ar/" target="_blank">
+                <img src="img/projects/budatown.png" alt="Budatown" />
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Área Club">
+              <a href="http://www.areaclub.com.ar/" target="_blank">
+                <img src="img/projects/area-club.png" alt="Área Club" />
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Integra Salud">
+              <a href="http://www.integrasm.com.ar" target="_blank">
+                <img src="img/projects/integra.png" alt="Integra Salud" />
+              </a>
+            </div>
           </div>
 
           <p>
@@ -80,178 +177,210 @@
           <div class="row">
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="HTML 5">
-                  <object type="image/svg+xml" data="img/skills/html.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/html.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="CSS 3">
-                  <object type="image/svg+xml" data="img/skills/css.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/css.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Javascript">
-                  <object type="image/svg+xml" data="img/skills/javascript.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/javascript.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Wordpress">
-                  <object type="image/svg+xml" data="img/skills/wordpress.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/wordpress.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Responsive Web Design">
-                  <object type="image/svg+xml" data="img/skills/mobile.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/mobile.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="PHP">
-                  <object type="image/svg+xml" data="img/skills/php.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/php.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="MySQL">
-                  <object type="image/svg+xml" data="img/skills/sql.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/sql.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Bootstrap">
-                  <object type="image/svg+xml" data="img/skills/bootstrap.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/bootstrap.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="jQuery">
-                  <object type="image/svg+xml" data="img/skills/jquery.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/jquery.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Font Awesome">
-                  <object type="image/svg+xml" data="img/skills/fontawesome.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/fontawesome.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Less">
-                  <object type="image/svg+xml" data="img/skills/less.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/less.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Sass">
-                  <object type="image/svg+xml" data="img/skills/sass.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/sass.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Git">
-                  <object type="image/svg+xml" data="img/skills/git.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/git.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Grunt">
-                  <object type="image/svg+xml" data="img/skills/grunt.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/grunt.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Gulp">
-                  <object type="image/svg+xml" data="img/skills/gulp.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/gulp.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
 
             <!-- Skill -->
-            <div class="col-md-2">
+            <div class="col-md-2 col-4">
               <div  class="single-skill"
                     data-toggle="popover"
                     data-trigger="hover"
                     data-placement="top"
                     data-content="Angular">
-                  <object type="image/svg+xml" data="img/skills/angular.svg" viewBox width="100%">Your browser does not support SVGs</object>
+                <object type="image/svg+xml" data="img/skills/angular.svg">
+                  Your browser does not support SVG
+                </object>
               </div>
             </div>
           </div>
@@ -270,9 +399,15 @@
 
       <!-- Social Nav -->
       <nav id="social-nav">
-        <li><i class="fab fa-instagram"></i></li>
-        <li><i class="fab fa-behance"></i></li>
-        <li><i class="fab fa-linkedin"></i></li>
+        <li>
+          <a href="https://www.instagram.com/fabricioviazzi" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/fabriciovia007" target="_blank"><i class="fab fa-behance"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/fabricioviazzi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </li>
       </nav>
 
       <!-- Contact Form -->
@@ -307,64 +442,10 @@
   </div>
 </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-
-    <script>
-
-      $(function () {
-        $('[data-toggle="popover"]').popover()
-      });
-
-      $(document).ready(function() {
-
-        $('input, textarea').focus(function(e){
-          $(this).parent().addClass('focused');
-          $(this).parent().addClass('dirty');
-          $(this).removeClass('untouched');
-        });
-
-        $('input, textarea').blur(function(e){
-          $(this).parent().removeClass('focused');
-
-          if ( !$(this).val() ) {
-            $(this).addClass('error');
-            $('#submit-form').attr('disabled','true');
-          } else {
-            $(this).removeClass('error');
-            if ( !$('.error').length && !$('.untouched').length ) {
-              $('#submit-form').removeAttr('disabled');
-            }
-          }
-        });
-
-        $("#textarea").on('change keyup paste', manageChange);
-
-        $('input, textarea').change(manageChange);
-
-        function manageChange(e) {
-
-          if ( $(this).val() ) {
-
-            $(this).parent().addClass('not-empty');
-            $(this).removeClass('error');
-
-            if ( !$('.error').length && !$('.untouched').length ) {
-              $('#submit-form').removeAttr('disabled');
-            }
-          } else {
-            $(this).parent().removeClass('not-empty');
-            $(this).addClass('error');
-            $('#submit-form').attr('disabled','true');
-          }
-        };
-
-      });
-    </script>
-
-
+    <script defer src="js/scripts.min.js"></script>
   </body>
 </html>

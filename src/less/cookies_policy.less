@@ -1,0 +1,124 @@
+@import '_config.less';
+
+body {
+
+  &.blur #cookies-policy-container {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #cookies-policy-container {
+    position: fixed;
+    left:20px;
+    bottom:20px;
+    padding: 20px 30px 20px 20px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 4;
+    border:2px solid fade(@brand_main,70%);
+
+    &.closed {
+      bottom: 0;
+      transform: translate(0,-100%);
+    }
+
+    @media all and (max-width: 1790px) {
+      bottom: 0;
+      left: 50%;
+      width: max-content;
+      min-width: 40%;
+      background: fade(#333,90%);
+      text-align: center;
+      transform: translate(-50%,0);
+      border: none;
+
+      &.closed {
+        transform: translate(-50%,-100%);
+      }
+    }
+
+    .fa-times {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: @brand_main;
+      cursor: pointer;
+    }
+
+    h4 {
+      margin: 0;
+      color: #FFF;
+      font-size: .9rem;
+      font-weight: bold;
+      line-height: normal;
+
+      span {
+        color: @brand_main;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #cookies-policy-modal {
+
+    .modal-content {
+      background: #333;
+      border-radius: 0;
+
+      .modal-header {
+        position: relative;
+        border-color: @brand_main;
+
+        .modal-title {
+          margin: 0 auto;
+          color: @brand_main;
+          font-weight: lighter;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .close {
+          float: none;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          margin: 0;
+          padding: 0;
+          color: @brand_main;
+          font-size: 1rem;
+          text-shadow: none;
+          opacity: 1;
+        }
+      }
+
+      .modal-body {
+
+        p {
+          color: #FFF;
+          font-size: .9rem;
+          font-weight: lighter;
+        }
+      }
+
+      .modal-footer {
+        justify-content: center;
+        border-color: @brand_main;
+
+        button {
+          padding: 10px 20px;
+          font-size: .8rem;
+          text-transform: uppercase;
+          outline: none!important;
+          box-shadow: none!important;
+          border-radius: 0;
+          border: none!important;
+
+          &.btn-primary { background: @brand_success; }
+
+          &.btn-secondary { background: @brand_error; }
+        }
+      }
+    }
+  }
+}

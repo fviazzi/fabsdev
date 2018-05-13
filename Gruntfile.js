@@ -19,6 +19,11 @@ module.exports = function(grunt) {
 				files: ['src/js/*.js'],
 				tasks: ['minjs'],
 			},
+
+			img: {
+				files: ['src/**/*.{png,jpg,svg}'],
+				tasks: ['minimg'],
+			},
 		},
 
 		less: {
@@ -60,7 +65,7 @@ module.exports = function(grunt) {
 			},
 
 			home: {
-				files: { 'upload/index.html' : 'src/build/html/index.html' },
+				files: { 'upload/index.php' : 'src/build/html/index.html' },
 			},
 
 		},
@@ -72,16 +77,24 @@ module.exports = function(grunt) {
 		  },
 
 		  homejs: {
-
-		    files: {
-		      src: [
-						'src/js/app.js',
-						'src/js/route.js'
-					],
-					dest: 'upload/js/scripts.min.js',
-		    }
+				src: [
+					'src/js/*.js',
+				],
+				dest: 'upload/js/scripts.min.js',
 		  }
 		},
+
+		tinyimg: {
+
+      imagemin: {
+        files: [{
+          expand: true,
+          cwd: 'src/img',
+          src: ['**/*.{png,jpg,svg}'],
+          dest: 'upload/img'
+        }]
+      }
+    }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
@@ -90,6 +103,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-tinyimg');
 
 	// Default task(s).
 	grunt.registerTask('default', ['watch']);
@@ -98,13 +112,15 @@ module.exports = function(grunt) {
 	grunt.registerTask('minhtml', ['htmlmin:home']);
 	grunt.registerTask('mincss', ['less:home', 'cssmin']);
 	grunt.registerTask('minjs', ['uglify']);
+	grunt.registerTask('minimg',['tinyimg:imagemin'])
 
 	// Compilers
 	grunt.registerTask('compile', ['concat:home','minhtml','mincss','minjs']);
 
 	// Watchers
-	grunt.registerTask('watchall', ['concat:home','minhtml','mincss','minjs','watch']);
+	grunt.registerTask('watchall', ['compile','watch']);
 	grunt.registerTask('watchhtml', ['concat:home','minhtml','watch:homehtml']);
 	grunt.registerTask('watchcss', ['mincss','watch:homecss']);
 	grunt.registerTask('watchjs', ['minjs','watch:homejs']);
+	grunt.registerTask('watchimg', ['minimg','watch:img']);
 };
