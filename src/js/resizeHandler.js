@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   function handleResize() {
 
+    // Width handler
     if (window.innerWidth < 992) {
       var headerHeight  = $('#profile-header').innerHeight(),
           sidebarHeight = window.innerHeight - headerHeight;
@@ -22,6 +23,13 @@ $(document).ready(function() {
       $('#sidebar').css({
         'paddingTop': '20px'
       });
+
+      // Page Height Handler
+      var sidebarHeight = $('#sidebar').innerHeight() + 100;
+
+      if ( sidebarHeight > $(window).innerHeight() ) {
+        $('#profile-content').addClass('no-max-height');
+      }
     }
   }
 

@@ -64,16 +64,21 @@
 body {
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 body.blur {
   cursor: default;
+  overflow: auto;
+}
+body.blur.modal-open {
+  overflow: hidden;
 }
 body.blur #background-container {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
   transform: scale(1.1);
 }
 body.blur .container {
@@ -352,6 +357,9 @@ body #main-content #profile-content::-webkit-scrollbar-track:hover {
 }
 body #main-content #profile-content::-webkit-scrollbar {
   width: 5px;
+}
+body #main-content #profile-content.no-max-height {
+  max-height: none!important;
 }
 body #main-content #profile-content p {
   color: #FFF;
@@ -761,10 +769,11 @@ body #cookies-policy-container {
   opacity: 0;
   z-index: 4;
   border: 2px solid rgba(209, 169, 61, 0.7);
+  transition: all 0.2s ease-out;
 }
 body #cookies-policy-container.closed {
   bottom: 0;
-  transform: translate(0, -100%);
+  transform: translate(0, 100%);
 }
 @media all and (max-width: 1790px) {
   body #cookies-policy-container {
@@ -778,7 +787,7 @@ body #cookies-policy-container.closed {
     border: none;
   }
   body #cookies-policy-container.closed {
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 100%);
   }
 }
 body #cookies-policy-container .fa-times {
@@ -827,10 +836,17 @@ body #cookies-policy-modal .modal-content .modal-header .close {
   text-shadow: none;
   opacity: 1;
 }
+body #cookies-policy-modal .modal-content .modal-body h3 {
+  color: #FFF;
+}
 body #cookies-policy-modal .modal-content .modal-body p {
   color: #FFF;
   font-size: .9rem;
   font-weight: lighter;
+}
+body #cookies-policy-modal .modal-content .modal-body a {
+  color: #D1A93D;
+  text-decoration: none;
 }
 body #cookies-policy-modal .modal-content .modal-footer {
   justify-content: center;
