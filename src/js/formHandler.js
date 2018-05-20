@@ -47,7 +47,9 @@ $(document).ready(function() {
 
     e.preventDefault();
 
-    setInterval(ajax_call, 5000);
+    //setInterval(ajax_call, 0);
+
+    ajax_call();
 
     function ajax_call() {
 
@@ -59,16 +61,16 @@ $(document).ready(function() {
 
       $.ajax({
             type     : "POST",
-            url      : "index.php?route=form_submission",
+            url      : "system/form_submission.php",
             timeout  : 5000,
-            data     : data,
+            data     : { data : data },
             dataType : "json",
             success  : handleSuccess,
             error    : handleError,
         });
 
       function handleSuccess(response) {
-        console.log("Response: " + response);
+        console.log("Response: " , response);
       }
 
       function handleError(request, status, err) {
