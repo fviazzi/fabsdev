@@ -16,12 +16,9 @@
 			margin: 0 20px auto 0;
 			padding: 2px;
 			background: rgb(2,0,36);
-			background: -moz-linear-gradient(90deg, rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
-			background: -webkit-linear-gradient(90deg, rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
-			background: linear-gradient(90deg,rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
 			flex: .7;
 			z-index: 2;
+			.primary-gradient-reverse(@direction: 140deg);
 			.fadeIn(@duration: .7s, @delay: .2s);
 
 			img {
@@ -71,7 +68,9 @@
 				padding: 5px 15px;
 				display: flex;
 				flex-wrap: wrap;
-				border: 2px solid @color_secondary;
+				border: 2px solid;
+				border-image-source: linear-gradient(110deg, @color_primary, @color_secondary);
+				border-image-slice: 1;
 
 				& > div {
 					flex: 0 50%;
