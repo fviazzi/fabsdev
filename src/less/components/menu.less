@@ -37,7 +37,18 @@
 		background-attachment: fixed;
 		filter: blur(15px);
 		z-index: 1;
-		.shadow(@delay: .2s);
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: .35;
+		.bg-gradient;
 	}
 
 	button {
