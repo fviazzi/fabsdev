@@ -1,0 +1,86 @@
+@import '../config.less';
+
+#home {
+
+	.blurred-container {
+		position: relative;
+		width: 50%;
+		min-width: 500px;
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 100px 0;
+
+		#profile {
+			z-index: 2;
+			.fadeIn(@duration: .7s, @delay: .2s);
+
+			#profile-picture {
+				width: 120px;
+				height: 120px;
+				margin: 0 auto;
+				padding: 2px;
+				background: rgb(2,0,36);
+				background: -moz-linear-gradient(90deg, rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
+				background: -webkit-linear-gradient(90deg, rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
+				background: linear-gradient(90deg,rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+				overflow: hidden;
+				border-radius: 100%;
+
+				img {
+					width: 100%;
+					border-radius: 100%;
+				}
+			}
+
+			h1 {
+				margin: 20px 0 10px;
+				color: #FFF;
+
+				span { color: @color_primary; }
+			}
+
+			h2 {
+				margin: 10px 0 0;
+				color: #FFF;
+				font-size: 1rem;
+				font-weight: 300;
+				text-transform: uppercase;
+
+				&.primary { color: @color_primary; }
+			}
+		}
+
+		nav {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 0 15% 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			z-index: 2;
+			.slideInDown(@delay: .7s);
+
+			button {
+				padding: 0;
+				color: @color_primary;
+				text-transform: uppercase;
+				transition: .2s;
+
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		#contact-btn {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 2;
+			.fadeInUp(@delay: 1.2s);
+		}
+	}
+}
