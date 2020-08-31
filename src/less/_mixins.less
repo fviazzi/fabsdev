@@ -1,0 +1,15 @@
+@import  '_variables.less';
+
+.transition {
+  transition: .2s;
+}
+
+.primary-gradient( @start: 0%, @end: 100% ) {
+  background: linear-gradient( 40deg, @color_primary @start, @color_secondary @end);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+}
+
+.bg-gradient ( @start: 0%, @end: 100% ) {
+  background: linear-gradient( 40deg, @color_primary_bg @start, @color_secondary_bg @end );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= @color_primary_bg,endColorstr=@color_secondary_bg,GradientType=1);
+}
