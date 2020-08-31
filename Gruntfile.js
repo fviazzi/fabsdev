@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		watch: {
 
 			homehtml: {
-				files: ['src/html/*.html','src/html/*.php'],
+				files: ['src/html/**/*.html','src/html/**/*.php'],
 				tasks: ['concat','minhtml'],
 			},
 
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
 			homejs: {
 				files: ['src/js/*.js'],
-				tasks: ['minjs'],
+				tasks: ['js'],
 			},
 
 			img: {
@@ -27,6 +27,10 @@ module.exports = function(grunt) {
 		},
 
 		less: {
+
+			options : {
+				plugins : [ new (require('less-plugin-autoprefix'))({browsers : [ "last 2 versions" ]}) ]
+			},
 
 			home: {
 				src: ["src/less/general.less","src/less/**/*.less"],
@@ -52,7 +56,15 @@ module.exports = function(grunt) {
 		concat: {
 
 			home: {
-				src: ['src/html/header.html', 'src/html/index.html', 'src/html/footer.html'],
+				src: [
+					'src/html/header.html',
+					'src/html/menu.html',
+					'src/html/views/home.html',
+					'src/html/views/about.html',
+					'src/html/views/skills.html',
+					'src/html/views/experience.html',
+					'src/html/views/contact.html',
+					'src/html/footer.html'],
 				dest: 'src/build/html/index.html',
 			},
 		},
@@ -60,14 +72,47 @@ module.exports = function(grunt) {
 		htmlmin: {
 
 			options: {
-			  removeComments: true,
-			  collapseWhitespace: true
+				removeComments: true,
+				collapseWhitespace: true
 			},
 
 			home: {
 				files: { 'upload/index.php' : 'src/build/html/index.html' },
 			},
 
+		},
+
+		browserify: {
+
+			build : {
+
+				files: {
+					'src/build/js/scripts.js': ['src/js/index.js' ]
+				},
+
+				options: {
+					transform: [
+						[ 'babelify', { 
+							presets: [ [
+								"@babel/preset-env",
+								{
+									"targets": {
+										"browsers": [
+											"last 2 versions",
+											"safari >= 7",
+											"ie >= 11"
+										]
+									}
+								}
+							] ]
+						} ]
+					],
+
+					browserifyOptions: {
+						debug: true
+					}
+				}
+			}
 		},
 
 		uglify: {
@@ -78,7 +123,7 @@ module.exports = function(grunt) {
 
 		  homejs: {
 				src: [
-					'src/js/*.js',
+					'src/build/js/scripts.js',
 				],
 				dest: 'upload/js/scripts.min.js',
 		  }
@@ -102,25 +147,26 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-tinyimg');
 
 	// Default task(s).
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['compile','minimg','watch']);
 
 	// Minificators
 	grunt.registerTask('minhtml', ['htmlmin:home']);
 	grunt.registerTask('mincss', ['less:home', 'cssmin']);
-	grunt.registerTask('minjs', ['uglify']);
+	grunt.registerTask('js', ['browserify','uglify']);
 	grunt.registerTask('minimg',['tinyimg:imagemin'])
 
 	// Compilers
-	grunt.registerTask('compile', ['concat:home','minhtml','mincss','minjs']);
+	grunt.registerTask('compile', ['concat:home','minhtml','mincss','js']);
 
 	// Watchers
-	grunt.registerTask('watchall', ['compile','watch']);
+	grunt.registerTask('watchall', ['watch']);
 	grunt.registerTask('watchhtml', ['concat:home','minhtml','watch:homehtml']);
 	grunt.registerTask('watchcss', ['mincss','watch:homecss']);
-	grunt.registerTask('watchjs', ['minjs','watch:homejs']);
+	grunt.registerTask('watchjs', ['js','watch:homejs']);
 	grunt.registerTask('watchimg', ['minimg','watch:img']);
 };

@@ -17,13 +17,19 @@
   },
   "homepage": "https://gitlab.com/fviazzi/fabs-dev#README",
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babelify": "^10.0.0",
     "grunt": "^1.0.2",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-browserify": "^5.3.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-htmlmin": "^2.4.0",
     "grunt-contrib-less": "^1.4.1",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-tinyimg": "^1.0.0"
+    "grunt-tinyimg": "^1.0.0",
+    "less-plugin-autoprefix": "^2.0.0"
   }
 }
