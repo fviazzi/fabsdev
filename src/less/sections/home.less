@@ -64,13 +64,25 @@
 			.slideInDown(@delay: .7s);
 
 			button {
-				padding: 0;
-				color: @color_primary;
+				position: relative;
+				color: #FFF;
 				text-transform: uppercase;
 				transition: .2s;
+				border: 2px solid transparent;
 
-				&:hover {
-					transform: scale(1.1);
+				&:after {
+					content:"";
+					position: absolute;
+					left: 0;
+					width: 0;
+					height: 2px;
+					bottom: -10px;
+					transition: all .2s ease-in-out;
+				}
+
+				&:hover:after {
+					width: 100%;
+					background: linear-gradient( to right, @color_primary, @color_secondary);
 				}
 			}
 		}
