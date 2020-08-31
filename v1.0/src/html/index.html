@@ -1,0 +1,412 @@
+<!-- Loader -->
+<div id="loader">
+  <div class="dot"></div>
+</div>
+
+<!-- Background Image Container -->
+<div id="background-container"></div>
+
+<!-- Welcome Message -->
+<div id="welcome">
+  <h1><?php echo $welcome_title; ?></h1>
+
+  <div class="tap-container">
+    <div class="tap"></div>
+    <h5><?php echo $welcome_text; ?></h5>
+  </div>
+</div>
+
+<!-- Cookies Policy -->
+<div id="cookies-policy-container" class="closed">
+  <div id="close-cookies-policy">
+    <i  class="fa fa-times"
+        data-toggle="popover"
+        data-trigger="hover"
+        data-placement="top"
+        data-content="<?php echo $cookies_notice_popover; ?>"></i>
+  </div>
+  <h4> <?php echo $cookies_notice_text; ?> <br />
+    <span data-toggle="modal" data-target="#cookies-policy-modal"><?php echo $cookies_notice_link; ?></span>
+  </h4>
+</div>
+
+<!-- Cookies Policy Modal -->
+<div id="cookies-policy-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><?php echo $cookies_modal_title; ?></h5>
+        <i class="fa fa-times close" data-dismiss="modal" aria-label="Close"></i>
+      </div>
+      <div class="modal-body">
+        <?php echo $cookies_modal_text; ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo $cookies_modal_close; ?></button>
+        <button id="policy-agree-button" type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $cookies_modal_agree; ?></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div id="main-container" class="container">
+
+  <div class="row">
+
+    <!-- Main Container -->
+    <main id="main-content" class="col-lg-9">
+
+      <!-- Profile Header -->
+      <header id="profile-header" class="row">
+
+        <div id="profile-image" class="image-container col-lg-3">
+          <img src="img/profile.jpg" alt="Fabricio Viazzi">
+        </div>
+
+        <div class="basic-info col-lg-9">
+          <h3>Fabricio Viazzi</h3>
+          <h4 class="location"><?php echo $basic_location; ?></h4>
+          <h4 class="job-title"><?php echo $basic_job; ?></h4>
+          <h4 class="job-speciality"><?php echo $basic_spec; ?></h4>
+        </div>
+
+        <div class="mobile-menu ">
+          <button id="mobile-button" class="btn btn-secondary" type="button">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Profile Text -->
+      <div id="profile-content" class="row">
+
+        <!-- Text -->
+        <div class="text col-lg-12">
+          <p><?php echo $about_text_1; ?></p>
+          <p><?php echo $about_text_2; ?></p>
+          <p><?php echo $about_text_3; ?></p>
+          <p><?php echo $about_text_4; ?></p>
+
+          <!-- Projects -->
+          <div id="projects-container">
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Alltec Bio">
+              <a href="https://alltecbio.com/" target="_blank">
+                <img src="img/projects/alltec.png" alt="Alltec Bio" />
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Budatown">
+              <a href="https://www.budatown.com.ar/" target="_blank">
+                <img src="img/projects/budatown.png" alt="Budatown" />
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Área Club">
+              <a href="http://www.areaclub.com.ar/" target="_blank">
+                <img src="img/projects/area-club.png" alt="Área Club" />
+              </a>
+            </div>
+
+            <!-- Project -->
+            <div  class="project"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="top"
+                  data-content="Integra Salud">
+              <a href="http://www.integrasm.com.ar" target="_blank">
+                <img src="img/projects/integra.png" alt="Integra Salud" />
+              </a>
+            </div>
+          </div>
+
+          <p><?php echo $about_text_5; ?></p>
+        </div>
+
+        <!-- Skills -->
+        <div id="skills-container" class="col-lg-12">
+
+          <div class="row">
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="HTML 5">
+                <object type="image/svg+xml" data="img/skills/html.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="CSS 3">
+                <object type="image/svg+xml" data="img/skills/css.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Javascript">
+                <object type="image/svg+xml" data="img/skills/javascript.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Wordpress">
+                <object type="image/svg+xml" data="img/skills/wordpress.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Responsive Web Design">
+                <object type="image/svg+xml" data="img/skills/mobile.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="PHP">
+                <object type="image/svg+xml" data="img/skills/php.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="MySQL">
+                <object type="image/svg+xml" data="img/skills/sql.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Bootstrap">
+                <object type="image/svg+xml" data="img/skills/bootstrap.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="jQuery">
+                <object type="image/svg+xml" data="img/skills/jquery.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Font Awesome">
+                <object type="image/svg+xml" data="img/skills/fontawesome.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Less">
+                <object type="image/svg+xml" data="img/skills/less.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Sass">
+                <object type="image/svg+xml" data="img/skills/sass.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Git">
+                <object type="image/svg+xml" data="img/skills/git.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Grunt">
+                <object type="image/svg+xml" data="img/skills/grunt.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Gulp">
+                <object type="image/svg+xml" data="img/skills/gulp.svg">
+
+                </object>
+              </div>
+            </div>
+
+            <!-- Skill -->
+            <div class="col-md-2 col-4">
+              <div  class="single-skill"
+                    data-toggle="popover"
+                    data-trigger="hover"
+                    data-placement="top"
+                    data-content="Angular">
+                <object type="image/svg+xml" data="img/skills/angular.svg">
+                  <?php echo $svg_error; ?>
+                </object>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside id="sidebar" class="col-lg-3">
+
+      <!-- Language -->
+      <nav id="language-navigation">
+        <li id="language-english">En</li>
+        <li id="language-spanish">Es</li>
+      </nav>
+
+      <!-- Social Nav -->
+      <nav id="social-nav">
+        <li>
+          <a href="https://www.instagram.com/fabricioviazzi" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/fabriciovia007" target="_blank"><i class="fab fa-behance"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/fabricioviazzi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </li>
+      </nav>
+
+      <!-- Contact Form -->
+      <div id="contact-form-container">
+        <h4><?php echo $contact_title; ?></h4>
+        <hr />
+        <form id="contact-form">
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="message"><?php echo $contact_form_name; ?></label>
+            <input id="contact-form-name" type="text" class="untouched" name="name" />
+          </div>
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="message"><?php echo $contact_form_email; ?></label>
+            <input id="contact-form-email" type="email" class="untouched" name="email" />
+          </div>
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message"><?php echo $contact_form_msg; ?></label>
+            <textarea id="contact-form-message" name="message" class="untouched" rows="8"></textarea>
+          </div>
+          <!-- Submit -->
+          <div class="form-group">
+            <button id="submit-form" type="submit" disabled>
+              <i class="fa fa-paper-plane"></i> <?php echo $contact_form_send; ?>
+            </button>
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+</div>
