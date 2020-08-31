@@ -1,0 +1,105 @@
+@import '../config.less';
+
+#about-me {
+
+	.blurred-container {
+		position: relative;
+		width: 50%;
+		min-width: 800px;
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 30px;
+		flex-direction: row;
+		align-items: flex-end;
+
+		figure {
+			margin: 0 20px auto 0;
+			padding: 2px;
+			background: rgb(2,0,36);
+			background: -moz-linear-gradient(90deg, rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
+			background: -webkit-linear-gradient(90deg, rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
+			background: linear-gradient(90deg,rgba(red(@color_primary),green(@color_primary),blue(@color_primary),1) 0%, rgba(red(@color_secondary),green(@color_secondary),blue(@color_secondary),1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+			flex: .7;
+			z-index: 2;
+			.fadeIn(@duration: .7s, @delay: .2s);
+
+			img {
+				width: 100%;
+			}
+		}
+
+		article {
+			text-align: left;
+			flex: 1;
+			z-index: 2;
+
+			.title {
+				margin: 0 0 20px;
+
+				h5 {
+					margin: 0;
+					color: @color_primary;
+					font-weight: 300;
+					text-transform: uppercase;
+				}
+
+				h2 {
+					margin: 0;
+					color: #FFF;
+					font-size: 2.5rem;
+
+					span {
+						color: @color_primary;
+						padding-bottom: 5px;
+						border-bottom: 1px solid #FFF;
+					}
+				}
+			}
+
+			.content {
+
+				p {
+					color: #FFF;
+					font-size: .9rem;
+					font-weight: 300;
+					line-height: 1.3rem;
+				}
+			}
+
+			.file {
+				padding: 5px 15px;
+				display: flex;
+				flex-wrap: wrap;
+				border: 2px solid @color_secondary;
+
+				& > div {
+					flex: 0 50%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					&:nth-child(even) {
+						padding-left: 15px;
+					}
+
+					&:nth-child(odd) {
+						padding-right: 15px;
+					}
+
+					& > span {
+						color: @color_primary;
+						font-size: .9rem;
+					}
+
+					& > p {
+						margin: 5px;
+						color: #FFF;
+						font-size: .9rem;
+						font-weight: 300;
+					}
+				}
+			}
+		}
+	}
+}
