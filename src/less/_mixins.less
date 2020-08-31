@@ -4,9 +4,14 @@
   transition: .2s;
 }
 
-.primary-gradient( @start: 0%, @end: 100% ) {
-  background: linear-gradient( 40deg, @color_primary @start, @color_secondary @end);
+.primary-gradient( @direction: 40deg, @start: 0%, @end: 100% ) {
+  background: linear-gradient( @direction, @color_primary @start, @color_secondary @end);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+}
+
+.primary-gradient-reverse( @direction: 40deg, @start: 0%, @end: 100% ) {
+  background: linear-gradient( @direction, @color_secondary @start, @color_primary @end);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_secondary,endColorstr=@color_primary,GradientType=1);
 }
 
 .bg-gradient ( @start: 0%, @end: 100% ) {
