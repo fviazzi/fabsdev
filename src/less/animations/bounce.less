@@ -1,0 +1,40 @@
+.bounce(@duration: 1s, @function: cubic-bezier(0.250, 0.460, 0.450, 0.940), @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: bounce @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(-500px);
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+	38% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+		opacity: 1;
+	}
+	55% {
+		transform: translateY(-65px);
+		animation-timing-function: ease-in;
+	}
+	72% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	}
+	81% {
+		transform: translateY(-28px);
+		animation-timing-function: ease-in;
+	}
+	90% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	}
+	95% {
+		transform: translateY(-8px);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: translateY(0);
+		animation-timing-function: ease-out;
+	}
+}

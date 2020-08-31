@@ -1,0 +1,51 @@
+.backOutLeft(@duration: .6s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: backOutLeft @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.backOutRight(@duration: .6s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: backOutRight @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes backOutLeft {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		box-shadow: 0 0 30px rgba(36,6,84,.4);
+	}
+
+	20% {
+		-webkit-transform: translateX(0px) scale(0.7);
+		transform: translateX(0px) scale(0.7);
+		opacity: 0.7;
+	}
+
+	100% {
+		-webkit-transform: translateX(-2000px) scale(0.7);
+		transform: translateX(-2000px) scale(0.7);
+		opacity: 0.7;
+		box-shadow: none;
+	}
+}
+
+@keyframes backOutRight {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+		box-shadow: 0 0 30px rgba(36,6,84,.4);
+	}
+
+	20% {
+		-webkit-transform: translateX(0px) scale(0.7);
+		transform: translateX(0px) scale(0.7);
+		opacity: 0.7;
+	}
+
+	100% {
+		-webkit-transform: translateX(2000px) scale(0.7);
+		transform: translateX(2000px) scale(0.7);
+		opacity: 0.7;
+		box-shadow: none;
+	}
+}
