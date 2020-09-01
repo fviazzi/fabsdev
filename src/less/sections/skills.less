@@ -4,19 +4,22 @@
 
 	.blurred-container {
 		position: relative;
-		width: 1100px;
-		margin: 75px auto 0;
+		width: 920px;
+		margin: 35px auto 0;
 		padding: 0;
 		flex-direction: row;
 		align-items: flex-start;
 
 		& > div {
 			max-height: ~"calc(100vh - 35px)";
+			//min-height: ~"calc(100vh - 100px)";
 			margin: 0;
 			padding: 35px 0;
 			flex: 1;
 			z-index: 2;
-			overflow: auto;
+			overflow: visible;
+
+			&:hover { z-index: 3; }
 
 			& > h4 {
 				margin: 0 30px;
@@ -37,44 +40,488 @@
 
 				.skill {
 					position: relative;
+					width: 50px;
+					height: 50px;
 					margin: 10px;
 					text-align: left;
-					flex: 0 ~"calc(33.3% - 20px)";
+					transition: transform 0.5s;
+					cursor: pointer;
+
+					&:hover { z-index: 3; }
+
+					&:hover {
+
+						.description {
+							opacity: 1;
+							z-index: 1;
+
+							&.top, &.bottom { transform: translate(-50%,0); }
+
+							&.left, &.right { transform: translate(0,-50%); }
+						}
+					}
 
 					.loader {
 
 					}
 
 					figure {
+						margin: 0;
 						
 						&.svg-loading {
-							width: 100px;
-							height: 100px;
+							width: 100%;
+							height: 100%;
 							margin: 0;
 							background: linear-gradient( 40deg, @color_primary, @color_secondary);
 							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+						}
+
+						img {
+							width: 100%;
+							padding: 12px;
+						}
+
+						span {
+							width: 50px;
+							height: 50px;
+							padding: 0 6px 4px 0;
+							color: #FFF;
+							font-weight: bold;
+							display: flex;
+							align-items: flex-end;
+							justify-content: flex-end;
 						}
 					}
 
 					.description {
 						position: absolute;
-						top: 0;
-						left: 0;
-						padding: 10px;
-						display: none;
+						min-width: 250px;
+						padding: 10px 15px;
+						background: @color_secondary;
+						opacity: 0;
+						z-index: 0;
+						pointer-events: none;
+						box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+						transition: .2s;
+
+						&:before {
+							content: "";
+							position: absolute;
+							width: 20px;
+							height: 20px;
+							background: @color_secondary;
+							z-index: 0;
+						}
+
+						&.top {
+							left: 50%;
+							bottom: ~"calc(100% + 20px)";
+							transform: translate(-50%,-10%);
+
+							&:before {
+								left: 50%;
+								bottom: 0;
+								transform: rotate(45deg) translate(0px, -50%);
+							}
+						}
+
+						&.right {
+							top: 50%;
+							left: ~"calc(100% + 20px)";
+							transform: translate(-10%,-50%);
+
+							&:before {
+								top: 50%;
+								left: 0;
+								transform: rotate(45deg) translate(-50%, 0px);
+							}
+						}
+
+						&.bottom {
+							left: 50%;
+							top: ~"calc(100% + 20px)";
+							transform: translate(-50%,-10%);
+
+							&:before {
+								left: 50%;
+								top: 0;
+								transform: rotate(45deg) translate(-50%, 0px);
+							}
+						}
+
+						&.left {
+							top: 50%;
+							right: ~"calc(100% + 20px)";
+							transform: translate(-10%,-50%);
+
+							&:before {
+								top: 50%;
+								right: -17px;
+								transform: rotate(45deg) translate(-50%, 0px);
+							}
+						}
 
 						h4 {
-							margin: 0 0 10px;
+							position: relative;
+							margin: 0 0 5px;
 							color: #FFF;
+							font-size: .9rem;
+							z-index: 1;
 						}
 
 						p {
+							position: relative;
+							margin: 0;
 							color: #FFF;
+							font-size: .8rem;
 							font-weight: 300;
+							line-height: 1.1rem;
+							z-index: 1;
+						}
+					}
+
+					/* Skills colors */
+					&.ps {
+
+						figure span {
+							background: #001D26;
+							color: #00C8FF;
+							border: 2px solid #00C8FF;
+						}
+
+						.description {
+							background: #001D26;
+
+							&:before { background: #001D26; }
+						}
+					}
+
+					&.ai {
+
+						figure span {
+							background: #1C0A00;
+							color: #FF7F18;
+							border: 2px solid #FF7F18;
+						}
+
+						.description {
+							background: #1C0A00;
+
+							&:before { background: #1C0A00; }
+						}
+					}
+
+					&.xd {
+
+						figure span {
+							background: #2E001E;
+							color: #FF2BC2;
+							border: 2px solid #FF2BC2;
+						}
+
+						.description {
+							background: #2E001E;
+
+							&:before { background: #2E001E; }
+						}
+					}
+
+					&.html {
+
+						figure {
+							background: #E44D26;
+						}
+
+						.description {
+							background: #E44D26;
+
+							&:before { background: #E44D26; }
+						}
+					}
+
+					&.css {
+
+						figure {
+							background: #0C73B8;
+						}
+
+						.description {
+							background: #0C73B8;
+
+							&:before { background: #0C73B8; }
+						}
+					}
+
+					&.js {
+
+						figure {
+							background: #E5A228;
+						}
+
+						.description {
+							background: #E5A228;
+
+							&:before { background: #E5A228; }
+						}
+					}
+
+					&.jq {
+
+						figure {
+							background: #21ACE2;
+						}
+
+						.description {
+							background: #21ACE2;
+
+							&:before { background: #21ACE2; }
+						}
+					}
+
+					&.bs {
+
+						figure {
+							background: #52274C;
+						}
+
+						.description {
+							background: #52274C;
+
+							&:before { background: #52274C; }
+						}
+					}
+
+					&.an {
+
+						figure {
+							background: #C3002F;
+						}
+
+						.description {
+							background: #C3002F;
+
+							&:before { background: #C3002F; }
+						}
+					}
+
+					&.vue {
+
+						figure {
+							background: #31475E;
+							border: 2px solid #3FB984;
+						}
+
+						.description {
+							background: #31475E;
+
+							&:before { background: #31475E; }
+						}
+					}
+
+					&.react {
+
+						figure {
+							background: #1F1F1F;
+							border: 2px solid #4CD2F3;
+						}
+
+						.description {
+							background: #1F1F1F;
+
+							&:before { background: #1F1F1F; }
+						}
+					}
+
+					&.php {
+
+						figure {
+							background: #464B8A;
+							border: 2px solid #787CB4;
+						}
+
+						.description {
+							background: #464B8A;
+
+							&:before { background: #464B8A; }
+						}
+					}
+
+					&.mysql {
+
+						figure {
+							background: #00618B;
+							border: 2px solid #E48F00;
+						}
+
+						.description {
+							background: #00618B;
+
+							&:before { background: #00618B; }
+						}
+					}
+
+					&.git {
+
+						figure {
+							background: #F05033;
+						}
+
+						.description {
+							background: #F05033;
+
+							&:before { background: #F05033; }
+						}
+					}
+
+					&.wordpress {
+
+						figure {
+							background: #0275A1;
+						}
+
+						.description {
+							background: #0275A1;
+
+							&:before { background: #0275A1; }
+						}
+					}
+
+					&.node {
+
+						figure {
+							background: #3B8739;
+							border: 2px solid #6DA75D;
+						}
+
+						.description {
+							background: #3B8739;
+
+							&:before { background: #3B8739; }
+						}
+					}
+
+					&.grunt {
+
+						figure {
+							background: #FF7E22;
+							border: 2px solid #FFA300;
+						}
+
+						.description {
+							background: #FF7E22;
+
+							&:before { background: #FF7E22; }
+						}
+					}
+
+					&.webpack {
+
+						figure {
+							background: #1C78C0;
+							border: 2px solid #8ED5FA;
+						}
+
+						.description {
+							background: #1C78C0;
+
+							&:before { background: #1C78C0; }
+						}
+					}
+
+					&.gulp {
+
+						figure {
+							background: #D34A47;
+						}
+
+						.description {
+							background: #D34A47;
+
+							&:before { background: #D34A47; }
+						}
+					}
+
+					&.trello {
+
+						figure {
+							background: #0091E6;
+							border: 2px solid #0079BF;
+						}
+
+						.description {
+							background: #0091E6;
+
+							&:before { background: #0091E6; }
+						}
+					}
+
+					&.aws {
+
+						figure {
+							background: #162B3E;
+							border: 2px solid #FC9A00;
+						}
+
+						.description {
+							background: #162B3E;
+
+							&:before { background: #162B3E; }
 						}
 					}
 				}
 			}
+		}
+	}
+
+	// View Enter Animations
+	&.active .blurred-container .skill {
+
+		&:nth-child(1) {
+			.flipInY(@delay: .4s);
+		}
+
+		&:nth-child(2) {
+			.flipInY(@delay: .45s);
+		}
+
+		&:nth-child(3) {
+			.flipInY(@delay: .5s);
+		}
+
+		&:nth-child(4) {
+			.flipInY(@delay: .55s);
+		}
+
+		&:nth-child(5) {
+			.flipInY(@delay: .6s);
+		}
+
+		&:nth-child(6) {
+			.flipInY(@delay: .65s);
+		}
+
+		&:nth-child(7) {
+			.flipInY(@delay: .7s);
+		}
+
+		&:nth-child(8) {
+			.flipInY(@delay: .75s);
+		}
+
+		&:nth-child(9) {
+			.flipInY(@delay: .8s);
+		}
+
+		&:nth-child(10) {
+			.flipInY(@delay: .85s);
+		}
+
+		&:nth-child(11) {
+			.flipInY(@delay: .9s);
+		}
+
+		&:nth-child(12) {
+			.flipInY(@delay: .95s);
 		}
 	}
 }

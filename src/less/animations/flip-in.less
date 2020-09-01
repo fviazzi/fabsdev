@@ -1,4 +1,4 @@
-.flipInY(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+.flipInY(@duration: .8s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	backface-visibility: visible;
 	animation: flipInY @duration @function @delay @iteraions @direction @fill @play_state;
 }
@@ -6,24 +6,19 @@
 @keyframes flipInY {
 
 	0% {
-		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-		transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-		-webkit-transition-timing-function: ease-in;
+		transform: perspective(400px) rotate3d(0, 1, 0, 160deg);
 		transition-timing-function: ease-in;
 		opacity: 0;
 	}
 
 	40% {
-		-webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
 		transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
-		-webkit-transition-timing-function: ease-in;
 		transition-timing-function: ease-in;
 	}
 
 	100% {
 		visibility: visible;
 		opacity: 1;
-		-webkit-transform: perspective(400px);
 		transform: perspective(400px);
 	}
 

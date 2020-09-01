@@ -57,5 +57,5 @@ function switchTab() {
 
 // Register load event
 document.addEventListener("DOMContentLoaded", () => {
-//	document.querySelector('[data-target="#skills"]').click();
+	document.querySelector('[data-target="#skills"]').click();
 });

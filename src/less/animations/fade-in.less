@@ -1,12 +1,21 @@
 .fadeIn( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeIn @duration @function @delay @iteraions @direction @fill @play_state;
 }
+
 .fadeInUp( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeInUp @duration @function @delay @iteraions @direction @fill @play_state;
 }
 
+.fadeInLeft( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeInLeft @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
 .fadeInDown( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeInDown @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.fadeInRight( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeInRight @duration @function @delay @iteraions @direction @fill @play_state;
 }
 
 @keyframes fadeIn {
@@ -35,6 +44,20 @@
   }
 }
 
+@keyframes fadeInLeft {
+
+  0% {
+    opacity: 0;
+    transform: translate(-10%,0);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,0);
+  }
+}
+
 @keyframes fadeInDown {
 
   0% {
@@ -46,5 +69,19 @@
     opacity: 1;
     visibility: visible;
     transform: translate(0,0);
+  }
+}
+
+@keyframes fadeInRight {
+
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
   }
 }

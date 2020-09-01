@@ -28,7 +28,7 @@ function imgLazyLoad() {
 	});
 
 	function imageLoaded(e) {
-		this.parentNode.classList.remove("loading");
+		this.parentNode.classList.remove("loading","svg-loading");
 	}
 
 	function imageError(e) {

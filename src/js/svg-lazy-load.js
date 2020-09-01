@@ -11,16 +11,16 @@ function svgLazyLoad() {
 	figures.forEach( figure => {
 
 		// Make sure this figure has images with loading class
-		if ( figure.classList.contains('loading') ) {
+		if ( figure.classList.contains('svg-loading') ) {
 
 			// Get figure images
-			let images = figure.getElementsByTagName('object');
+			let containers = figure.getElementsByTagName('object');
 
-			for (let img of images) {
-				// Set image src and listen to load and error events 
-				img.src = img.dataset.src; 
-				img.addEventListener('load',imageLoaded);
-				img.addEventListener('error',imageError);
+			for (let container of containers) {
+				// Set image src and listen to load and error events
+				container.data = container.dataset.src;
+				container.addEventListener('load',imageLoaded);
+				container.addEventListener('error',imageError);
 			}
 		}
 
