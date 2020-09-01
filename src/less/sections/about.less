@@ -19,7 +19,6 @@
 			flex: .7;
 			z-index: 2;
 			.primary-gradient-reverse(@direction: 140deg);
-			.fadeIn(@duration: .7s, @delay: .2s);
 
 			img {
 				width: 100%;
@@ -98,6 +97,28 @@
 						font-weight: 300;
 					}
 				}
+			}
+		}
+	}
+
+	// View Enter Animations
+	&.active .blurred-container{
+
+		figure img {
+			.growIn(@duration: .5s, @delay: .5s);
+		}
+
+		article {
+			.title {
+				.fadeInUp(@duration: .4s, @delay: .6s);
+			}
+
+			.content {
+				.fadeInUp(@duration: .4s, @delay: .7s);
+			}
+
+			.file {
+				.fadeInUp(@duration: .4s, @delay: .8s);
 			}
 		}
 	}

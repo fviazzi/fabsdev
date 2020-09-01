@@ -6457,8 +6457,6 @@ body figure .loader {
   z-index: 2;
   background: linear-gradient(140deg, #FC6262 0%, #FFD86F 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FC6262, endColorstr=#FFD86F, GradientType=1);
-  -webkit-animation: fadeIn 0.7s ease-in-out 0.2s 1 normal both running;
-          animation: fadeIn 0.7s ease-in-out 0.2s 1 normal both running;
 }
 #about-me .blurred-container figure img {
   width: 100%;
@@ -6535,6 +6533,22 @@ body figure .loader {
   color: #FFF;
   font-size: .9rem;
   font-weight: 300;
+}
+#about-me.active .blurred-container figure img {
+  -webkit-animation: growIn 0.5s ease-in-out 0.5s 1 normal both running;
+          animation: growIn 0.5s ease-in-out 0.5s 1 normal both running;
+}
+#about-me.active .blurred-container article .title {
+  -webkit-animation: fadeInUp 0.4s ease-in-out 0.6s 1 normal both running;
+          animation: fadeInUp 0.4s ease-in-out 0.6s 1 normal both running;
+}
+#about-me.active .blurred-container article .content {
+  -webkit-animation: fadeInUp 0.4s ease-in-out 0.7s 1 normal both running;
+          animation: fadeInUp 0.4s ease-in-out 0.7s 1 normal both running;
+}
+#about-me.active .blurred-container article .file {
+  -webkit-animation: fadeInUp 0.4s ease-in-out 0.8s 1 normal both running;
+          animation: fadeInUp 0.4s ease-in-out 0.8s 1 normal both running;
 }
 
 @font-face {
