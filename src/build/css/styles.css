@@ -7316,8 +7316,6 @@ body figure .loader {
 }
 #home .blurred-container #profile {
   z-index: 2;
-  -webkit-animation: fadeIn 0.7s ease-in-out 0.2s 1 normal both running;
-          animation: fadeIn 0.7s ease-in-out 0.2s 1 normal both running;
 }
 #home .blurred-container #profile #profile-picture {
   width: 120px;
@@ -7368,8 +7366,6 @@ body figure .loader {
       -ms-flex-pack: justify;
           justify-content: space-between;
   z-index: 2;
-  -webkit-animation: slideInDown 0.3s ease-in-out 0.7s 1 normal both running;
-          animation: slideInDown 0.3s ease-in-out 0.7s 1 normal both running;
 }
 #home .blurred-container nav button {
   position: relative;
@@ -7399,6 +7395,16 @@ body figure .loader {
   top: 20px;
   right: 20px;
   z-index: 2;
+}
+#home.active .blurred-container #profile {
+  -webkit-animation: fadeIn 0.7s ease-in-out 0.5s 1 normal both running;
+          animation: fadeIn 0.7s ease-in-out 0.5s 1 normal both running;
+}
+#home.active .blurred-container nav {
+  -webkit-animation: slideInDown 0.3s ease-in-out 0.7s 1 normal both running;
+          animation: slideInDown 0.3s ease-in-out 0.7s 1 normal both running;
+}
+#home.active .blurred-container #contact-btn {
   -webkit-animation: fadeInUp 0.2s ease-in-out 1.2s 1 normal both running;
           animation: fadeInUp 0.2s ease-in-out 1.2s 1 normal both running;
 }

@@ -12,7 +12,6 @@
 
 		#profile {
 			z-index: 2;
-			.fadeIn(@duration: .7s, @delay: .2s);
 
 			#profile-picture {
 				width: 120px;
@@ -61,7 +60,6 @@
 			align-items: center;
 			justify-content: space-between;
 			z-index: 2;
-			.slideInDown(@delay: .7s);
 
 			button {
 				position: relative;
@@ -92,6 +90,21 @@
 			top: 20px;
 			right: 20px;
 			z-index: 2;
+		}
+	}
+
+	// View Enter Animations
+	&.active .blurred-container{
+
+		#profile {
+			.fadeIn(@duration: .7s, @delay: .5s);
+		}
+
+		nav {
+			.slideInDown(@delay: .7s);
+		}
+
+		#contact-btn {
 			.fadeInUp(@delay: 1.2s);
 		}
 	}
