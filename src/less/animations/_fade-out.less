@@ -6,6 +6,10 @@
   animation: fadeOutUp @duration ease-in-out @delay @iteraions @direction @fill @play_state;
 }
 
+.fadeOutDown( @duration: .2s, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+  animation: fadeOutDown @duration ease-in-out @delay @iteraions @direction @fill @play_state;
+}
+
 @keyframes fadeOut {
 
   0% {
@@ -28,5 +32,19 @@
     opacity: 0;
     visibility: hidden;
     transform: translate(0,-20%);
+  }
+}
+
+@keyframes fadeOutDown {
+
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0,20%);
   }
 }

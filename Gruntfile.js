@@ -11,7 +11,10 @@ module.exports = function(grunt) {
 			},
 
 			homecss: {
-				files: ['src/less/**/*.less'],
+				files: [
+					'src/less/**/*.less',
+					'!src/less/**/_*.less'
+				],
 				tasks: ['mincss'],
 			},
 
