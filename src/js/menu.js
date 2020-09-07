@@ -47,15 +47,18 @@ function switchTab() {
 		// Remove classes from previous active section
 		section.classList.remove('active','active-left','active-right','leave-left','leave-right');
 
-		// Swap menus between home and any other page
+		// Swap menus between home and any other page, handle contact btn visibility as well
 		if (target.id === 'home') {
 			document.querySelector('#main-menu').classList.add('leave');
+			document.querySelector('#menu-contact-btn').classList.add('leave');
 
 			setTimeout( () => {
 				document.querySelector('#main-menu').classList.remove('active','leave');
+				document.querySelector('#menu-contact-btn').classList.remove('active','leave');
 			},200);
 		} else {
 			document.querySelector('#main-menu').classList.add('active');
+			document.querySelector('#menu-contact-btn').classList.add('active');
 		}
 
 	},400);
