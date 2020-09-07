@@ -6,6 +6,5 @@ import './collapse.js';
 window.onload = pageLoaded;
 
 function pageLoaded() {
-	console.log('hey');
 	document.body.classList.add('loaded')
 }
