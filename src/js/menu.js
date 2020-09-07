@@ -1,27 +1,32 @@
+// Merge home and header menu buttons
 let btns = [
 	...document.querySelectorAll('#home-menu button'),
 	...document.querySelectorAll('#main-menu button')
 ];
 
+// Register click event for each one
 btns.forEach( btn => {
 	btn.addEventListener('click',switchTab);
 });
 
 function switchTab() {
 
-	// Update active button
+	// Remove previous active button
 	document.querySelector('#main-menu .active').classList.remove('active');
+
+	// Add new active button on header menu
 	let btnTarget = this.dataset.target;
 	document.querySelector('#main-menu [data-target="' + btnTarget + '"]').classList.add('active');
 
-	this.classList.add('active');
-
-	// Get current and target sections, declare enter and leave animations
+	// Get current and target sections, 
 	let section = document.querySelector('section.active');
 	let target  = document.querySelector( this.dataset.target );
+
+	// Declare enter and leave animations variables
+	// (direction on the menu: left-> Right or Right -> Left)
 	let enter,leave;
 
-	// Compare index to set enter and leave animation classes
+	// Compare section idex to determine direction
 	if ( parseInt( section.dataset.index ) > parseInt( target.dataset.index ) ) {
 		leave = 'leave-right';
 		enter = 'active-left';
@@ -30,18 +35,19 @@ function switchTab() {
 		enter = 'active-right';
 	}
 
-	// Start leave animation
+	// Start leave animation for previous active section
 	section.classList.add(leave);
 
 	// Add active class to new active section
 	target.classList.add('active',enter);
 
+	// We need a timeout to wait for the animations to finish
 	setTimeout( () => {
 
-		// Remove classes from former active section
+		// Remove classes from previous active section
 		section.classList.remove('active','active-left','active-right','leave-left','leave-right');
 
-		// Handle home and main menu visibility
+		// Swap menus between home and any other page
 		if (target.id === 'home') {
 			document.querySelector('#main-menu').classList.add('leave');
 
@@ -54,8 +60,3 @@ function switchTab() {
 
 	},400);
 }
-
-// Register load event
-document.addEventListener("DOMContentLoaded", () => {
-	document.querySelector('[data-target="#skills"]').click();
-});
