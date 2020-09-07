@@ -3,3 +3,5 @@
 
 # Build
 /src/build/**/*
+/upload/js/scripts.min.js
+/upload/css/styles.min.css
