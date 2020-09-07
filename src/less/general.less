@@ -8,7 +8,6 @@
 body {
 	height: 100vh;
 	margin: 0;
-
 	padding: 0;
 	background: rgb(82,154,194);
 	background: -moz-linear-gradient(180deg, rgba(82,154,194,1) 0%, rgba(239,110,59,1) 20%, rgba(35,76,32,1) 40%, rgba(2,155,199,1) 100%);
@@ -20,20 +19,8 @@ body {
 	background-size: cover;
 	background-position: center;
 
-	section {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		background: inherit;
-		overflow: hidden;
-		opacity: 0;
-		z-index: 0;
+	// Enter animations
+	&.loaded section {
 
 		&.active {
 			.fadeIn(@duration: .7s);
@@ -55,6 +42,22 @@ body {
 		&.leave-right .blurred-container {
 			.backOutRight;
 		}
+	}
+
+	section {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background: inherit;
+		overflow: hidden;
+		opacity: 0;
+		z-index: 0;
 	}
 
 	.blurred-container {

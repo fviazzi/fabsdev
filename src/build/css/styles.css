@@ -19,6 +19,27 @@ body {
   background-size: cover;
   background-position: center;
 }
+body.loaded section.active {
+  -webkit-animation: fadeIn 0.7s ease-in-out 0s 1 normal both running;
+          animation: fadeIn 0.7s ease-in-out 0s 1 normal both running;
+  z-index: 1;
+}
+body.loaded section.active-left .blurred-container {
+  -webkit-animation: backInLeft 0.6s ease-in-out 0s 1 normal both running;
+          animation: backInLeft 0.6s ease-in-out 0s 1 normal both running;
+}
+body.loaded section.active-right .blurred-container {
+  -webkit-animation: backInRight 0.6s ease-in-out 0s 1 normal both running;
+          animation: backInRight 0.6s ease-in-out 0s 1 normal both running;
+}
+body.loaded section.leave-left .blurred-container {
+  -webkit-animation: backOutLeft 0.6s ease-in-out 0s 1 normal both running;
+          animation: backOutLeft 0.6s ease-in-out 0s 1 normal both running;
+}
+body.loaded section.leave-right .blurred-container {
+  -webkit-animation: backOutRight 0.6s ease-in-out 0s 1 normal both running;
+          animation: backOutRight 0.6s ease-in-out 0s 1 normal both running;
+}
 body section {
   position: absolute;
   top: 0;
@@ -39,27 +60,6 @@ body section {
   overflow: hidden;
   opacity: 0;
   z-index: 0;
-}
-body section.active {
-  -webkit-animation: fadeIn 0.7s ease-in-out 0s 1 normal both running;
-          animation: fadeIn 0.7s ease-in-out 0s 1 normal both running;
-  z-index: 1;
-}
-body section.active-left .blurred-container {
-  -webkit-animation: backInLeft 0.6s ease-in-out 0s 1 normal both running;
-          animation: backInLeft 0.6s ease-in-out 0s 1 normal both running;
-}
-body section.active-right .blurred-container {
-  -webkit-animation: backInRight 0.6s ease-in-out 0s 1 normal both running;
-          animation: backInRight 0.6s ease-in-out 0s 1 normal both running;
-}
-body section.leave-left .blurred-container {
-  -webkit-animation: backOutLeft 0.6s ease-in-out 0s 1 normal both running;
-          animation: backOutLeft 0.6s ease-in-out 0s 1 normal both running;
-}
-body section.leave-right .blurred-container {
-  -webkit-animation: backOutRight 0.6s ease-in-out 0s 1 normal both running;
-          animation: backOutRight 0.6s ease-in-out 0s 1 normal both running;
 }
 body .blurred-container {
   position: relative;
