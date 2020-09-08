@@ -7,6 +7,13 @@ body section article {
 	flex-direction: row;
 	z-index: 2;
 
+	@media all and (max-width: 650px) {
+		max-height: ~"calc(100vh - 100px)";
+		padding: 15px;
+		flex-direction: column;
+		overflow: auto;
+	}
+
 	figure {
 		margin: 0 20px auto 0;
 		padding: 2px;
@@ -14,6 +21,11 @@ body section article {
 		flex: .7;
 		z-index: 2;
 		.primary-gradient-reverse(@direction: 140deg);
+
+		@media all and (max-width: 650px) {
+			width: 80%;
+			margin: 0 auto 20px;
+		}
 
 		img {
 			width: 100%;
@@ -70,6 +82,10 @@ body section article {
 			border-image-source: linear-gradient(110deg, @color_primary, @color_secondary);
 			border-image-slice: 1;
 
+			@media all and (max-width: 650px) {
+				flex-direction: column;
+			}
+
 			& > div {
 				flex: 0 50%;
 				display: flex;
@@ -78,10 +94,18 @@ body section article {
 
 				&:nth-child(even) {
 					padding-left: 15px;
+
+					@media all and (max-width: 650px) {
+						padding: 0;
+					}
 				}
 
 				&:nth-child(odd) {
 					padding-right: 15px;
+
+					@media all and (max-width: 650px) {
+						padding: 0;
+					}
 				}
 
 				& > span {
