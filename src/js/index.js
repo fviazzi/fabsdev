@@ -1,8 +1,9 @@
-import './menu.js';
-import { imgLazyLoad, imgbgLazyLoad } from './img-lazy-load.js';
+import './about.js';
 import './collapse.js';
 import './contact-btn.js';
 import './contact-form.js';
+import { imgLazyLoad, imgbgLazyLoad } from './img-lazy-load.js';
+import './menu.js';
 
 // Page load event
 window.onload = pageLoaded;
