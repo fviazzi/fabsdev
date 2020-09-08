@@ -1,0 +1,232 @@
+@import (reference) '../config.less';
+
+#menu-contact-btn {
+	position: fixed;
+	top: 70px;
+	left: -85px;
+	width: 65px;
+	height: 40px;
+	padding: 0 15px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	border-radius: 12px;
+	opacity: .85;
+	z-index: 2;
+	transition: all .2s ease-in-out;
+
+	&.leave {
+		left: -85px;
+	}
+
+	&.active {
+		left: -20px;
+	}
+
+	&:hover { opacity: 1; }
+
+	svg {
+		width: 18px;
+	}
+}
+
+#contact {
+
+	&:after {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.6);
+		z-index: 0;
+	}
+
+	#contact-leave {
+		position: fixed;
+		top: 30px;
+		left: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+
+		svg {
+			width: 15px;
+			margin-right: 10px;
+		}
+	}
+
+	.blurred-container {
+		position: relative;
+		width: 50%;
+		min-width: 800px;
+		max-width: 1000px;
+		margin: 0 auto;
+		z-index: 2;
+
+		article {
+
+			form {
+				margin-right: 30px;
+				padding: 0;
+				flex: .7;
+				display: flex;
+				flex-direction: column;
+
+				.input-container {
+					position: relative;
+					margin: 0 0 15px;
+
+					&.focus label,
+					&.focus label[for="message"] {
+						top: 10px;
+						left: 10px;
+						font-size: .6rem;
+						color: @color_primary;
+					}
+
+					&.disabled {
+						opacity: .3;
+						cursor: not-allowed;
+
+						input, textarea {
+							pointer-events: none;
+						}
+					}
+
+					label {
+						position: absolute;
+						top: 50%;
+						left: 10px;
+						color: #FFF;
+						font-size: .8rem;
+						pointer-events: none;
+						transform: translate(0,-50%);
+						transition: all .3s ease-in-out;
+
+						&[for="message"] {
+							top: 20px;
+						}
+					}
+
+					input, textarea {
+						width: 100%;
+						margin: 0;
+						padding: 15px 10px 5px;
+						color: #FFF;
+						background: transparent;
+						outline: none!important;
+						border: 2px solid!important;
+						border-image-source: linear-gradient(110deg, @color_primary, @color_secondary)!important;
+						border-image-slice: 1!important;
+						transition: all .2s ease-in-out;
+
+						&:focus {
+							background: rgba(0,0,0,.3);
+						}
+
+						&:-webkit-autofill,
+						&:-webkit-autofill:hover, 
+						&:-webkit-autofill:focus, 
+						&:-webkit-autofill:active  {
+							background: rgba(0,0,0,.3);
+							box-shadow: 0 0 0 30px #2F585E inset!important;
+							-webkit-text-fill-color: #FFF !important;
+						}
+
+						&.error {
+							background: rgba(100,0,0,.3);
+							border-image-source: linear-gradient(110deg, @color_danger, @color_danger_light)!important;
+							.shake;
+						}
+					}
+
+					textarea {
+						resize: none;
+					}
+				}
+
+				button {
+					position: relative;
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: all .3s ease-in-out;
+
+					&.loading {
+						opacity: .7;
+						cursor: not-allowed;
+
+						svg, .send, .done { opacity: 0; }
+
+						.loader	 { opacity: 1; }
+
+					}
+
+					&.done {
+						svg, .send { opacity: 0; }
+						.done { opacity: 1; }
+					}
+
+					svg {
+						width: 15px;
+						margin-right: 5px;
+						transition: all .3s ease-in-out;
+					}
+
+					.done {
+						position: absolute;
+						opacity: 0;
+					}
+
+					.loader {
+						position: absolute!important;
+						width: 40px!important;
+						height: 40px!important;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						opacity: 0;
+						transition: all .3s ease-in-out;
+						.loader-waves;
+					}
+				}
+
+				.error-message {
+					margin: 10px 0 -20px;
+					color: #FFF;
+					font-size: .8rem;
+					opacity: 0;
+					transform: translate(0,-20px);
+					transition: all .2s ease-in-out;
+
+					&.show {
+						transform: translate(0,0);
+						opacity: 1;
+					}
+				}
+			}
+
+			.info {
+
+				.title {
+					margin-bottom: 15px;
+				}
+
+				.file {
+
+					& > div:nth-child(even) {
+						padding-left: 0;
+					}
+
+					svg {
+						width: 15px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -45,7 +45,7 @@ function switchTab() {
 	setTimeout( () => {
 
 		// Remove classes from previous active section
-		section.classList.remove('active','active-left','active-right','leave-left','leave-right');
+		section.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
 
 		// Swap menus between home and any other page, handle contact btn visibility as well
 		if (target.id === 'home') {

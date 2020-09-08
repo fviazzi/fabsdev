@@ -1,0 +1,50 @@
+.shrinkInUp(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: shrinkInUp @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.shrinkOut(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: shrinkOut @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.shrinkOutDown(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: shrinkOutDown @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes shrinkInUp {
+
+	0% {
+		transform: scale(1.5) translate(0,-10%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes shrinkOut {
+
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(.5);
+		opacity: 0;
+	}
+}
+
+@keyframes shrinkOutDown {
+
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(.5) translate(0,10%);
+		opacity: 0;
+	}
+}

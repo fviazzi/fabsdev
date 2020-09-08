@@ -35,12 +35,24 @@ body {
 			.backInRight;
 		}
 
+		&.active-shrink .blurred-container {
+			.shrinkInUp;
+		}
+
 		&.leave-left .blurred-container {
 			.backOutLeft;
 		}
 
 		&.leave-right .blurred-container {
 			.backOutRight;
+		}
+
+		&.leave-right .blurred-container {
+			.backOutRight;
+		}
+
+		&.leave-shrink .blurred-container {
+			.shrinkOutDown;
 		}
 	}
 
@@ -95,8 +107,14 @@ body {
 		}
 	}
 
-	h1, h2, h3, h4, h5, h6, p, span, strong, button, a {
+	h1, h2, h3, h4, h5, h6, p, span, strong, button, a, label, input, textarea {
 		font-family: 'Lato', sans-serif;
+	}
+
+	a {
+		color: #FFF;
+		text-decoration: none!important;
+		outline: none!important;
 	}
 
 	button {

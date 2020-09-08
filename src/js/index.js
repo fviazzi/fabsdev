@@ -1,6 +1,8 @@
 import './menu.js';
 import { imgLazyLoad, imgbgLazyLoad } from './img-lazy-load.js';
 import './collapse.js';
+import './contact-btn.js';
+import './contact-form.js';
 
 // Page load event
 window.onload = pageLoaded;
@@ -8,3 +10,9 @@ window.onload = pageLoaded;
 function pageLoaded() {
 	document.body.classList.add('loaded')
 }
+
+// Register load event
+document.addEventListener("DOMContentLoaded", () => {
+	//document.querySelector('[data-target="#about-me"]').click();
+	//document.querySelector('#menu-contact-btn').click();
+});
