@@ -58,7 +58,10 @@ function switchTab() {
 			},200);
 		} else {
 			document.querySelector('#main-menu').classList.add('active');
-			document.querySelector('#menu-contact-btn').classList.add('active');
+
+			setTimeout( () => {
+				document.querySelector('#menu-contact-btn').classList.add('active');
+			},600);
 		}
 
 	},400);

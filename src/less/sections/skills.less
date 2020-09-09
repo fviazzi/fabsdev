@@ -1,6 +1,164 @@
 @import (reference) '../config.less';
 
+body.skill-open {
+
+	#main-menu.active,
+	#menu-contact-btn { z-index: 0; }
+}
+
 #skills {
+
+	#skills-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		z-index: 0;
+		transition: all .3s ease-in-out;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0,0,0,.5);
+			z-index: 1;
+		}
+
+		div {
+			position: relative;
+			margin: 0 30px;
+			padding: 20px 30px;
+			pointer-events: none;
+			box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+			z-index: 2;
+
+			h4 {
+				position: relative;
+				margin: 0 0 5px;
+				color: #FFF;
+				font-size: .9rem;
+				z-index: 1;
+			}
+
+			p {
+				position: relative;
+				margin: 0;
+				color: #FFF;
+				font-size: .8rem;
+				font-weight: 300;
+				line-height: 1.1rem;
+				z-index: 1;
+			}
+
+			/* Skills colors */
+			&.ps {
+				background: #001D26;
+			}
+
+			&.ai {
+				background: #1C0A00;
+			}
+
+			&.xd {
+				background: #2E001E;
+				border: 2px solid #FF2BC2;
+			}
+
+			&.html {
+				background: #E44D26;
+			}
+
+			&.css {
+				background: #0C73B8;
+			}
+
+			&.js {
+				background: #E5A228;
+			}
+
+			&.jq {
+				background: #21ACE2;
+			}
+
+			&.bs {
+				background: #52274C;
+			}
+
+			&.an {
+				background: #C3002F;
+			}
+
+			&.vue {
+				background: #31475E;
+				border: 2px solid #3FB984;
+			}
+
+			&.react {
+				background: #1F1F1F;
+				border: 2px solid #4CD2F3;
+			}
+
+			&.php {
+				background: #464B8A;
+				border: 2px solid #787CB4;
+			}
+
+			&.mysql {
+				background: #00618B;
+				border: 2px solid #E48F00;
+			}
+
+			&.git {
+				background: #F05033;
+			}
+
+			&.wordpress {
+				background: #0275A1;
+			}
+
+			&.node {
+				background: #3B8739;
+				border: 2px solid #6DA75D;
+			}
+
+			&.grunt {
+				background: #FF7E22;
+				border: 2px solid #FFA300;
+			}
+
+			&.webpack {
+				background: #1C78C0;
+				border: 2px solid #8ED5FA;
+			}
+
+			&.gulp {
+				background: #D34A47;
+			}
+
+			&.trello {
+				background: #0091E6;
+				border: 2px solid #0079BF;
+			}
+
+			&.aws {
+				background: #162B3E;
+				border: 2px solid #FC9A00;
+			}
+		}
+
+		&.active {
+			opacity: 1;
+			z-index: 2;
+		}
+	}
 
 	.blurred-container {
 		position: relative;
@@ -10,14 +168,35 @@
 		flex-direction: row;
 		align-items: flex-start;
 
+		@media all and (max-width: 930px) {
+			width: 100%;
+			min-width: 0;
+			max-width: 100%;
+			max-height: ~"calc(100vh - 75px)";
+			margin: 35px 10px 0;
+			padding: 30px 0;
+			flex-direction: column;
+			justify-content: flex-start;
+			overflow-y: auto;
+
+			&:after {
+				height: 122%;
+			}
+		}
+
 		& > div {
 			max-height: ~"calc(100vh - 35px)";
-			//min-height: ~"calc(100vh - 100px)";
 			margin: 0;
 			padding: 35px 0;
 			flex: 1;
 			z-index: 2;
 			overflow: visible;
+
+			@media all and (max-width: 930px) {
+				max-height: none;
+				width: 100%;
+				padding: 0;
+			}
 
 			&:hover { z-index: 3; }
 
@@ -52,9 +231,24 @@
 					transition: transform 0.5s;
 					cursor: pointer;
 
-					&:hover { z-index: 3; }
+					@media all and (min-width: 931px) {
 
-					&:hover {
+						&:hover {
+							z-index: 3;
+
+							.description {
+								opacity: 1;
+								z-index: 1;
+
+								&.top, &.bottom { transform: translate(-50%,0); }
+
+								&.left, &.right { transform: translate(0,-50%); }
+							}
+						}
+					}
+
+					&.active {
+						z-index: 3;
 
 						.description {
 							opacity: 1;
@@ -159,6 +353,26 @@
 								top: 50%;
 								right: -17px;
 								transform: rotate(45deg) translate(-50%, 0px);
+							}
+						}
+
+						@media all and (max-width: 930px) {
+
+							&.top, &.bottom, &.left, &.right {
+								position: fixed;
+								top: 50%;
+								left: 50%;
+								transform: translate(-50%,-50%)!important;
+
+								&:before {
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									background: rgba(0,0,0,.3);
+									transform: none;
+								}
 							}
 						}
 
