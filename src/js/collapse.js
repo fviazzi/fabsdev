@@ -26,7 +26,43 @@ document.addEventListener("DOMContentLoaded", () => {
 			btn.addEventListener('click',nextProject);
 		}
 	});
+
+	// Register active view and resize fixes for height
+	document.addEventListener('experience',fixHeight);
+	window.addEventListener('resize',fixHeight);
 });
+
+// Fixes the projects in "cover" mode
+function fixHeight () {
+
+	console.log('event!');
+
+	// Remove active view listener
+	document.removeEventListener('experience',fixHeight);
+
+	// Make sure class is active
+	if (document.querySelector('#experience').classList.contains('active')) {
+
+			// Find every collapse element
+			let containers = document.querySelectorAll('.collapse');
+
+			containers.forEach( (container) => {
+
+				// Make sure container is not open
+				if (!container.classList.contains('open')) {
+
+					// Set max-height on mobile
+					if (window.innerWidth <= 805) {
+						let padding   = (window.innerWidth < 650) ? 30 : 60;
+						let maxHeight = container.querySelector('.cover').offsetHeight + padding;
+						container.style.maxHeight =  maxHeight + 'px';
+					} else {
+						container.style.maxHeight =  '180px';
+					}
+				}
+			});
+	}
+}
 
 // Nav to the next project on the queue
 function nextProject() {
@@ -64,23 +100,33 @@ function prevProject() {
 function collapse() {
 
 	// Close any open collapse element
-	let open      = this.parentElement.getElementsByClassName('open');
+	let open      = document.querySelectorAll('#projects-container .open');
 	let openIndex = 0;
 
 	// Prevent collapse from "closing" itself
 	if (open.length && open[0] !== this) {
 		openIndex = parseInt(open[0].dataset.index);
-		open[0].style.maxHeight = '180px';
+
+		// Set max height for cover
+		let padding   = (window.innerWidth < 650) ? 30 : 60;
+		let maxHeight = this.querySelector('.cover').offsetHeight + padding;
+		open[0].style.maxHeight =  maxHeight + 'px';
 		open[0].classList.remove('open');
 	}
 
 	// Make sure collapse needs to be "open"
 	if ( !this.classList.contains('open') ) {
 
-		// Add open class and set it's content height as max height
+		// Add open class
 		this.classList.add('open');
-		let inner = this.getElementsByTagName('article')[0];
-		this.style.maxHeight = inner.offsetHeight + 'px';
+
+		// Set content height as max height
+		if ( window.innerWidth > 715 ) {
+			let inner = this.getElementsByTagName('article')[0];
+			this.style.maxHeight = inner.offsetHeight + 'px';
+		} else {
+			this.style.maxHeight = 'none';
+		}
 
 		// Update position count
 		let collapsers = document.querySelectorAll('.collapse');

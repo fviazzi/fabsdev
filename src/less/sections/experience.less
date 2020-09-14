@@ -51,6 +51,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	z-index: 3;
 
 	&[data-index="first"] button[data-direction="prev"],
 	&[data-index="last"] button[data-direction="next"] {
@@ -139,6 +140,12 @@
 			justify-content: flex-start;
 			transition: all .3s ease-in-out;
 
+			@media all and (max-width: 805px) {
+				max-height: none;
+				width: ~"calc(100% - 40px)";
+				min-width: 0;
+			}
+
 			&:after {
 				opacity: .6;
 				background: linear-gradient(40deg,#1ab5a2 0,#4464a5 100%);
@@ -148,38 +155,58 @@
 				cursor: pointer;
 				z-index: 2;
 
+				@media all and (max-width: 715px) {
+					flex-direction: column;
+					overflow: hidden;
+				}
+
 				.images-container {
 					position: relative;
 					margin-right: 20px;
 					flex: .7;
 					perspective: 1000px;
 
+					@media all and (max-width: 715px) {
+						margin: 0 auto;
+					}
+
 					.inner-container {
 						transform-style: preserve-3d;
 						transition: transform 0.3s ease-in-out;
 
-						.cover {
-							position: absolute;
-							top: 0;
-							left: 0;
-							margin: 0;
-							opacity: 1;
-							flex: 1;
-							transition: all .3s ease-in-out;
-							backface-visibility: hidden;
-						}
+						figure {
 
-						.preview {
-							margin: 0;
-							opacity: 0;
-							flex: 1;
-							transition: all .3s ease-in-out;
-							backface-visibility: hidden;
+							@media all and (max-width: 650px) {
+								width: 100%;
+							}
+
+							&.cover {
+								position: absolute;
+								top: 0;
+								left: 0;
+								margin: 0;
+								opacity: 1;
+								flex: 1;
+								transition: all .3s ease-in-out;
+								backface-visibility: hidden;
+							}
+
+							&.preview {
+								margin: 0 auto;
+								opacity: 0;
+								flex: 1;
+								transition: all .3s ease-in-out;
+								backface-visibility: hidden;
+							}
 						}
 					}
 				}
 
 				.info {
+
+					@media all and (max-width: 715px) {
+						margin-top: 20px;
+					}
 
 					.title {
 						margin-top: 30px;
@@ -224,9 +251,14 @@
 					opacity: .35;
 					.bg-gradient;
 				}
-				
+
 				article {
 					cursor: default;
+
+					@media all and (max-width: 715px) {
+						max-height: none;
+						overflow-y: auto;
+					}
 
 					.images-container {
 

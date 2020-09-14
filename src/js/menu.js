@@ -18,7 +18,7 @@ function switchTab() {
 	let btnTarget = this.dataset.target;
 	document.querySelector('#main-menu [data-target="' + btnTarget + '"]').classList.add('active');
 
-	// Get current and target sections, 
+	// Get current and target sections,
 	let section = document.querySelector('section.active');
 	let target  = document.querySelector( this.dataset.target );
 
@@ -56,13 +56,21 @@ function switchTab() {
 				document.querySelector('#main-menu').classList.remove('active','leave');
 				document.querySelector('#menu-contact-btn').classList.remove('active','leave');
 			},200);
-		} else {
-			document.querySelector('#main-menu').classList.add('active');
 
-			setTimeout( () => {
-				document.querySelector('#menu-contact-btn').classList.add('active');
-			},600);
+			return;
+
+		// Register "experience" event for collapse.js
+		} else if (target.id === 'experience') {
+			let event = new Event('experience');
+			document.dispatchEvent(event);
 		}
+
+		// Show menu & contact btn
+		document.querySelector('#main-menu').classList.add('active');
+
+		setTimeout( () => {
+			document.querySelector('#menu-contact-btn').classList.add('active');
+		},600);
 
 	},400);
 }
