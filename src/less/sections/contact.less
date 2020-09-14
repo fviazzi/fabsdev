@@ -15,6 +15,23 @@
 	z-index: 2;
 	transition: all .2s ease-in-out;
 
+	@media all and (max-width: 650px) {
+		top: auto;
+		right: -85px;
+		bottom: 11px;
+		left: auto!important;
+		padding: 0 0 0 15px;
+		justify-content: flex-start;
+
+		&.leave {
+			right: -85px;
+		}
+
+		&.active {
+			right: -20px;
+		}
+	}
+
 	&.leave {
 		left: -85px;
 	}
