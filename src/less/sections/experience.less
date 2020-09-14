@@ -53,6 +53,15 @@
 	justify-content: center;
 	z-index: 3;
 
+	@media all and (max-width: 805px) {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 10px 0;
+		background: @color_primary_bg;
+		flex-direction: row;
+	}
+
 	&[data-index="first"] button[data-direction="prev"],
 	&[data-index="last"] button[data-direction="next"] {
 		opacity: .3;
@@ -62,6 +71,10 @@
 	span {
 		margin: 15px 0;
 		color: #FFF;
+
+		@media all and (max-width: 805px) {
+			margin: 0 15px;
+		}
 	}
 
 	button {
