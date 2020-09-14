@@ -4,17 +4,17 @@
   transition: .2s;
 }
 
-.primary-gradient( @direction: 40deg, @start: 0%, @end: 100% ) {
-  background: linear-gradient( @direction, @color_primary @start, @color_secondary @end);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+.primary-gradient( @direction: 40deg, @start: 0%, @end: 100%, @first_color: @color_primary, @second_color: @color_secondary ) {
+  background: linear-gradient( @direction, @first_color @start, @second_color @end);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@first_color,endColorstr=@second_color,GradientType=1);
 }
 
-.primary-gradient-reverse( @direction: 40deg, @start: 0%, @end: 100% ) {
-  background: linear-gradient( @direction, @color_secondary @start, @color_primary @end);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_secondary,endColorstr=@color_primary,GradientType=1);
+.primary-gradient-reverse( @direction: 40deg, @start: 0%, @end: 100%, @first_color: @color_secondary, @second_color: @color_primary ) {
+  background: linear-gradient( @direction, @first_color @start, @second_color @end);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@first_color,endColorstr=@second_color,GradientType=1);
 }
 
-.bg-gradient ( @start: 0%, @end: 100% ) {
-  background: linear-gradient( 40deg, @color_primary_bg @start, @color_secondary_bg @end );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= @color_primary_bg,endColorstr=@color_secondary_bg,GradientType=1);
+.bg-gradient( @direction: 40deg, @start: 0%, @end: 100%, @first_color: @color_primary_bg, @second_color: @color_secondary_bg ) {
+  background: linear-gradient( @direction, @first_color @start, @second_color @end);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@first_color,endColorstr=@second_color,GradientType=1);
 }
