@@ -24,12 +24,14 @@ function enterContact() {
 	// Leave previous view
 	previousView.classList.add('leave-shrink');
 
+	// Scroll to top (mobile)
+	container.querySelector('article').scrollTo(0,-10000);
+
 	setTimeout(() => {
 		previousView.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
 
 		// Enter contact view
 		container.classList.add('active','active-shrink');
-
 
 		// Check if menu and contact btn have to be activated
 		if ( previousView.id !== "home" ) {
