@@ -55,7 +55,10 @@ module.exports = function(grunt) {
 
 			target: {
 				files: {
-					'upload/css/styles.min.css': ['src/build/css/styles.css']
+					'upload/css/styles.min.css': [
+						'src/build/lib/normalize.css',
+						'src/build/css/styles.css'
+					]
 				}
 			}
 		},
@@ -169,7 +172,7 @@ module.exports = function(grunt) {
 	// Minificators
 	grunt.registerTask('minhtml', ['htmlmin:home']);
 	grunt.registerTask('mincss', ['less:home', 'cssmin']);
-	grunt.registerTask('js', ['browserify']);
+	grunt.registerTask('js', ['browserify','uglify']);
 	grunt.registerTask('minimg',['tinyimg:imagemin'])
 
 	// Compilers
