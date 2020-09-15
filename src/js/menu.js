@@ -1,26 +1,29 @@
+// Import selector
+import { $ } from './_selector';
+
 // Merge home and header menu buttons
 let btns = [
-	...document.querySelectorAll('#home-menu button'),
-	...document.querySelectorAll('#main-menu button')
+	...$('#home-menu button'),
+	...$('#main-menu button')
 ];
 
 // Register click event for each one
 btns.forEach( btn => {
-	btn.addEventListener('click',switchTab);
+	btn.addEventListener('click',switchView);
 });
 
-function switchTab() {
+function switchView() {
 
 	// Remove previous active button
-	document.querySelector('#main-menu .active').classList.remove('active');
+	$('#main-menu .active').classList.remove('active');
 
 	// Add new active button on header menu
 	let btnTarget = this.dataset.target;
-	document.querySelector('#main-menu [data-target="' + btnTarget + '"]').classList.add('active');
+	$('#main-menu [data-target="' + btnTarget + '"]').classList.add('active');
 
 	// Get current and target sections,
-	let section = document.querySelector('section.active');
-	let target  = document.querySelector( this.dataset.target );
+	let section = $('section.active');
+	let target  = $( this.dataset.target );
 
 	// Declare enter and leave animations variables
 	// (direction on the menu: left-> Right or Right -> Left)
@@ -49,12 +52,12 @@ function switchTab() {
 
 		// Swap menus between home and any other page, handle contact btn visibility as well
 		if (target.id === 'home') {
-			document.querySelector('#main-menu').classList.add('leave');
-			document.querySelector('#menu-contact-btn').classList.add('leave');
+			$('#main-menu').classList.add('leave');
+			$('#menu-contact-btn').classList.add('leave');
 
 			setTimeout( () => {
-				document.querySelector('#main-menu').classList.remove('active','leave');
-				document.querySelector('#menu-contact-btn').classList.remove('active','leave');
+				$('#main-menu').classList.remove('active','leave');
+				$('#menu-contact-btn').classList.remove('active','leave');
 			},200);
 
 			return;
@@ -66,10 +69,10 @@ function switchTab() {
 		}
 
 		// Show menu & contact btn
-		document.querySelector('#main-menu').classList.add('active');
+		$('#main-menu').classList.add('active');
 
 		setTimeout( () => {
-			document.querySelector('#menu-contact-btn').classList.add('active');
+			$('#menu-contact-btn').classList.add('active');
 		},600);
 
 	},400);
