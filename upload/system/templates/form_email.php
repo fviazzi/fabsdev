@@ -1,3 +1,11 @@
+<?php
+	$data = array(
+		'name'    => 'Fabricio',
+		'email'   => 'fabricioviazzi@gmail.com',
+		'message' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis possimus quod, veritatis a tenetur dignissimos recusandae officiis laudantium, nemo minus nobis nostrum fugiat soluta? Corrupti amet sed consequuntur perferendis quas.',
+	);
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -7,104 +15,104 @@
 	<body style="max-width:1170px; margin: 0 auto; padding: 0; font-size:14px;">
 		<table 	border="0" cellpadding="0" cellspacing="0" width="100%"
 				style="
-					background:#F5F5F5;
+					max-width: 500px;
+					margin: 0 auto;
+					background:#FFF;
 					text-align: 'center';
 					font-family: Arial, Helvetica, sans-serif;
 				">
 			<thead style="
 						width:100%;
-						background-color:#111111;
-						color:#F5F5F5;
-						text-align: 'center';
+						background-color:#003E36;
+						text-align: center;
 					">
+				<tr style="
+							width:50%;
+							text-align: center;
+					">
+					<th colspan="2" style="
+							padding: 0px;
+							color:#F5F5F5;
+							font-weight: 700;
+						">
+						<img src="https://fabsdev.com/img/mailing/form-header.png" alt="">
+					</th>
+				</tr>
 				<tr style="
 							width:100%;
 							text-align: center;
 					">
 					<th colspan="2" style="
-							padding:60px 0px;
-							color:#ED1C24;
-							font-weight: 700;
+							padding: 20px 0px;
+							color: #F5F5F5;
+							font-size: 12px;
 						">
 						<h1 style="
 								margin:0px auto;
+								font-weight: 300;
 							">
-							NUEVA CONSULTA DE FORMULARIO
+							Nueva Consulta de Formulario
 						</h1>
 					</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody >
 				<tr>
-					<td style="
-						width:50%;
-						padding:50px 20px 10px;
-						font-weight: bold;
-						text-align: right;
-						border-left:1px solid #E3E5EA;
-						border-right:2px solid #DDD;
-					">
-						Nombre
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0" width="100%"
+								style="
+									margin: 30px auto 20px;
+									padding: 20px;
+									background:#DCF3EF;
+									text-align: 'center';
+									font-family: Arial, Helvetica, sans-serif;
+									border-top: 5px solid #00695C;
+								">
+							<tbody>
+								<tr>
+									<td style="
+										width:100%;
+										padding:20px 10px;
+										text-align: left;
+									">
+										<b>Nombre:</b> <?php echo $data['name']; ?>
+									</td>
+								</tr>
+								<tr>
+									<td style="
+										width:100%;
+										padding:20px 10px;
+										text-align: left;
+									">
+										<b>Email</b>
+										<a style="
+											color:#00695C;
+											font-weight: bold;
+											text-decoration: none;
+										" href="mailto:<?php echo $data['email']; ?>"><?php echo $data['email']; ?></a>
+									</td>
+								</tr>
+								<tr>
+									<th colspan="2" style="
+										width:100%;
+										padding:20px 10px 10px;
+										text-align: left;
+									">
+										<b>Consulta:</b>
+									</th>
+								</tr>
+								<tr>
+									<th colspan="2" style="
+										width:100%;
+										padding:0 10px 20px;
+										font-weight: 300;
+										text-align: left;
+									">
+										<?php echo $data['message']; ?>
+									</th>
+								</tr>
+							</tbody>
 					</td>
-					<td style="
-						width:50%;
-						padding:50px 20px 10px;
-						border-right:1px solid #E3E5EA;
-					">
-						<?php echo $data['name']; ?>
-					</td>
-				</tr>
-				<tr>
-					<td style="
-						width:50%;
-						padding:10px 20px 10px;
-						font-weight: bold;
-						text-align: right;
-						border-radius: 0px 0px 0px 5px;
-						border-left:1px solid #E3E5EA;
-						border-right:2px solid #DDD;
-					">
-						Email
-					</td>
-					<td style="
-						width:50%;
-						padding:10px 20px 10px;
-						border-radius: 0px 0px 5px 0px;
-						border-right:1px solid #E3E5EA;
-					">
-						<a style="
-							color:#ED1C24;
-							font-weight: bold;
-							text-decoration: none;
-						" href="mailto:<?php echo $data['email']; ?>"><?php echo $data['email']; ?></a>
-					</td>
-				</tr>
-				<tr>
-					<th colspan="2" style="
-						width:10%;
-						padding:20px 20px 0px;
-						font-weight: bold;
-						text-align: center;
-						border-radius: 0px 0px 0px 5px;
-						border-left:1px solid #E3E5EA;
-						border-right:1px solid #E3E5EA;
-					">
-						Consulta:
-					</th>
-				</tr>
-				<tr>
-					<th colspan="2" style="
-						width:10%;
-						padding:20px 40px 50px;
-						font-weight: normal;
-						text-align: left;
-						border-radius: 0px 0px 0px 5px;
-						border-left:1px solid #E3E5EA;
-						border-right:1px solid #E3E5EA;
-						border-bottom:3px solid #E3E5EA;
-					">
-						<?php echo $data['message']; ?>
-					</th>
 				</tr>
 			</tbody>
 		</table>
