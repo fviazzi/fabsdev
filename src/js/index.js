@@ -13,6 +13,6 @@ function pageLoaded() {
 	document.body.classList.add('loaded')
 
 	// Load view for testing
-	document.querySelector('[data-target="#skills"]').click();
+	//document.querySelector('[data-target="#experience"]').click();
 	//document.querySelector('#menu-contact-btn').click();
 }
