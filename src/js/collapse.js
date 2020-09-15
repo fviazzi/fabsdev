@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // Fixes the projects in "cover" mode
 function fixHeight () {
 
-	console.log('event!');
-
 	// Remove active view listener
 	document.removeEventListener('experience',fixHeight);
 
