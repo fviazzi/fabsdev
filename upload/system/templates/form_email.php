@@ -85,23 +85,23 @@
 									</td>
 								</tr>
 								<tr>
-									<th colspan="2" style="
+									<td style="
 										width:100%;
 										padding:20px 10px 10px;
 										text-align: left;
 									">
 										<b>Consulta:</b>
-									</th>
+									</td>
 								</tr>
 								<tr>
-									<th colspan="2" style="
+									<td style="
 										width:100%;
 										padding:0 10px 20px;
 										font-weight: 300;
 										text-align: left;
 									">
 										<?php echo $data['message']; ?>
-									</th>
+									</td>
 								</tr>
 							</tbody>
 					</td>
