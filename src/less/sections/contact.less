@@ -15,7 +15,7 @@
 	z-index: 2;
 	transition: all .2s ease-in-out;
 
-	@media all and (max-width: 650px) {
+	@media all and (max-width: 820px) {
 		top: auto;
 		right: -85px;
 		bottom: 11px;
@@ -76,9 +76,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		z-index: 2;
+		z-index: 3;
 
-		@media all and (max-width: 650px) {
+		@media all and (max-width: 820px) {
 			top: 20px;
 			z-index: 3;
 		}
@@ -107,7 +107,7 @@
 			margin: 0;
 		}
 
-		@media all and (max-width: 650px) {
+		@media all and (max-width: 820px) {
 			max-width: 100%;
 			width: ~"calc(100% - 30px)";
 			min-width: 0;
@@ -116,8 +116,11 @@
 
 		article {
 
-			@media all and (max-width: 650px) {
+			@media all and (max-width: 820px) {
+				max-height: ~"calc(100vh - 75px)";
+				padding: 15px;
 				flex-flow: column-reverse nowrap;
+				overflow: auto;
 			}
 
 			form {
@@ -127,7 +130,7 @@
 				display: flex;
 				flex-direction: column;
 
-				@media all and (max-width: 650px) {
+				@media all and (max-width: 820px) {
 					margin-right: 0;
 					flex: 1;
 				}
@@ -139,7 +142,7 @@
 					text-align: left;
 					display: none;
 
-					@media all and (max-width: 650px) {
+					@media all and (max-width: 820px) {
 						display: block;
 					}
 				}
@@ -281,7 +284,7 @@
 
 			.info {
 
-				@media all and (max-width: 650px) {
+				@media all and (max-width: 820px) {
 					flex: 1;
 				}
 
@@ -291,7 +294,7 @@
 
 				.file {
 
-					@media all and (max-width: 650px) {
+					@media all and (max-width: 820px) {
 						margin: 0 -15px;
 						padding: 15px;
 						background: @color_primary_bg;
@@ -310,7 +313,7 @@
 							max-height: 30px;
 						}
 
-						@media all and (max-width: 650px) {
+						@media all and (max-width: 820px) {
 							padding: 5px 0;
 							justify-content: flex-start;
 						}
