@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	imgBgLazyLoad();
 });
 
+export { imgLazyLoad, imgBgLazyLoad };
+
 function imgLazyLoad() {
 
 	// Get all figures from website
@@ -49,6 +51,7 @@ function imgBgLazyLoad() {
 
 		let img = document.createElement('img');
 
+		// Make sure there is a background to load
 		if (container.dataset.background) {
 			img.src = container.dataset.background;
 			img.dataset.index = index;
@@ -59,16 +62,15 @@ function imgBgLazyLoad() {
 	});
 
 	function imageLoaded(e) {
+
 		setTimeout( () => {
 			containers[this.dataset.index].style.backgroundImage = 'url(' + this.src + ')';
-		}, 200);
+		},0);
 	}
 
 	function imageError(e) {
 		setTimeout( () => {
-			bgLazyLoad();
+			imgBgLazyLoad();
 		}, 300);
 	}
 }
-
-export { imgLazyLoad, imgBgLazyLoad };
