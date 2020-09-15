@@ -14,69 +14,72 @@ btns.forEach( btn => {
 
 function switchView() {
 
-	// Remove previous active button
-	$('#main-menu .active').classList.remove('active');
-
-	// Add new active button on header menu
-	let btnTarget = this.dataset.target;
-	$('#main-menu [data-target="' + btnTarget + '"]').classList.add('active');
-
-	// Get current and target sections,
+	// Get previous and next active sections
 	let section = $('section.active');
 	let target  = $( this.dataset.target );
 
-	// Declare enter and leave animations variables
-	// (direction on the menu: left-> Right or Right -> Left)
-	let enter,leave;
+	if ( section !== target ) {
 
-	// Compare section idex to determine direction
-	if ( parseInt( section.dataset.index ) > parseInt( target.dataset.index ) ) {
-		leave = 'leave-right';
-		enter = 'active-left';
-	} else {
-		leave = 'leave-left';
-		enter = 'active-right';
-	}
+		// Remove previous active button
+		$('#main-menu .active').classList.remove('active');
 
-	// Start leave animation for previous active section
-	section.classList.add(leave);
+		// Add new active button on header menu
+		let btnTarget = this.dataset.target;
+		$('#main-menu [data-target="' + btnTarget + '"]').classList.add('active');
 
-	// Add active class to new active section
-	target.classList.add('active',enter);
+		// Declare enter and leave animations variables
+		// (direction on the menu: left-> Right or Right -> Left)
+		let enter,leave;
 
-	// We need a timeout to wait for the animations to finish
-	setTimeout( () => {
-
-		// Remove classes from previous active section
-		section.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
-
-		// Swap menus between home and any other page, handle contact btn visibility as well
-		if (target.id === 'home') {
-			$('#main-menu').classList.add('leave');
-			$('#menu-contact-btn').classList.add('leave');
-
-			setTimeout( () => {
-				$('#main-menu').classList.remove('active','leave');
-				$('#menu-contact-btn').classList.remove('active','leave');
-			},200);
-
-			return;
-
-		// Register "experience" event for collapse.js
-		} else if (target.id === 'experience') {
-
-				// Create load event
-				let event = document.createEvent('Event');
-				event.initEvent('experience', true, true);
-				document.dispatchEvent(event);
+		// Compare section idex to determine direction
+		if ( parseInt( section.dataset.index ) > parseInt( target.dataset.index ) ) {
+			leave = 'leave-right';
+			enter = 'active-left';
+		} else {
+			leave = 'leave-left';
+			enter = 'active-right';
 		}
 
-		// Show menu & contact btn
-		$('#main-menu').classList.add('active');
+		// Start leave animation for previous active section
+		section.classList.add(leave);
 
+		// Add active class to new active section
+		target.classList.add('active',enter);
+
+		// We need a timeout to wait for the animations to finish
 		setTimeout( () => {
-			$('#menu-contact-btn').classList.add('active');
-		},600);
 
-	},400);
+			// Remove classes from previous active section
+			section.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
+
+			// Swap menus between home and any other page, handle contact btn visibility as well
+			if (target.id === 'home') {
+				$('#main-menu').classList.add('leave');
+				$('#menu-contact-btn').classList.add('leave');
+
+				setTimeout( () => {
+					$('#main-menu').classList.remove('active','leave');
+					$('#menu-contact-btn').classList.remove('active','leave');
+				},200);
+
+				return;
+
+			// Register "experience" event for collapse.js
+			} else if (target.id === 'experience') {
+
+					// Create load event
+					let event = document.createEvent('Event');
+					event.initEvent('experience', true, true);
+					document.dispatchEvent(event);
+			}
+
+			// Show menu & contact btn
+			$('#main-menu').classList.add('active');
+
+			setTimeout( () => {
+				$('#menu-contact-btn').classList.add('active');
+			},600);
+
+		},400);
+	}
 }
