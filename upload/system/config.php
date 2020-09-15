@@ -1,10 +1,10 @@
 <?php
 
 	// Set Language (deprecated for now)
-	$lead = isset($_GET['r']) ? $_GET['r'] : null;
+	$lead = isset($_GET['r']) ? strip_tags( $_GET['r'] ) : null;
 
 	// Make sure there is a lead
-	if ($lead) {
+	if ( $lead && !empty($lead) ) {
 
 		// Email Template
 		ob_start();
@@ -14,7 +14,7 @@
 
 		// Send Email
 		$to       =	'fabricioviazzi@gmail.com';
-		$subject  =	'Form Contact';
+		$subject  =	'New Lead';
 
 		$headers  = "From: Reach <leads@fabsdev.com>" . "\r\n";
 		$headers .= "Reply-To: fabricioviazzi@gmail.com\r\n";

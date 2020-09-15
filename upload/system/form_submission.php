@@ -7,16 +7,22 @@
 		3 - Success
 	*/
 
-	// Get request data...
-	$data   = array(
-		'name'    => $_POST['name'],
-		'email'   => $_POST['email'],
-		'message' => $_POST['message']
-	);
-	
 	// Declare response
 	$response = array(
 		'success' => false
+	);
+
+	// Leave if data doesn't exists
+	if ( !isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['message']) ) {
+		header('Content-Type: application/json');
+		echo json_encode($response);
+	}
+
+	// Get request data...
+	$data   = array(
+		'name'    => strip_tags( $_POST['name'] ),
+		'email'   => strip_tags( $_POST['email'] ),
+		'message' => strip_tags( $_POST['message'] )
 	);
 
 	if ( validate_data($data) ) {
