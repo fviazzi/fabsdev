@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	imgLazyLoad();
 	imgBgLazyLoad();
 });
-	
+
 function imgLazyLoad() {
 
 	// Get all figures from website
@@ -18,8 +18,8 @@ function imgLazyLoad() {
 			let images = figure.getElementsByTagName('img');
 
 			for (let img of images) {
-				// Set image src and listen to load and error events 
-				img.src = img.dataset.src; 
+				// Set image src and listen to load and error events
+				img.src = img.dataset.src;
 				img.addEventListener('load',imageLoaded);
 				img.addEventListener('error',imageError);
 			}
@@ -28,7 +28,9 @@ function imgLazyLoad() {
 	});
 
 	function imageLoaded(e) {
-		this.parentNode.classList.remove("loading","svg-loading");
+		setTimeout(() => {
+			this.parentNode.classList.remove("loading","svg-loading");
+		}, 100);
 	}
 
 	function imageError(e) {
@@ -57,7 +59,9 @@ function imgBgLazyLoad() {
 	});
 
 	function imageLoaded(e) {
-		containers[this.dataset.index].style.backgroundImage = 'url(' + this.src + ')';
+		setTimeout( () => {
+			containers[this.dataset.index].style.backgroundImage = 'url(' + this.src + ')';
+		}, 200);
 	}
 
 	function imageError(e) {
