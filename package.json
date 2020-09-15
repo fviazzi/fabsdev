@@ -31,5 +31,9 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-tinyimg": "^1.0.0",
     "less-plugin-autoprefix": "^2.0.0"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "regenerator-runtime": "^0.13.7"
   }
 }

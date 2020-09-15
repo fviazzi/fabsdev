@@ -32,7 +32,11 @@ module.exports = function(grunt) {
 		less: {
 
 			options : {
-				plugins : [ new (require('less-plugin-autoprefix'))({browsers : [ "last 2 versions" ]}) ]
+				plugins : [ new (
+					require('less-plugin-autoprefix'))({
+						browsers : [ "last 2 versions" ]
+					})
+				]
 			},
 
 			home: {
@@ -90,25 +94,30 @@ module.exports = function(grunt) {
 			build : {
 
 				files: {
-					'src/build/js/scripts.js': ['src/js/index.js' ]
+					'src/build/js/scripts.js' : [
+						'core-js/stable',
+						'regenerator-runtime/runtime',
+						'src/js/index.js'
+					],
 				},
 
 				options: {
 					transform: [
-						[ 'babelify', { 
-							presets: [ [
-								"@babel/preset-env",
-								{
-									"targets": {
-										"browsers": [
-											"last 2 versions",
-											"safari >= 7",
-											"ie >= 11"
-										]
-									}
-								}
-							] ]
-						} ]
+						[
+							'babelify',
+							{
+								presets: [[
+									"@babel/preset-env",
+									{
+										corejs:"3",
+										useBuiltIns: 'usage',
+										targets: {
+											browsers: ['> 0.25%, not dead'],
+										},
+									},
+								]]
+							}
+						]
 					],
 
 					browserifyOptions: {
@@ -120,16 +129,16 @@ module.exports = function(grunt) {
 
 		uglify: {
 
-		  options: {
-		    mangle: false
-		  },
+			options: {
+				mangle: false
+			},
 
-		  homejs: {
+			homejs: {
 				src: [
 					'src/build/js/scripts.js',
 				],
 				dest: 'upload/js/scripts.min.js',
-		  }
+			}
 		},
 
 		tinyimg: {
@@ -160,7 +169,7 @@ module.exports = function(grunt) {
 	// Minificators
 	grunt.registerTask('minhtml', ['htmlmin:home']);
 	grunt.registerTask('mincss', ['less:home', 'cssmin']);
-	grunt.registerTask('js', ['browserify','uglify']);
+	grunt.registerTask('js', ['browserify']);
 	grunt.registerTask('minimg',['tinyimg:imagemin'])
 
 	// Compilers

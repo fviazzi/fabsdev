@@ -1,11 +1,12 @@
-import { $ } from './_selector';
+import './custom-events.js';
+import $ from './_selector';
 import './about.js';
 import './collapse.js';
 import './contact-btn.js';
 import './contact-form.js';
 import './demo.js';
-import { imgLazyLoad, imgbgLazyLoad } from './img-lazy-load.js';
-import { navigateView, switchView } from './menu.js';
+import './img-lazy-load.js';
+import './menu.js';
 import './skills.js';
 
 // Page load event
@@ -16,13 +17,14 @@ function pageLoaded() {
 	// Add body class for children styles
 	document.body.classList.add('loaded');
 
+	// Create load event
+	let event = document.createEvent('Event');
+	event.initEvent('pageReady', true, true);
+
 	setTimeout( () => {
 
-		// Create load event
-		let event = new Event('pageReady');
+		// Dispatch "pageReady" event
 		document.dispatchEvent(event);
-
-		// Activate body
 
 		setTimeout( () => {
 			// Show Home view

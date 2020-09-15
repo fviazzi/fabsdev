@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	imgBgLazyLoad();
 });
 
-export { imgLazyLoad, imgBgLazyLoad };
-
 function imgLazyLoad() {
 
 	// Get all figures from website

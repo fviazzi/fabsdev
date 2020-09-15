@@ -1,5 +1,5 @@
 // Import selector
-import { $ } from './_selector';
+import $ from './_selector';
 
 // Merge home and header menu buttons
 let btns = [
@@ -64,8 +64,11 @@ function switchView() {
 
 		// Register "experience" event for collapse.js
 		} else if (target.id === 'experience') {
-			let event = new Event('experience');
-			document.dispatchEvent(event);
+
+				// Create load event
+				let event = document.createEvent('Event');
+				event.initEvent('experience', true, true);
+				document.dispatchEvent(event);
 		}
 
 		// Show menu & contact btn

@@ -28,6 +28,12 @@
 
 	&.active {
 		.fadeInUp;
+
+		// IE 11
+		@media all and (-ms-high-contrast:none) {
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 
 	&.leave {

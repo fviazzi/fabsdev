@@ -9,6 +9,11 @@
 		max-width: 1000px;
 		margin: 0 auto;
 
+		// IE 11
+		@media all and (-ms-high-contrast:none) {
+			margin: 0;
+		}
+
 		@media all and (max-width: 650px) {
 			width: 100%;
 			min-width: 0;

@@ -62,6 +62,11 @@
 
 	&.active #contact-leave {
 		.shrinkInUp(@delay: .5s);
+
+		// IE 11
+		@media all and (-ms-high-contrast:none) {
+			z-index: 20;
+		}
 	}
 
 	#contact-leave {
@@ -81,6 +86,11 @@
 		svg {
 			width: 15px;
 			margin-right: 10px;
+
+			// IE 11
+			@media all and (-ms-high-contrast:none) {
+				max-height: 15px;
+			}
 		}
 	}
 
@@ -91,6 +101,11 @@
 		max-width: 1000px;
 		margin: 0 auto;
 		z-index: 2;
+
+		// IE 11
+		@media all and (-ms-high-contrast:none) {
+			margin: 0;
+		}
 
 		@media all and (max-width: 650px) {
 			max-width: 100%;
@@ -288,7 +303,12 @@
 						}
 					}
 
-					& > div{
+					& > div {
+
+						// IE 11
+						@media all and (-ms-high-contrast:none) {
+							max-height: 30px;
+						}
 
 						@media all and (max-width: 650px) {
 							padding: 5px 0;

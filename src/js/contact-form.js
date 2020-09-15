@@ -57,7 +57,7 @@ function handleForm(e) {
 		// Send data
 		const data = new URLSearchParams( new FormData( form ) );
 		const url  = './system/form_submission.php';
-	
+
 		fetch( url, {
 			method : 'POST',
 			body   : data,
@@ -70,14 +70,14 @@ function handleForm(e) {
 		.catch(handleError);
 
 		function handleSuccess(response) {
-			
+
 			if ( response.success ) {
 				form.querySelector('button').classList.add('done');
 			} else {
 				throw Error();
 			}
 		}
-		
+
 		function handleError() {
 
 			// Show error

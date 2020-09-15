@@ -25,7 +25,7 @@ function enterContact() {
 	previousView.classList.add('leave-shrink');
 
 	// Scroll to top (mobile)
-	container.querySelector('article').scrollTo(0,-10000);
+	container.querySelector('article').scrollTop = -10000;
 
 	setTimeout(() => {
 		previousView.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');

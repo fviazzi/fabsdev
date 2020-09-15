@@ -154,10 +154,14 @@ function collapse() {
 
 		function scroll(container,element) {
 
-			container.scrollTo({
-				top      : element.offsetTop - 55,
-				behavior : 'smooth',
-			});
+			try {
+				container.scrollTo({
+					top      : element.offsetTop - 55,
+					behavior : 'smooth',
+				});
+			} catch (error) {
+				container.scrollTop = element.offsetTop - 55;
+			}
 		}
 	}
 };

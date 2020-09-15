@@ -7,6 +7,11 @@ body section article {
 	flex-direction: row;
 	z-index: 2;
 
+	// IE 11
+	@media all and (-ms-high-contrast:none) {
+		width: 100%;
+	}
+
 	@media all and (max-width: 650px) {
 		max-height: ~"calc(100vh - 75px)";
 		padding: 15px;

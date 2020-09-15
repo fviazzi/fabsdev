@@ -31,6 +31,11 @@ body {
 		&.active {
 			.fadeIn(@duration: .7s);
 			z-index: 1;
+
+			// IE 11
+			@media all and (-ms-high-contrast:none) {
+				opacity: 1;
+			}
 		}
 
 		&.active-left .blurred-container {
