@@ -67,7 +67,7 @@
 										padding:20px 10px;
 										text-align: center;
 									">
-										<b>Refer Nº:</b> <?php echo $referer; ?>
+										<b>Lead Nº:</b> <?php echo $lead; ?>
 									</td>
 								</tr>
 								</tr>
