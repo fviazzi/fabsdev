@@ -1,96 +1,101 @@
 @import (reference) '../config.less';
 
 #experience {
+	transition: all .3s ease-in-out;
 
-// View enter animations
-&.active #projects-container .blurred-container {
+	// View enter animations
+	&.active #projects-container .blurred-container {
 
-	&:nth-child(1) {
-		.fadeInDown(@delay: .2s);
-	}
+		&:nth-child(1) {
+			.fadeInDown(@delay: .2s);
+		}
 
-	&:nth-child(2) {
-		.fadeInDown(@delay: .25s);
-	}
+		&:nth-child(2) {
+			.fadeInDown(@delay: .25s);
+		}
 
-	&:nth-child(3) {
-		.fadeInDown(@delay: .3s);
-	}
+		&:nth-child(3) {
+			.fadeInDown(@delay: .3s);
+		}
 
-	&:nth-child(4) {
-		.fadeInDown(@delay: .35s);
-	}
+		&:nth-child(4) {
+			.fadeInDown(@delay: .35s);
+		}
 
-	&:nth-child(5) {
-		.fadeInDown(@delay: .4s);
-	}
+		&:nth-child(5) {
+			.fadeInDown(@delay: .4s);
+		}
 
-	&:nth-child(6) {
-		.fadeInDown(@delay: .45s);
-	}
+		&:nth-child(6) {
+			.fadeInDown(@delay: .45s);
+		}
 
-	&:nth-child(7) {
-		.fadeInDown(@delay: .5s);
-	}
+		&:nth-child(7) {
+			.fadeInDown(@delay: .5s);
+		}
 
-	&:nth-child(8) {
-		.fadeInDown(@delay: .55s);
-	}
-}
-
-&.leave-left #projects-container .blurred-container,
-&.leave-right #projects-container .blurred-container {
-	.fadeOutDown!important;
-}
-
-#projects-nav {
-	position: fixed;
-	left: 20px;
-	bottom: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	z-index: 3;
-
-	@media all and (max-width: 805px) {
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		padding: 10px 0;
-		background: @color_primary_bg;
-		flex-direction: row;
-	}
-
-	&[data-index="first"] button[data-direction="prev"],
-	&[data-index="last"] button[data-direction="next"] {
-		opacity: .3;
-		cursor: not-allowed;
-	}
-
-	span {
-		margin: 15px 0;
-		color: #FFF;
-
-		@media all and (max-width: 805px) {
-			margin: 0 15px;
+		&:nth-child(8) {
+			.fadeInDown(@delay: .55s);
 		}
 	}
 
-	button {
-		width: 40px;
-		height: 40px;
-		font-weight: bold;
+	&.leave-left #projects-container .blurred-container,
+	&.leave-right #projects-container .blurred-container {
+		.fadeOutDown!important;
+	}
+
+	&.demo-open {
+		z-index: 4;
+	}
+
+	#projects-nav {
+		position: fixed;
+		left: 20px;
+		bottom: 20px;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		cursor: pointer;
+		z-index: 3;
 
-		svg {
-			min-width: 20px;
+		@media all and (max-width: 805px) {
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 10px 0;
+			background: @color_primary_bg;
+			flex-direction: row;
+		}
+
+		&[data-index="first"] button[data-direction="prev"],
+		&[data-index="last"] button[data-direction="next"] {
+			opacity: .3;
+			cursor: not-allowed;
+		}
+
+		span {
+			margin: 15px 0;
+			color: #FFF;
+
+			@media all and (max-width: 805px) {
+				margin: 0 15px;
+			}
+		}
+
+		button {
+			width: 40px;
+			height: 40px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+
+			svg {
+				min-width: 20px;
+			}
 		}
 	}
-}
 
 	#projects-container {
 		width: 100%;
@@ -224,6 +229,10 @@
 					.title {
 						margin-top: 30px;
 						transition: all .3s ease-in-out;
+
+						.content {
+							margin-top: 20px;
+						}
 					}
 
 					.content,
@@ -303,6 +312,58 @@
 					}
 				}
 			}
+		}
+	}
+
+	.project-demo {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		padding: 30px;
+		background: rgba(0,0,0,.8);
+		opacity: 0;
+		pointer-events: none;
+		overflow: hidden;
+		z-index: 4;
+		transition: all .3s ease-in-out;
+
+		@media all and (max-width: 650px) {
+			padding: 20px 10px 50px;
+		}
+
+		&.open {
+			opacity: 1;
+			pointer-events: all;
+
+			video {
+				.shrinkInUp(@delay: .3s);
+			}
+		}
+
+		button {
+			position: absolute;
+			top: 10px;
+			left: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media all and (max-width: 650px) {
+				position: static;
+				top: 0;
+				margin: 0 0 10px 20px;
+			}
+
+			svg {
+				width: 15px;
+				margin-right: 10px;
+			}
+		}
+
+		video {
+			height: ~"calc(100% - 45px)";
 		}
 	}
 }
