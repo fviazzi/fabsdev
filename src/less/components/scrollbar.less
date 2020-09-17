@@ -1,0 +1,48 @@
+@import (reference) '../config.less';
+
+.scrollbar {
+	scrollbar-color: @color_primary_bg @color_secondary_bg;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+
+	&::-webkit-scrollbar-button {
+		width: 0px;
+		height: 0px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: @color_secondary_bg;
+		border: 0px none #ffffff;
+		border-radius: 50px;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: @color_secondary_bg;
+	}
+
+	&::-webkit-scrollbar-thumb:active {
+		background: @color_secondary_bg;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: @color_primary_bg;
+		border: 0px none #ffffff;
+		border-radius: 50px;
+	}
+
+	&::-webkit-scrollbar-track:hover {
+		background: @color_primary_bg;
+	}
+
+	&::-webkit-scrollbar-track:active {
+		background: @color_primary_bg;
+	}
+
+	&::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+}
