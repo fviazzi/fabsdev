@@ -12,8 +12,8 @@ body section article {
 		width: 100%;
 	}
 
-	@media all and (max-width: 650px) {
-		max-height: ~"calc(100vh - 75px)";
+	@media all and (max-width: 730px) {
+		height: ~"calc(100vh - 35px)";
 		padding: 15px;
 		flex-direction: column;
 		overflow: auto;
@@ -27,9 +27,10 @@ body section article {
 		z-index: 2;
 		.gradient-brand-background-reverse(@direction: 140deg);
 
-		@media all and (max-width: 650px) {
+		@media all and (max-width: 730px) {
 			width: 80%;
 			margin: 0 auto 20px;
+			overflow: hidden;
 		}
 
 		img {
@@ -53,6 +54,10 @@ body section article {
 				color: @color_primary;
 				font-weight: 300;
 				text-transform: uppercase;
+
+				@media all and (max-width: 730px) {
+					margin: 0 5px 5px;
+				}
 			}
 
 			h2 {
@@ -77,62 +82,62 @@ body section article {
 				font-weight: 300;
 				line-height: 1.3rem;
 
-				@media all and (max-width: 650px) {
+				@media all and (max-width: 730px) {
 					font-size: 1rem;
 					line-height: 1.5rem;
 				}
 			}
 
-			@media all and (max-width: 650px) {
+			@media all and (max-width: 730px) {
 				margin: 15px 0;
 			}
 		}
+	}
 
-		.file {
-			padding: 5px 15px;
+	.file {
+		padding: 5px 15px;
+		display: flex;
+		flex-wrap: wrap;
+		border: 2px solid;
+		border-image-source: linear-gradient(110deg, @color_primary, @color_secondary);
+		border-image-slice: 1;
+
+		@media all and (max-width: 730px) {
+			display: block;
+		}
+
+		& > div {
+			flex: 0 50%;
 			display: flex;
-			flex-wrap: wrap;
-			border: 2px solid;
-			border-image-source: linear-gradient(110deg, @color_primary, @color_secondary);
-			border-image-slice: 1;
+			align-items: center;
+			justify-content: space-between;
 
-			@media all and (max-width: 650px) {
-				flex-direction: column;
+			&:nth-child(even) {
+				padding-left: 15px;
+
+				@media all and (max-width: 730px) {
+					padding: 0;
+				}
 			}
 
-			& > div {
-				flex: 0 50%;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
+			&:nth-child(odd) {
+				padding-right: 15px;
 
-				&:nth-child(even) {
-					padding-left: 15px;
-
-					@media all and (max-width: 650px) {
-						padding: 0;
-					}
+				@media all and (max-width: 730px) {
+					padding: 0;
 				}
+			}
 
-				&:nth-child(odd) {
-					padding-right: 15px;
+			& > span {
+				color: @color_primary;
+				font-size: .9rem;
+			}
 
-					@media all and (max-width: 650px) {
-						padding: 0;
-					}
-				}
-
-				& > span {
-					color: @color_primary;
-					font-size: .9rem;
-				}
-
-				& > p {
-					margin: 5px;
-					color: #FFF;
-					font-size: .9rem;
-					font-weight: 300;
-				}
+			& > p {
+				margin: 5px;
+				color: #FFF;
+				font-size: .9rem;
+				font-weight: 300;
 			}
 		}
 	}
