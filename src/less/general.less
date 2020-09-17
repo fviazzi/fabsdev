@@ -24,6 +24,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	background: inherit;
+	background-attachment: fixed;
 
 	// Enter animations
 	&.loaded section {
@@ -81,6 +83,10 @@ body {
 		overflow: hidden;
 		opacity: 0;
 		z-index: 0;
+
+		@media all and (max-width: 730px) {
+			display: block;
+		}
 	}
 
 	.blurred-container {
