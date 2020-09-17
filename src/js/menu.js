@@ -49,6 +49,10 @@ function switchView() {
 		// We need a timeout to wait for the animations to finish
 		setTimeout( () => {
 
+			// Scroll top (safari)
+			window.scrollTop = 0;
+			target.scrollTop = 0;
+
 			// Remove classes from previous active section
 			section.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
 
