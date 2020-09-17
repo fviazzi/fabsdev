@@ -1,12 +1,12 @@
 import './custom-events.js';
 import $ from './_selector';
 import './about.js';
-import './collapse.js';
 import './contact-btn.js';
 import './contact-form.js';
 import './demo.js';
 import './img-lazy-load.js';
 import './menu.js';
+import './projects-nav.js';
 import './skills.js';
 
 // Page load event
@@ -30,13 +30,25 @@ function pageLoaded() {
 		document.dispatchEvent(event);
 
 		setTimeout( () => {
-			// Show Home view
-			$('#home').classList.add('active');
+
+			// Load view for testing
+			//document.querySelector('[data-target="#experience"]').click();
+			//document.querySelector('#menu-contact-btn').click();
+
+			// iphone sucks
+			if ( isIos() ) {
+				$('#home nav').style.paddingBottom = '100px';
+			}
 		}, 300);
 
 	}, 0);
+}
 
-	// Load view for testing
-	//document.querySelector('[data-target="#experience"]').click();
-	//document.querySelector('#menu-contact-btn').click();
+function isIos() {
+	return [
+		'iPhone Simulator',
+		'iPhone',
+	].includes(navigator.platform)
+	// iPad on iOS 13 detection
+	|| (navigator.userAgent.includes("Mac") && "ontouchend" in document)
 }
