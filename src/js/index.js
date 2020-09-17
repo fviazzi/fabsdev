@@ -21,6 +21,9 @@ function pageLoaded() {
 	let event = document.createEvent('Event');
 	event.initEvent('pageReady', true, true);
 
+	// Show Home view
+	$('#home').classList.add('active');
+
 	setTimeout( () => {
 
 		// Dispatch "pageReady" event

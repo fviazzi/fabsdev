@@ -1,6 +1,5 @@
 // Register load event
-document.addEventListener("DOMContentLoaded", () => {
-	imgLazyLoad();
+document.addEventListener("pageReady", () => {
 	imgBgLazyLoad();
 });
 
@@ -61,8 +60,14 @@ function imgBgLazyLoad() {
 
 	function imageLoaded(e) {
 
+		containers[this.dataset.index].style.backgroundImage = 'url(' + this.src + ')';
+
 		setTimeout( () => {
-			containers[this.dataset.index].style.backgroundImage = 'url(' + this.src + ')';
+
+			// If body img is loaded, load the rest of the images
+			if (this.dataset.index === "0") {
+				imgLazyLoad();
+			}
 		},0);
 	}
 
