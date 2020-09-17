@@ -1,4 +1,5 @@
 @import (reference) '../config.less';
+@import (reference) '../components/scrollbar.less';
 
 body.skill-open {
 
@@ -163,7 +164,7 @@ body.skill-open {
 	.blurred-container {
 		position: relative;
 		width: 920px;
-		margin: 35px auto 0;
+		margin: 34px auto 0;
 		padding: 0;
 		flex-direction: row;
 		align-items: flex-start;
@@ -177,68 +178,98 @@ body.skill-open {
 			width: 100%;
 			min-width: 0;
 			max-width: 100%;
-			max-height: ~"calc(100vh - 75px)";
-			margin: 35px 10px 0;
-			padding: 30px 0;
-			flex-direction: column;
-			justify-content: flex-start;
-			overflow-y: auto;
-
-			&:after {
-				height: 122%;
-			}
+			max-height: ~"calc(100vh - 35px)";
+			margin: 35px 0 0;
+			display: block;
 		}
 
-		& > div {
-			max-height: ~"calc(100vh - 35px)";
-			margin: 0;
-			padding: 35px 0;
-			flex: 1;
-			z-index: 2;
-			overflow: visible;
+		#skills-container {
+			display: flex;
 
 			@media all and (max-width: 930px) {
-				max-height: none;
-				width: 100%;
-				padding: 0;
+				position: relative;
+				height: ~"calc(100vh - 35px)";
+				padding: 20px 0;
+				display: block;
+				z-index: 2;
+				overflow: auto;
+				.scrollbar;
 			}
 
-			&:hover { z-index: 3; }
-
-			& > h4 {
-				margin: 0 30px;
-				padding: 0 0 7px 3px;
-				color: #FFF;
-				font-size: .8rem;
-				font-weight: 300;
-				text-align: left;
-				text-transform: uppercase;
-				border-bottom: 1px solid #FFF;
-			}
-
-			.skills-group {
+			& > div {
+				max-height: ~"calc(100vh - 35px)";
 				margin: 0;
-				padding: 10px 20px;
-				display: flex;
-				flex-wrap: wrap;
+				padding: 35px 0;
+				flex: 1;
+				z-index: 2;
+				overflow: visible;
 
-				&.left-container {
-					flex-direction: row-reverse;
-					justify-content: flex-end;
+				@media all and (max-width: 930px) {
+					max-height: none;
+					width: 100%;
+					padding: 0;
+					display: block;
 				}
 
-				.skill {
-					position: relative;
-					width: 50px;
-					height: 50px;
-					margin: 10px;
+				&:hover { z-index: 3; }
+
+				& > h4 {
+					margin: 0 30px;
+					padding: 0 0 7px 3px;
+					color: #FFF;
+					font-size: .8rem;
+					font-weight: 300;
 					text-align: left;
-					transition: transform 0.5s;
-					cursor: pointer;
+					text-transform: uppercase;
+					border-bottom: 1px solid #FFF;
+				}
 
-					@media all and (min-width: 931px) {
+				.skills-group {
+					margin: 0;
+					padding: 10px 20px;
+					display: flex;
+					flex-wrap: wrap;
 
-						&:hover {
+					@media all and (max-width: 930px) {
+						max-width: 100%;
+						overflow: hidden;
+					}
+
+					&.left-container {
+						flex-direction: row-reverse;
+						justify-content: flex-end;
+					}
+
+					.skill {
+						position: relative;
+						width: 50px;
+						height: 50px;
+						margin: 10px;
+						text-align: left;
+						transition: transform 0.5s;
+						cursor: pointer;
+
+						@media all and (min-width: 931px) {
+
+							&:hover {
+								z-index: 3;
+
+								.description {
+									opacity: 1;
+									z-index: 1;
+
+									&.top, &.bottom { transform: translate(-50%,0); }
+
+									&.left, &.right { transform: translate(0,-50%); }
+								}
+							}
+						}
+
+						@media all and (max-width: 400px) {
+							margin: 10px 8px;
+						}
+
+						&.active {
 							z-index: 3;
 
 							.description {
@@ -250,442 +281,429 @@ body.skill-open {
 								&.left, &.right { transform: translate(0,-50%); }
 							}
 						}
-					}
 
-					&.active {
-						z-index: 3;
+						figure {
+							margin: 0;
+
+							&.loading {
+								width: 100%;
+								height: 100%;
+								margin: 0;
+								background: linear-gradient( 40deg, @color_primary, @color_secondary);
+								filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
+							}
+
+							img {
+								width: 100%;
+								padding: 12px;
+							}
+
+							span {
+								width: 50px;
+								height: 50px;
+								padding: 0 6px 4px 0;
+								color: #FFF;
+								font-weight: bold;
+								display: flex;
+								align-items: flex-end;
+								justify-content: flex-end;
+							}
+						}
 
 						.description {
-							opacity: 1;
-							z-index: 1;
-
-							&.top, &.bottom { transform: translate(-50%,0); }
-
-							&.left, &.right { transform: translate(0,-50%); }
-						}
-					}
-
-					figure {
-						margin: 0;
-
-						&.loading {
-							width: 100%;
-							height: 100%;
-							margin: 0;
-							background: linear-gradient( 40deg, @color_primary, @color_secondary);
-							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color_primary,endColorstr=@color_secondary,GradientType=1);
-						}
-
-						img {
-							width: 100%;
-							padding: 12px;
-						}
-
-						span {
-							width: 50px;
-							height: 50px;
-							padding: 0 6px 4px 0;
-							color: #FFF;
-							font-weight: bold;
-							display: flex;
-							align-items: flex-end;
-							justify-content: flex-end;
-						}
-					}
-
-					.description {
-						position: absolute;
-						min-width: 250px;
-						padding: 10px 15px;
-						background: @color_secondary;
-						opacity: 0;
-						z-index: 0;
-						pointer-events: none;
-						box-shadow: 2px 2px 20px rgba(0,0,0,.2);
-						transition: .2s;
-
-						&:before {
-							content: "";
 							position: absolute;
-							width: 20px;
-							height: 20px;
+							min-width: 250px;
+							padding: 10px 15px;
 							background: @color_secondary;
+							opacity: 0;
 							z-index: 0;
-						}
-
-						&.top {
-							left: 50%;
-							bottom: ~"calc(100% + 20px)";
-							transform: translate(-50%,-10%);
+							pointer-events: none;
+							box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+							transition: .2s;
 
 							&:before {
+								content: "";
+								position: absolute;
+								width: 20px;
+								height: 20px;
+								background: @color_secondary;
+								z-index: 0;
+							}
+
+							&.top {
 								left: 50%;
-								bottom: 0;
-								transform: rotate(45deg) translate(0px, -50%);
-							}
-						}
-
-						&.right {
-							top: 50%;
-							left: ~"calc(100% + 20px)";
-							transform: translate(-10%,-50%);
-
-							&:before {
-								top: 50%;
-								left: 0;
-								transform: rotate(45deg) translate(-50%, 0px);
-							}
-						}
-
-						&.bottom {
-							left: 50%;
-							top: ~"calc(100% + 20px)";
-							transform: translate(-50%,-10%);
-
-							&:before {
-								left: 50%;
-								top: 0;
-								transform: rotate(45deg) translate(-50%, 0px);
-							}
-						}
-
-						&.left {
-							top: 50%;
-							right: ~"calc(100% + 20px)";
-							transform: translate(-10%,-50%);
-
-							&:before {
-								top: 50%;
-								right: -17px;
-								transform: rotate(45deg) translate(-50%, 0px);
-							}
-						}
-
-						@media all and (max-width: 930px) {
-
-							&.top, &.bottom, &.left, &.right {
-								position: fixed;
-								top: 50%;
-								left: 50%;
-								transform: translate(-50%,-50%)!important;
+								bottom: ~"calc(100% + 20px)";
+								transform: translate(-50%,-10%);
 
 								&:before {
-									position: absolute;
-									top: 0;
-									left: 0;
-									width: 100%;
-									height: 100%;
-									background: rgba(0,0,0,.3);
-									transform: none;
+									left: 50%;
+									bottom: 0;
+									transform: rotate(45deg) translate(0px, -50%);
 								}
+							}
+
+							&.right {
+								top: 50%;
+								left: ~"calc(100% + 20px)";
+								transform: translate(-10%,-50%);
+
+								&:before {
+									top: 50%;
+									left: 0;
+									transform: rotate(45deg) translate(-50%, 0px);
+								}
+							}
+
+							&.bottom {
+								left: 50%;
+								top: ~"calc(100% + 20px)";
+								transform: translate(-50%,-10%);
+
+								&:before {
+									left: 50%;
+									top: 0;
+									transform: rotate(45deg) translate(-50%, 0px);
+								}
+							}
+
+							&.left {
+								top: 50%;
+								right: ~"calc(100% + 20px)";
+								transform: translate(-10%,-50%);
+
+								&:before {
+									top: 50%;
+									right: -17px;
+									transform: rotate(45deg) translate(-50%, 0px);
+								}
+							}
+
+							@media all and (max-width: 930px) {
+
+								&.top, &.bottom, &.left, &.right {
+									position: fixed;
+									top: 50%;
+									left: 50%;
+									transform: translate(-50%,-50%)!important;
+
+									&:before {
+										position: absolute;
+										top: 0;
+										left: 0;
+										width: 100%;
+										height: 100%;
+										background: rgba(0,0,0,.3);
+										transform: none;
+									}
+								}
+							}
+
+							h4 {
+								position: relative;
+								margin: 0 0 5px;
+								color: #FFF;
+								font-size: .9rem;
+								z-index: 1;
+							}
+
+							p {
+								position: relative;
+								margin: 0;
+								color: #FFF;
+								font-size: .8rem;
+								font-weight: 300;
+								line-height: 1.1rem;
+								z-index: 1;
 							}
 						}
 
-						h4 {
-							position: relative;
-							margin: 0 0 5px;
-							color: #FFF;
-							font-size: .9rem;
-							z-index: 1;
+						/* Skills colors */
+						&.ps {
+
+							figure span {
+								background: #001D26;
+								color: #00C8FF;
+								border: 2px solid #00C8FF;
+							}
+
+							.description {
+								background: #001D26;
+
+								&:before { background: #001D26; }
+							}
 						}
 
-						p {
-							position: relative;
-							margin: 0;
-							color: #FFF;
-							font-size: .8rem;
-							font-weight: 300;
-							line-height: 1.1rem;
-							z-index: 1;
-						}
-					}
+						&.ai {
 
-					/* Skills colors */
-					&.ps {
+							figure span {
+								background: #1C0A00;
+								color: #FF7F18;
+								border: 2px solid #FF7F18;
+							}
 
-						figure span {
-							background: #001D26;
-							color: #00C8FF;
-							border: 2px solid #00C8FF;
+							.description {
+								background: #1C0A00;
+
+								&:before { background: #1C0A00; }
+							}
 						}
 
-						.description {
-							background: #001D26;
+						&.xd {
 
-							&:before { background: #001D26; }
-						}
-					}
+							figure span {
+								background: #2E001E;
+								color: #FF2BC2;
+								border: 2px solid #FF2BC2;
+							}
 
-					&.ai {
+							.description {
+								background: #2E001E;
 
-						figure span {
-							background: #1C0A00;
-							color: #FF7F18;
-							border: 2px solid #FF7F18;
-						}
-
-						.description {
-							background: #1C0A00;
-
-							&:before { background: #1C0A00; }
-						}
-					}
-
-					&.xd {
-
-						figure span {
-							background: #2E001E;
-							color: #FF2BC2;
-							border: 2px solid #FF2BC2;
+								&:before { background: #2E001E; }
+							}
 						}
 
-						.description {
-							background: #2E001E;
+						&.html {
 
-							&:before { background: #2E001E; }
-						}
-					}
+							figure {
+								background: #E44D26;
+							}
 
-					&.html {
+							.description {
+								background: #E44D26;
 
-						figure {
-							background: #E44D26;
-						}
-
-						.description {
-							background: #E44D26;
-
-							&:before { background: #E44D26; }
-						}
-					}
-
-					&.css {
-
-						figure {
-							background: #0C73B8;
+								&:before { background: #E44D26; }
+							}
 						}
 
-						.description {
-							background: #0C73B8;
+						&.css {
 
-							&:before { background: #0C73B8; }
-						}
-					}
+							figure {
+								background: #0C73B8;
+							}
 
-					&.js {
+							.description {
+								background: #0C73B8;
 
-						figure {
-							background: #E5A228;
-						}
-
-						.description {
-							background: #E5A228;
-
-							&:before { background: #E5A228; }
-						}
-					}
-
-					&.jq {
-
-						figure {
-							background: #21ACE2;
+								&:before { background: #0C73B8; }
+							}
 						}
 
-						.description {
-							background: #21ACE2;
+						&.js {
 
-							&:before { background: #21ACE2; }
-						}
-					}
+							figure {
+								background: #E5A228;
+							}
 
-					&.bs {
+							.description {
+								background: #E5A228;
 
-						figure {
-							background: #52274C;
-						}
-
-						.description {
-							background: #52274C;
-
-							&:before { background: #52274C; }
-						}
-					}
-
-					&.an {
-
-						figure {
-							background: #C3002F;
+								&:before { background: #E5A228; }
+							}
 						}
 
-						.description {
-							background: #C3002F;
+						&.jq {
 
-							&:before { background: #C3002F; }
-						}
-					}
+							figure {
+								background: #21ACE2;
+							}
 
-					&.vue {
+							.description {
+								background: #21ACE2;
 
-						figure {
-							background: #31475E;
-							border: 2px solid #3FB984;
-						}
-
-						.description {
-							background: #31475E;
-
-							&:before { background: #31475E; }
-						}
-					}
-
-					&.react {
-
-						figure {
-							background: #1F1F1F;
-							border: 2px solid #4CD2F3;
+								&:before { background: #21ACE2; }
+							}
 						}
 
-						.description {
-							background: #1F1F1F;
+						&.bs {
 
-							&:before { background: #1F1F1F; }
-						}
-					}
+							figure {
+								background: #52274C;
+							}
 
-					&.php {
+							.description {
+								background: #52274C;
 
-						figure {
-							background: #464B8A;
-							border: 2px solid #787CB4;
-						}
-
-						.description {
-							background: #464B8A;
-
-							&:before { background: #464B8A; }
-						}
-					}
-
-					&.mysql {
-
-						figure {
-							background: #00618B;
-							border: 2px solid #E48F00;
+								&:before { background: #52274C; }
+							}
 						}
 
-						.description {
-							background: #00618B;
+						&.an {
 
-							&:before { background: #00618B; }
-						}
-					}
+							figure {
+								background: #C3002F;
+							}
 
-					&.git {
+							.description {
+								background: #C3002F;
 
-						figure {
-							background: #F05033;
-						}
-
-						.description {
-							background: #F05033;
-
-							&:before { background: #F05033; }
-						}
-					}
-
-					&.wordpress {
-
-						figure {
-							background: #0275A1;
+								&:before { background: #C3002F; }
+							}
 						}
 
-						.description {
-							background: #0275A1;
+						&.vue {
 
-							&:before { background: #0275A1; }
-						}
-					}
+							figure {
+								background: #31475E;
+								border: 2px solid #3FB984;
+							}
 
-					&.node {
+							.description {
+								background: #31475E;
 
-						figure {
-							background: #3B8739;
-							border: 2px solid #6DA75D;
-						}
-
-						.description {
-							background: #3B8739;
-
-							&:before { background: #3B8739; }
-						}
-					}
-
-					&.grunt {
-
-						figure {
-							background: #FF7E22;
-							border: 2px solid #FFA300;
+								&:before { background: #31475E; }
+							}
 						}
 
-						.description {
-							background: #FF7E22;
+						&.react {
 
-							&:before { background: #FF7E22; }
-						}
-					}
+							figure {
+								background: #1F1F1F;
+								border: 2px solid #4CD2F3;
+							}
 
-					&.webpack {
+							.description {
+								background: #1F1F1F;
 
-						figure {
-							background: #1C78C0;
-							border: 2px solid #8ED5FA;
-						}
-
-						.description {
-							background: #1C78C0;
-
-							&:before { background: #1C78C0; }
-						}
-					}
-
-					&.gulp {
-
-						figure {
-							background: #D34A47;
+								&:before { background: #1F1F1F; }
+							}
 						}
 
-						.description {
-							background: #D34A47;
+						&.php {
 
-							&:before { background: #D34A47; }
-						}
-					}
+							figure {
+								background: #464B8A;
+								border: 2px solid #787CB4;
+							}
 
-					&.trello {
+							.description {
+								background: #464B8A;
 
-						figure {
-							background: #0091E6;
-							border: 2px solid #0079BF;
-						}
-
-						.description {
-							background: #0091E6;
-
-							&:before { background: #0091E6; }
-						}
-					}
-
-					&.aws {
-
-						figure {
-							background: #162B3E;
-							border: 2px solid #FC9A00;
+								&:before { background: #464B8A; }
+							}
 						}
 
-						.description {
-							background: #162B3E;
+						&.mysql {
 
-							&:before { background: #162B3E; }
+							figure {
+								background: #00618B;
+								border: 2px solid #E48F00;
+							}
+
+							.description {
+								background: #00618B;
+
+								&:before { background: #00618B; }
+							}
+						}
+
+						&.git {
+
+							figure {
+								background: #F05033;
+							}
+
+							.description {
+								background: #F05033;
+
+								&:before { background: #F05033; }
+							}
+						}
+
+						&.wordpress {
+
+							figure {
+								background: #0275A1;
+							}
+
+							.description {
+								background: #0275A1;
+
+								&:before { background: #0275A1; }
+							}
+						}
+
+						&.node {
+
+							figure {
+								background: #3B8739;
+								border: 2px solid #6DA75D;
+							}
+
+							.description {
+								background: #3B8739;
+
+								&:before { background: #3B8739; }
+							}
+						}
+
+						&.grunt {
+
+							figure {
+								background: #FF7E22;
+								border: 2px solid #FFA300;
+							}
+
+							.description {
+								background: #FF7E22;
+
+								&:before { background: #FF7E22; }
+							}
+						}
+
+						&.webpack {
+
+							figure {
+								background: #1C78C0;
+								border: 2px solid #8ED5FA;
+							}
+
+							.description {
+								background: #1C78C0;
+
+								&:before { background: #1C78C0; }
+							}
+						}
+
+						&.gulp {
+
+							figure {
+								background: #D34A47;
+							}
+
+							.description {
+								background: #D34A47;
+
+								&:before { background: #D34A47; }
+							}
+						}
+
+						&.trello {
+
+							figure {
+								background: #0091E6;
+								border: 2px solid #0079BF;
+							}
+
+							.description {
+								background: #0091E6;
+
+								&:before { background: #0091E6; }
+							}
+						}
+
+						&.aws {
+
+							figure {
+								background: #162B3E;
+								border: 2px solid #FC9A00;
+							}
+
+							.description {
+								background: #162B3E;
+
+								&:before { background: #162B3E; }
+							}
 						}
 					}
 				}
@@ -694,7 +712,7 @@ body.skill-open {
 	}
 
 	// View Enter Animations
-	&.active .blurred-container .skill {
+	&.active .blurred-container #skills-container div .skill {
 
 		&:nth-child(1) {
 			.flipInY(@delay: .4s);
