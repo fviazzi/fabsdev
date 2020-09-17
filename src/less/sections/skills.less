@@ -20,7 +20,7 @@ body.skill-open {
 		justify-content: center;
 		opacity: 0;
 		z-index: 0;
-		transition: all .3s ease-in-out;
+		transition:.3s ease-in-out;
 
 		&:before {
 			content: "";
@@ -164,7 +164,6 @@ body.skill-open {
 	.blurred-container {
 		position: relative;
 		width: 920px;
-		margin: 34px auto 0;
 		padding: 0;
 		flex-direction: row;
 		align-items: flex-start;
@@ -178,8 +177,9 @@ body.skill-open {
 			width: 100%;
 			min-width: 0;
 			max-width: 100%;
-			max-height: ~"calc(100vh - 35px)";
-			margin: 35px 0 0;
+			height: 100%;
+			margin: 0;
+			padding: 35px 0 0;
 			display: block;
 		}
 
@@ -193,6 +193,9 @@ body.skill-open {
 				display: block;
 				z-index: 2;
 				overflow: auto;
+			}
+
+			@media all and (min-width: 731px) {
 				.scrollbar;
 			}
 
@@ -712,54 +715,57 @@ body.skill-open {
 	}
 
 	// View Enter Animations
-	&.active .blurred-container #skills-container div .skill {
+	@media all and (min-width: 731px) {
 
-		&:nth-child(1) {
-			.flipInY(@delay: .4s);
-		}
+		&.active .blurred-container #skills-container div .skill {
 
-		&:nth-child(2) {
-			.flipInY(@delay: .45s);
-		}
+			&:nth-child(1) {
+				.flipInY(@delay: .4s);
+			}
 
-		&:nth-child(3) {
-			.flipInY(@delay: .5s);
-		}
+			&:nth-child(2) {
+				.flipInY(@delay: .45s);
+			}
 
-		&:nth-child(4) {
-			.flipInY(@delay: .55s);
-		}
+			&:nth-child(3) {
+				.flipInY(@delay: .5s);
+			}
 
-		&:nth-child(5) {
-			.flipInY(@delay: .6s);
-		}
+			&:nth-child(4) {
+				.flipInY(@delay: .55s);
+			}
 
-		&:nth-child(6) {
-			.flipInY(@delay: .65s);
-		}
+			&:nth-child(5) {
+				.flipInY(@delay: .6s);
+			}
 
-		&:nth-child(7) {
-			.flipInY(@delay: .7s);
-		}
+			&:nth-child(6) {
+				.flipInY(@delay: .65s);
+			}
 
-		&:nth-child(8) {
-			.flipInY(@delay: .75s);
-		}
+			&:nth-child(7) {
+				.flipInY(@delay: .7s);
+			}
 
-		&:nth-child(9) {
-			.flipInY(@delay: .8s);
-		}
+			&:nth-child(8) {
+				.flipInY(@delay: .75s);
+			}
 
-		&:nth-child(10) {
-			.flipInY(@delay: .85s);
-		}
+			&:nth-child(9) {
+				.flipInY(@delay: .8s);
+			}
 
-		&:nth-child(11) {
-			.flipInY(@delay: .9s);
-		}
+			&:nth-child(10) {
+				.flipInY(@delay: .85s);
+			}
 
-		&:nth-child(12) {
-			.flipInY(@delay: .95s);
+			&:nth-child(11) {
+				.flipInY(@delay: .9s);
+			}
+
+			&:nth-child(12) {
+				.flipInY(@delay: .95s);
+			}
 		}
 	}
 }

@@ -50,7 +50,19 @@ function imgBgLazyLoad() {
 
 		// Make sure there is a background to load
 		if (container.dataset.background) {
-			img.src = container.dataset.background;
+
+
+			// Check if body needs mobile image
+			if (container === document.body) {
+
+				if (window.innerWidth > 500) {
+					img.src = container.dataset.background;
+				} else {
+					img.src = container.dataset.mobile;
+				}
+			}
+
+			// Assign a image index
 			img.dataset.index = index;
 			img.addEventListener('load',imageLoaded);
 			img.addEventListener('error',imageError);
@@ -59,7 +71,6 @@ function imgBgLazyLoad() {
 	});
 
 	function imageLoaded(e) {
-
 		containers[this.dataset.index].style.backgroundImage = 'url(' + this.src + ')';
 
 		setTimeout( () => {

@@ -1,8 +1,11 @@
 @import (reference) 'config.less';
 
-* {
-	box-sizing: border-box;
-	user-select: none;
+
+@media all and (max-width: 730px) {
+	* {
+		box-sizing: border-box;
+		user-select: none;
+	}
 }
 
 html {
@@ -15,10 +18,14 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+
+	@media all and (max-width: 730px) {
+		background-image: url('../img/mobile_background_low.jpg');
+	}
 }
 
 body {
-	height: 100vh;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	background-repeat: no-repeat;
@@ -26,9 +33,10 @@ body {
 	background-position: center;
 	background: inherit;
 	background-attachment: fixed;
+	overflow: hidden;
 
 	// Enter animations
-	&.loaded section {
+	&.loaded main section {
 
 		&.active {
 			.fadeIn(@duration: .7s);
@@ -69,12 +77,17 @@ body {
 		}
 	}
 
+	main {
+		background: inherit;
+		background-attachment: fixed;
+	}
+
 	section {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -83,6 +96,7 @@ body {
 		overflow: hidden;
 		opacity: 0;
 		z-index: 0;
+		transition:.3s ease-in-out;
 
 		@media all and (max-width: 730px) {
 			display: block;

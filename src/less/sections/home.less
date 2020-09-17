@@ -18,15 +18,29 @@
 		@media all and (max-width: 730px) {
 			max-width: 100%;
 			width: 100%;
-			height: 100vh;
-			height: -webkit-fill-available;
+			height: 100%;
 			margin: 0;
 			min-width: 0;
 			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 		}
 
 		@media all and (max-width: 300px) {
 			padding: 80px 0 0;
+		}
+
+		#contact-btn {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 2;
+
+			@media all and (max-width: 730px) {
+				position: static;
+				margin: 20px 20px 0 auto;
+			}
 		}
 
 		#profile {
@@ -79,15 +93,14 @@
 			align-items: center;
 			justify-content: space-between;
 			z-index: 2;
-			transition: all .3s ease-in-out;
+			transition:.3s ease-in-out;
 
 			@media all and (max-width: 730px) {
-				padding: 0 15px 70px;
+				position: static;
+				padding: 0 20px 30px;
 			}
 
 			@media all and (max-width: 300px) {
-				position: static;
-				padding: 30px 20px;
 				flex-direction: column;
 			}
 
@@ -106,12 +119,15 @@
 					width: 0;
 					height: 2px;
 					bottom: -10px;
-					transition: all .2s ease-in-out;
+					transition:.2s ease-in-out;
 				}
 
-				&:hover:after {
-					width: 100%;
-					background: linear-gradient( to right, @color_primary, @color_secondary);
+				@media all and (min-width: 731px) {
+
+					&:hover:after {
+						width: 100%;
+						background: linear-gradient( to right, @color_primary, @color_secondary);
+					}
 				}
 
 				@media all and (max-width: 400px) {
@@ -122,13 +138,6 @@
 					margin: 10px 0;
 				}
 			}
-		}
-
-		#contact-btn {
-			position: absolute;
-			top: 20px;
-			right: 20px;
-			z-index: 2;
 		}
 	}
 

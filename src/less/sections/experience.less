@@ -2,15 +2,10 @@
 @import (reference) '../components/scrollbar.less';
 
 #experience {
-	transition: all .3s ease-in-out;
 
 	&.leave-left #projects-container .blurred-container,
 	&.leave-right #projects-container .blurred-container {
-		.fadeOutDown!important;
-	}
-
-	&.active #projects-nav {
-		bottom: 0;
+		animation: none!important;
 	}
 
 	&.demo-open {
@@ -20,7 +15,7 @@
 	#projects-nav {
 		position: fixed;
 		left: 0;
-		bottom: -20%;
+		bottom: 0;
 		width: 100%;
 		padding: 10px 0;
 		background: @color_primary_bg;
@@ -29,7 +24,10 @@
 		align-items: center;
 		justify-content: center;
 		z-index: 3;
-		transition: all .3s ease-in-out;
+
+		@media all and (max-width: 730px) {
+			opacity: .95;
+		}
 
 		&[data-index="first"] button[data-direction="prev"],
 		&[data-index="last"] button[data-direction="next"] {
@@ -59,13 +57,13 @@
 
 	#projects-container {
 		width: 100%;
-		height: 100vh;
-		padding: 55px 0 75px;
+		height: 100%;
+		padding: 0;
 		background: inherit;
 		overflow: hidden;
 
 		@media all and (max-width: 730px) {
-			padding: 34px 0 60px;
+			padding: 0;
 		}
 
 		.project {
@@ -73,7 +71,8 @@
 			left: 0;
 			right: 0;
 			width: 100%;
-			height: ~"calc(100vh - 125px)";
+			height: 100%;
+			padding: 35px 0 90px;
 			background: inherit;
 			background-attachment: fixed;
 			text-align: center;
@@ -81,7 +80,9 @@
 			z-index: 0;
 
 			@media all and (max-width: 730px) {
-				height: ~"calc(100vh - 95px)";
+				height: 100%;
+				padding: 35px 0 0;
+				display: none;
 			}
 
 			.blurred-container {
@@ -93,9 +94,9 @@
 				max-height: 100%;
 				margin: 0 auto;
 				display: block;
-				transition: all .3s ease-in-out;
+				transition: opacity.3s ease-in-out;
 
-				@media all and (max-width: 805px) {
+				@media all and (max-width: 730px) {
 					min-width: 100%;
 					max-width: 100%;
 					width: 100%;
@@ -108,6 +109,7 @@
 
 					@media all and (max-width: 805px) {
 						display: block;
+						padding-bottom: 60px;
 					}
 
 					.meta-container {
@@ -180,7 +182,10 @@
 						padding: 0 20px;
 						display: block;
 						overflow: auto;
-						.scrollbar;
+
+						@media all and (min-width: 731px) {
+							.scrollbar;
+						}
 
 						@media all and (max-width: 715px) {
 							margin-top: 20px;
@@ -188,14 +193,8 @@
 						}
 
 						.title {
-							margin: 30px 0 20px;
-							transition: all .3s ease-in-out;
-						}
-
-						.content {
-							opacity: 0;
-							transform: translate(0,-10%);
-							transition: all .3s ease-in-out;
+							margin: 0 0 20px;
+							transition:.3s ease-in-out;
 						}
 					}
 				}
@@ -206,19 +205,13 @@
 				opacity: 1;
 				z-index: 1;
 
-				.blurred-container {
-					.shrinkInDown;
+				@media all and (max-width: 730px) {
+					display: block;
+				}
 
-					article .info {
-
-						.title {
-							margin: 0 0 20px;
-						}
-
-						.content {
-							opacity: 1;
-							transform: translate(0,0);
-						}
+				@media all and (min-width: 731px) {
+					.blurred-container {
+						.shrinkInDown;
 					}
 				}
 			}
@@ -244,7 +237,7 @@
 		pointer-events: none;
 		overflow: hidden;
 		z-index: 4;
-		transition: all .3s ease-in-out;
+		transition: .3s;
 
 		@media all and (max-width: 730px) {
 			padding: 20px 10px 50px;
@@ -255,7 +248,10 @@
 			pointer-events: all;
 
 			video {
-				.shrinkInUp(@delay: .3s);
+
+				@media all and (min-width: 731px) {
+					.shrinkInUp(@delay: .3s);
+				}
 			}
 		}
 
@@ -279,8 +275,10 @@
 			}
 		}
 
-		video {
-			height: ~"calc(100% - 45px)";
+		@media all and (min-width: 731px) {
+			video {
+				height: ~"calc(100% - 45px)";
+			}
 		}
 	}
 }

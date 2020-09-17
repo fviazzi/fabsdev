@@ -44,14 +44,12 @@ function switchView() {
 		section.classList.add(leave);
 
 		// Add active class to new active section
-		target.classList.add('active',enter);
+		setTimeout( () => {
+			target.classList.add('active',enter);
+		},0);
 
 		// We need a timeout to wait for the animations to finish
 		setTimeout( () => {
-
-			// Scroll top (safari)
-			window.scrollTop = 0;
-			target.scrollTop = 0;
 
 			// Remove classes from previous active section
 			section.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
@@ -65,24 +63,23 @@ function switchView() {
 					$('#main-menu').classList.remove('active','leave');
 					$('#menu-contact-btn').classList.remove('active','leave');
 				},200);
+			} else {
 
-				return;
+				// Show menu & contact btn
+				$('#main-menu').classList.add('active');
 
-			// Register "experience" event for collapse.js
-			} else if (target.id === 'experience') {
-
-					// Create load event
-					let event = document.createEvent('Event');
-					event.initEvent('experience', true, true);
-					document.dispatchEvent(event);
+				setTimeout( () => {
+					$('#menu-contact-btn').classList.add('active');
+				},600);
 			}
 
-			// Show menu & contact btn
-			$('#main-menu').classList.add('active');
 
 			setTimeout( () => {
-				$('#menu-contact-btn').classList.add('active');
-			},600);
+				// Register "navigation" event for height
+				let event = document.createEvent('Event');
+				event.initEvent('navigation', true, true);
+				document.dispatchEvent(event);
+			},0);
 
 		},400);
 	}
