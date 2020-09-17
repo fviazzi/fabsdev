@@ -15,11 +15,14 @@
 			margin: 0;
 		}
 
-		@media all and (max-width: 530px) {
+		@media all and (max-width: 730px) {
 			max-width: 100%;
 			width: 100%;
-			margin: 0 10px;
+			height: 100vh;
+			height: -webkit-fill-available;
+			margin: 0;
 			min-width: 0;
+			padding: 0;
 		}
 
 		@media all and (max-width: 300px) {
@@ -76,9 +79,10 @@
 			align-items: center;
 			justify-content: space-between;
 			z-index: 2;
+			transition: all .3s ease-in-out;
 
-			@media all and (max-width: 992px) {
-				padding: 0 20px 30px;
+			@media all and (max-width: 730px) {
+				padding: 0 15px 70px;
 			}
 
 			@media all and (max-width: 300px) {
