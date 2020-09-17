@@ -2,6 +2,10 @@
 
 #about-me {
 
+	@media all and (max-width: 730px) {
+		display: block;
+	}
+
 	.blurred-container {
 		position: relative;
 		width: 50%;
@@ -14,11 +18,22 @@
 			margin: 0;
 		}
 
-		@media all and (max-width: 650px) {
+		@media all and (max-width: 730px) {
 			width: 100%;
 			min-width: 0;
 			max-width: 100%;
-			margin: 35px 10px 0;
+			height: ~"calc(100vh - 35px)";
+			height: -webkit-fill-available;
+			margin: 35px 0 0;
+
+			article {
+				padding-bottom: 60px;
+				display: block;
+
+				figure {
+					min-height: 200px;
+				}
+			}
 		}
 	}
 
