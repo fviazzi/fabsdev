@@ -34,7 +34,7 @@
 		ob_end_clean();
 
 		// Send Email
-		$to       =	'reach@fabsdev.com';
+		$to       =	'fabricioviazzi@gmail.com';
 		$subject  =	'Form Contact';
 
 		$headers  = "From: Reach <reach@fabsdev.com.ar>" . "\r\n";
