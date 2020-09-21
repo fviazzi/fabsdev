@@ -43,7 +43,7 @@
 								margin:0px auto;
 								font-weight: 300;
 							">
-							Leed Notice
+							Lead Notice
 						</h1>
 					</th>
 				</tr>
