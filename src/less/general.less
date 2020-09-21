@@ -37,6 +37,7 @@ body {
 
 		&.active {
 			.fadeIn(@duration: .7s);
+			display: flex;
 			z-index: 1;
 
 			// IE 11
@@ -92,6 +93,7 @@ body {
 		background: inherit;
 		overflow: hidden;
 		opacity: 0;
+		display: none;
 		z-index: 0;
 		transition:.3s ease-in-out;
 
