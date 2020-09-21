@@ -9,6 +9,10 @@ import './menu.js';
 import './projects-nav.js';
 import './skills.js';
 
+// Clear url from get vars
+let path = window.location.pathname
+window.history.replaceState({}, document.title,  path);
+
 // Page load event
 window.onload = pageLoaded;
 
