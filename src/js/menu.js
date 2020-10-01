@@ -52,7 +52,10 @@ function switchView() {
 		setTimeout( () => {
 
 			// Remove classes from previous active section
-			section.classList.remove('active','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
+			section.classList.remove('active','active-done','active-left','active-right','active-shrink','leave-left','leave-right','leave-shrink');
+
+			// Mark target class as done
+			target.classList.add('active-done');
 
 			// Swap menus between home and any other page, handle contact btn visibility as well
 			if (target.id === 'home') {
@@ -72,7 +75,6 @@ function switchView() {
 					$('#menu-contact-btn').classList.add('active');
 				},600);
 			}
-
 
 			setTimeout( () => {
 				// Register "navigation" event for height

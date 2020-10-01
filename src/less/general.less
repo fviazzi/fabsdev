@@ -95,7 +95,8 @@ body {
 		opacity: 0;
 		display: none;
 		z-index: 0;
-		transition:.3s ease-in-out;
+		will-change: transform,opacity;
+		box-shadow: 0 0 30px rgba(36,6,84,.4);
 
 		@media all and (max-width: 730px) {
 			display: block;

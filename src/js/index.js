@@ -31,7 +31,7 @@ function pageLoaded() {
 	event.initEvent('pageReady', true, true);
 
 	// Show Home view
-	$('#home').classList.add('active');
+	$('#home').classList.add('active','active-done');
 
 	setTimeout( () => {
 

@@ -40,25 +40,25 @@
 	}
 
 	// View Enter Animations
-	&.active .blurred-container {
+	&.active-done .blurred-container {
 
 		article {
 
 			figure img {
-				.growIn(@duration: .5s, @delay: .5s);
+				.growIn(@duration: .5s, @delay: .2s);
 			}
 
 			.info {
 				.title {
-					.fadeInUp(@duration: .4s, @delay: .6s);
+					.fadeInUp(@duration: .4s, @delay: .4s);
 				}
 
 				.content {
-					.fadeInUp(@duration: .4s, @delay: .7s);
+					.fadeInUp(@duration: .4s, @delay: .5s);
 				}
 
 				.file {
-					.fadeInUp(@duration: .4s, @delay: .8s);
+					.fadeInUp(@duration: .4s, @delay: .6s);
 				}
 			}
 		}

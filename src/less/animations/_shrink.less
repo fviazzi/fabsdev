@@ -1,21 +1,26 @@
 .shrinkInUp(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: shrinkInUp @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 .shrinkInDown(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: shrinkInDown @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 .shrinkOut(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: shrinkOut @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 .shrinkOutUp(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: shrinkOutUp @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 .shrinkOutDown(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: shrinkOutDown @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 @keyframes shrinkInUp {

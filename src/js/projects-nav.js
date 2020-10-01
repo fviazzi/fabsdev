@@ -16,7 +16,7 @@ document.addEventListener("pageReady", () => {
 			if (index === 0) {
 				setTimeout( () => {
 					nextProject();
-				},0);
+				},800);
 			}
 		});
 
@@ -29,8 +29,8 @@ document.addEventListener("pageReady", () => {
 			}
 		});
 
-	} catch(err) {
-		alert('err!');
+	} catch(error) {
+		console.log(error);
 	}
 });
 
@@ -109,7 +109,7 @@ function navigate(openIndex,nextIndex) {
 	if (nextProject && nextProject.classList) {
 		setTimeout( () => {
 			nextProject.classList.add('enter');
-		},300);
+		},400);
 	}
 
 }

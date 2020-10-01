@@ -1,21 +1,26 @@
 .fadeIn( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeIn @duration @function @delay @iteraions @direction @fill @play_state;
+  will-change: transform,opacity;
 }
 
 .fadeInUp( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeInUp @duration @function @delay @iteraions @direction @fill @play_state;
+  will-change: transform,opacity;
 }
 
 .fadeInLeft( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeInLeft @duration @function @delay @iteraions @direction @fill @play_state;
+  will-change: transform,opacity;
 }
 
 .fadeInDown( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeInDown @duration @function @delay @iteraions @direction @fill @play_state;
+  will-change: transform,opacity;
 }
 
 .fadeInRight( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeInRight @duration @function @delay @iteraions @direction @fill @play_state;
+  will-change: transform,opacity;
 }
 
 @keyframes fadeIn {

@@ -1,9 +1,11 @@
 .growIn(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: growIn @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 .growInUp(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
 	animation: growInUp @duration @function @delay @iteraions @direction @fill @play_state;
+	will-change: transform,opacity;
 }
 
 @keyframes growIn {
