@@ -10,13 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// Register form submission
-	document.querySelector('#contact-form').addEventListener('submit',handleForm);
+	document.querySelector('#contact-form').addEventListener('submit',handleSubmit);
 });
 
+// Focus handler
 function handleFocus() {
 	this.parentNode.classList.add('focus');
 }
 
+// Blur handler
 function handleBlur() {
 
 	let valid  = validateInput(this);
@@ -33,7 +35,7 @@ function handleBlur() {
 	}
 }
 
-function handleForm(e) {
+function handleSubmit(e) {
 
 	e.preventDefault();
 
