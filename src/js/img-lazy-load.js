@@ -10,32 +10,34 @@ function imgLazyLoad() {
 
 	figures.forEach( figure => {
 
-		// Make sure this figure has images with loading class
-		if ( figure.classList.contains('loading') ) {
+		// Get figure images
+		let images = figure.getElementsByTagName('img');
 
-			// Get figure images
-			let images = figure.getElementsByTagName('img');
-
-			for (let img of images) {
-				// Set image src and listen to load and error events
-				img.src = img.dataset.src;
-				img.addEventListener('load',imageLoaded);
-				img.addEventListener('error',imageError);
-			}
-		}
+		images.forEach( img => {
+			// Set image src and listen to load and error events
+			img.src = img.dataset.src;
+			img.addEventListener('load',imageLoaded);
+			img.addEventListener('error',imageError);
+		});
 
 	});
 
 	function imageLoaded(e) {
 		setTimeout(() => {
-			this.parentNode.classList.remove("loading","svg-loading");
+			this.parentNode.classList.remove("loading");
 		}, 100);
 	}
 
 	function imageError(e) {
-		setTimeout( () => {
-			lazyLoad();
-		}, 200);
+
+		// Make to retry just once
+		if ( !this.datset.error ) {
+
+			// Retry after .2s
+			setTimeout( () => {
+				imgLazyLoad();
+			}, 200);
+		}
 	}
 };
 
