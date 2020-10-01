@@ -1,6 +1,6 @@
 
 (function () {
-	if ( typeof window.CustomEvent === "function" ) return false; //If not IE
+	if ( typeof window.CustomEvent === "function" ) return false;
 
 	function CustomEvent ( event, params ) {
 		params = params || { bubbles: false, cancelable: false, detail: undefined };
