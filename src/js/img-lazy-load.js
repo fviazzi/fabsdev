@@ -3,44 +3,6 @@ document.addEventListener("pageReady", () => {
 	imgBgLazyLoad();
 });
 
-function imgLazyLoad() {
-
-	// Get all figures from website
-	let figures = [].slice.call( document.querySelectorAll("figure.loading") );
-
-	figures.forEach( figure => {
-
-		// Get figure images
-		let images = figure.getElementsByTagName('img');
-
-		images.forEach( img => {
-			// Set image src and listen to load and error events
-			img.src = img.dataset.src;
-			img.addEventListener('load',imageLoaded);
-			img.addEventListener('error',imageError);
-		});
-
-	});
-
-	function imageLoaded(e) {
-		setTimeout(() => {
-			this.parentNode.classList.remove("loading");
-		}, 100);
-	}
-
-	function imageError(e) {
-
-		// Make to retry just once
-		if ( !this.datset.error ) {
-
-			// Retry after .2s
-			setTimeout( () => {
-				imgLazyLoad();
-			}, 200);
-		}
-	}
-};
-
 function imgBgLazyLoad() {
 
 	// Get all container with bg from website
@@ -80,6 +42,11 @@ function imgBgLazyLoad() {
 			// If body img is loaded, load the rest of the images
 			if (this.dataset.index === "0") {
 				imgLazyLoad();
+
+				// Load videos
+				setTimeout( () => {
+					videoLazyLoad();
+				},5000);
 			}
 		},0);
 	}
@@ -88,5 +55,75 @@ function imgBgLazyLoad() {
 		setTimeout( () => {
 			imgBgLazyLoad();
 		}, 300);
+	}
+}
+
+function imgLazyLoad() {
+
+	// Get all figures from website
+	let figures = [].slice.call( document.querySelectorAll("figure.loading") );
+
+	figures.forEach( figure => {
+
+		// Get figure images
+		let images = figure.getElementsByTagName('img');
+
+		images.forEach( img => {
+			// Set image src and listen to load and error events
+			img.src = img.dataset.src;
+			img.addEventListener('load',imageLoaded);
+			img.addEventListener('error',imageError);
+		});
+
+	});
+
+	function imageLoaded(e) {
+		setTimeout(() => {
+			this.parentNode.classList.remove("loading");
+		}, 100);
+	}
+
+	function imageError(e) {
+
+		// Make to retry just once
+		if ( !this.datset.error ) {
+
+			// Set error flag
+			this.datset.error = true;
+
+			// Retry after .2s
+			setTimeout( () => {
+				imgLazyLoad();
+			}, 200);
+		}
+	}
+}
+
+function videoLazyLoad() {
+
+	// Get all videos from website
+	let videos = [].slice.call( document.querySelectorAll("video") );
+
+	videos.forEach( video => {
+
+		// Set video src and listen to load and error events
+		video.src = video.dataset.src;
+		video.addEventListener('error',videoError);
+
+	});
+
+	function videoError(e) {
+
+		// Make to retry just once
+		if ( !this.datset.error ) {
+
+			// Set error flag
+			this.datset.error = true;
+
+			// Retry after .2s
+			setTimeout( () => {
+				videoLazyLoad();
+			}, 200);
+		}
 	}
 }
