@@ -6,6 +6,7 @@ import 'regenerator-runtime/runtime.js'
 // Internal modules
 import 'Assets/loader.js'
 import App from './App'
+import 'Less/config.less'
 asyncImports()
 
 const app  = document.getElementById('app')
