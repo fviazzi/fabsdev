@@ -5,13 +5,16 @@ import React from 'react'
 import './Loader.less'
 
 // Components
-import Loading from 'Components/Loading/Loading'
+import Wave from './Wave/Wave'
 
-export default function Loader () {
+export default function Loader ({ fade }) {
 
   return (
-    <div id='loader-container'>
-      <Loading loading />
+    <div
+      id='loader-container'
+      className={fade ? 'fade' : ''}
+    >
+      <Wave />
     </div>
   )
 }

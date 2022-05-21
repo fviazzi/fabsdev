@@ -8,6 +8,7 @@ import './Main.layout.less'
 
 // Components
 import Header from 'Components/Header/Header'
+import Loader from 'Components/Loader/Loader'
 
 export default function MainLayout () {
 
@@ -17,7 +18,9 @@ export default function MainLayout () {
   return (
     <main id='main-container' className={state.theme}>
       <Header />
-      <Outlet />
+      <React.Suspense fallback={<Loader />}>
+        <Outlet />
+      </React.Suspense>
     </main>
   )
 }

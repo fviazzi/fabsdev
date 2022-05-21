@@ -1,6 +1,10 @@
 // External modules
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom'
 
 // Internal modules
 import { AppContext } from 'Context'
@@ -34,42 +38,36 @@ export default function Router () {
 
   return (
     <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<MainLayout />}>
+          {/* Public routes are always enabled */}
+          {
+            lazy.filter(route => route.access.includes('public')).map(({ component, path, exact }) =>
+              <Route
+                exact={exact}
+                key={path}
+                path={path}
+                element={component}
+              />
+            )
+          }
 
-      <React.Suspense fallback={<div />}>
-
-        <Routes>
-
-          <Route path='/' element={<MainLayout />}>
-
-            {/* Public routes are always enabled */}
-            {
-              lazy.filter(route => route.access.includes('public')).map(({ component, path, exact }) =>
-                <Route
-                  exact={exact}
-                  key={path}
-                  path={path}
-                  element={component}
-                />
-              )
-            }
-
-            {/* Filter specific access routes */}
-            {
-              state.account.access &&
-                lazy
-                  .filter(route => route.access.includes(state.account.access))
-                  .map(({ component, path, exact }) =>
-                    <Route
-                      exact={exact}
-                      key={path}
-                      path={path}
-                      element={component}
-                    />
-                  )
-            }
-          </Route>
-        </Routes>
-      </React.Suspense>
+          {/* Filter specific access routes */}
+          {
+            state.account.access &&
+              lazy
+                .filter(route => route.access.includes(state.account.access))
+                .map(({ component, path, exact }) =>
+                  <Route
+                    exact={exact}
+                    key={path}
+                    path={path}
+                    element={component}
+                  />
+                )
+              }
+        </Route>
+      </Routes>
     </BrowserRouter>
   )
 }
