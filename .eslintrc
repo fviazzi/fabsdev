@@ -1,0 +1,18 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-multi-spaces": [
+      0,
+      {
+        "exceptions": {
+          "VariableDeclarator": 0,
+          "ImportDeclaration": 0
+        }
+      }
+    ],
+    "padded-blocks": [0]
+  }
+}

@@ -1,0 +1,33 @@
+.slideInUp(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: slideInUp @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.slideInRight(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: slideInRight @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes slideInUp {
+
+	0% {
+		transform: translate(0,-100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate(0,0%);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInRight {
+
+	0% {
+		transform: translate(10%,0);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translate(0%,0);
+		opacity: 1;
+	}
+}

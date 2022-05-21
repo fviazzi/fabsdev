@@ -1,0 +1,33 @@
+.fadeInUp( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeInUp @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.fadeInDown( @duration: .2s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeInDown @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes fadeInUp {
+
+  0% {
+    opacity: 0;
+    transform: translate(0,-10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}
+
+@keyframes fadeInDown {
+
+  0% {
+    opacity: 0;
+    transform: translate(0,10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+}

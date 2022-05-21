@@ -1,0 +1,26 @@
+.shake(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+	animation: shake @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes shake {
+
+	0%, 100% {
+		transform: translateX(0) translateZ(0);
+	}
+
+	10%, 30%, 50%, 70% {
+		transform: translateX(-10px) translateZ(0);
+	} 
+
+	20%, 40%, 60% {
+		transform: translateX(10px) translateZ(0);
+	}
+
+	80% {
+		transform: translateX(8px) translateZ(0);
+	}
+
+	90% {
+		transform: translateX(-8px) translateZ(0);
+	}
+}

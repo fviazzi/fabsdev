@@ -1,0 +1,14 @@
+.fadeOut( @duration: .2s, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+  animation: fadeOut @duration ease-in-out @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes fadeOut {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,17 @@
+# .htaccess file
+/dist/.htaccess
+
+# Build files
+/dist/js/**/*
+
+# Node modules directories
+node_modules/
+
+# Process id
+.process-id
+
+# Environment vars
+.env
+
+# Optional eslint cache
+.eslintcache
