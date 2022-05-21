@@ -23,7 +23,7 @@ export default function Home () {
   }
 
   return (
-    <div id='home-container'>
+    <section id='home-container'>
       <h1>
         This is the home page!!
       </h1>
@@ -37,6 +37,6 @@ export default function Home () {
       >
         Toggle theme
       </button>
-    </div>
+    </section>
   )
 }

@@ -27,9 +27,7 @@ export default function App () {
 
   return (
     <AppProvider value={{ state, dispatch }}>
-      <main className={state.theme}>
-        <Router />
-      </main>
+      <Router />
     </AppProvider>
   )
 }
