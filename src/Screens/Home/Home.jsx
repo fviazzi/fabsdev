@@ -22,8 +22,27 @@ export default function Home () {
     })
   }
 
+  const flip = e => {
+
+    const element = e.target
+
+    element.classList.add('flip')
+
+    setTimeout(() => {
+      element.classList.remove('flip')
+    }, 600)
+  }
+
   return (
     <section id='home-container'>
+
+      <h4>
+        <span onMouseEnter={flip}>H</span>
+        <span onMouseEnter={flip}>E</span>
+        <span onMouseEnter={flip}>Y</span>
+        <span onMouseEnter={flip}>!</span>
+      </h4>
+
       <h1>
         This is the home page!!
       </h1>
