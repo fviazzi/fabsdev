@@ -7,7 +7,7 @@ import './Intro.less'
 import { AppContext } from 'Context'
 
 // Components
-import Space from './Space/Space'
+import AnimatedSpace from 'Components/AnimatedSpace/AnimatedSpace'
 import Rocket from './Rocket/Rocket'
 
 // Assets
@@ -19,10 +19,9 @@ export default function Intro () {
   const { dispatch } = React.useContext(AppContext)
 
   // Local state
-  const [orientation, setOrientation] = React.useState('landscape')
-  const [leave, setLeave]             = React.useState(false)
-  const [launch, setLaunch]           = React.useState(false)
-  const [postLaunch, setPostLaunch]   = React.useState(false)
+  const [leave, setLeave]           = React.useState(false)
+  const [launch, setLaunch]         = React.useState(false)
+  const [postLaunch, setPostLaunch] = React.useState(false)
 
   // Constants
   const navigate = useNavigate()
@@ -34,13 +33,6 @@ export default function Intro () {
       type: 'UPDATE_SECTION',
       data: 'intro'
     })
-
-    window.addEventListener('resize', resizeHandler)
-
-    // Run the handler for the first time
-    resizeHandler()
-
-    return () => window.removeEventListener('resize', resizeHandler)
   }, [])
 
   // Leave effect
@@ -63,33 +55,17 @@ export default function Intro () {
     }
   }, [leave])
 
-  // Methods
-  const resizeHandler = () => {
-
-    const ratio = window.innerWidth / window.innerHeight
-
-    if (ratio >= 1.7777777) {
-      setOrientation('landscape')
-    } else {
-      setOrientation('portrait')
-    }
-  }
-
   return (
     <section
       id='intro-container'
       className={`
         ${leave ? 'leave' : ''}
         ${postLaunch ? 'post-launch' : ''}
-        ${orientation}
       `}
     >
 
       {/* Background */}
-      <div id='intro-background-container'>
-        <div className='mask' />
-        <Space />
-      </div>
+      <AnimatedSpace planets blur={!leave} />
 
       {/* Content */}
       <div className='container'>
