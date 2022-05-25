@@ -2,18 +2,18 @@
 import React from 'react'
 
 // Imports
-const Home = React.lazy(() => (import(/* webpackChunkName: "home" */'Screens/Home/Home')))
+const Intro = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
 const About = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
 
 const routes = [
 
   // Public routes
   {
-    path: '/home',
-    label: 'Home',
+    path: '/',
+    label: 'Intro',
     exact: false,
     access: ['public'],
-    component: <Home />
+    component: <Intro />
   },
   {
     path: '/about',

@@ -6,16 +6,10 @@ import {
   Route
 } from 'react-router-dom'
 
-// Internal modules
-import { AppContext } from 'Context'
-
 // Components
 import MainLayout from './Layouts/Main/Main.layout'
 
 export default function Router () {
-
-  // Global state
-  const { state } = React.useContext(AppContext)
 
   // Local state
   const [lazy, setLazy] = React.useState([])
@@ -51,21 +45,6 @@ export default function Router () {
               />
             )
           }
-
-          {/* Filter specific access routes */}
-          {
-            state.account.access &&
-              lazy
-                .filter(route => route.access.includes(state.account.access))
-                .map(({ component, path, exact }) =>
-                  <Route
-                    exact={exact}
-                    key={path}
-                    path={path}
-                    element={component}
-                  />
-                )
-              }
         </Route>
       </Routes>
     </BrowserRouter>
