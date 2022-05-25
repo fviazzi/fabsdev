@@ -2,6 +2,18 @@
   animation: fadeOut @duration ease-in-out @delay @iteraions @direction @fill @play_state;
 }
 
+.fadeOutRight(@duration: .8s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeOutRight @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.fadeOutRightBounce(@duration: .8s, @function: cubic-bezier(0.78, 0, 0.1, 1), @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeOutRightBounce @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+.fadeOutDownBounce(@duration: .8s, @function: cubic-bezier(0.78, 0, 0.1, 1), @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: fadeOutDownBounce @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
 @keyframes fadeOut {
 
   0% {
@@ -10,5 +22,49 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fadeOutRight {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-20%, 0);
+  }
+}
+
+@keyframes fadeOutRightBounce {
+
+  0% {
+    opacity: 1;
+  }
+
+  30% {
+    transform: translate(5%, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-20%, 0);
+  }
+}
+
+@keyframes fadeOutDownBounce {
+
+  0% {
+    opacity: 1;
+  }
+
+  30% {
+    transform: translate(0, -5%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, 20%);
   }
 }
