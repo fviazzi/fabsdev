@@ -91,14 +91,7 @@ module.exports = (env, argv) => {
           }
         },
         {
-          test: /\.(svg)$/,
-          type: 'asset/source',
-          generator: {
-            filename: 'images/[hash][ext][query]'
-          }
-        },
-        {
-          test: /\.(ttf|eot|woff|woff2|svg)$/,
+          test: /\.(ttf|eot|woff|woff2)$/,
           type: 'asset/resource',
           generator: {
             filename: 'fonts/[hash][ext][query]'
