@@ -23,6 +23,14 @@ export default function App () {
     // Start mock
     serverMock()
 
+    // Recover theme
+    if (localStorage.getItem('theme')) {
+      dispatch({
+        type: 'UPDATE_THEME',
+        data: localStorage.getItem('theme')
+      })
+    }
+
   }, [])
 
   return (
