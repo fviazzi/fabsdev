@@ -15,5 +15,4 @@ root.render(<App />)
 
 async function asyncImports () {
   await import(/* webpackChunkName: "normalize" */ 'normalize.css')
-  await import(/* webpackChunkName: "fontawesome" */ '@fortawesome/fontawesome-free/js/all')
 }
