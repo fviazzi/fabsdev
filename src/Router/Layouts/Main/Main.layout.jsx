@@ -17,7 +17,7 @@ export default function MainLayout () {
 
   return (
     <main id='main-container' className={state.theme}>
-      <Header />
+      {state.section !== 'intro' && <Header />}
       <React.Suspense fallback={<Loader />}>
         <Outlet />
       </React.Suspense>
