@@ -65,7 +65,11 @@ export default function Intro () {
     >
 
       {/* Background */}
-      <AnimatedSpace planets blur={!leave} />
+      <AnimatedSpace
+        planets
+        blur={!launch}
+        scale={postLaunch}
+      />
 
       {/* Content */}
       <div className='container'>

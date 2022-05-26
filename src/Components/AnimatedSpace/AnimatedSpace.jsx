@@ -8,12 +8,15 @@ import './AnimatedSpace.less'
 import Space from './Space/Space'
 import EmptySpace from './EmptySpace/EmptySpace'
 
-export default function AnimatedSpace ({ planets, blur }) {
+export default function AnimatedSpace ({ planets, blur, scale }) {
 
   return (
     <div
       id='section-background-container'
-      className={blur ? 'blur' : ''}
+      className={`
+      ${blur ? 'blur' : ''}
+      ${scale ? 'scale' : ''}
+      `}
     >
       {
         planets ? <Space /> : <EmptySpace />
