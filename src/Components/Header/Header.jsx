@@ -28,6 +28,16 @@ export default function Header () {
   }, [])
 
   // Methods
+  const navigate = section => {
+
+    setOpenNav(false)
+
+    dispatch({
+      type: 'UPDATE_SECTION',
+      data: section.toLowerCase()
+    })
+  }
+
   const toggleTheme = () => {
 
     // Update global state
@@ -95,6 +105,7 @@ export default function Header () {
                 key={link.toLowerCase()}
                 to={`/${link.toLowerCase()}`}
                 className={state.section === link.toLowerCase() ? 'active' : ''}
+                onClick={e => navigate(link)}
               >
                 {link}
               </Link>

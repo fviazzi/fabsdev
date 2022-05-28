@@ -29,12 +29,6 @@ export default function About () {
 
   // Mount effect
   React.useEffect(() => {
-
-    dispatch({
-      type: 'UPDATE_SECTION',
-      data: 'about'
-    })
-
     setMounted(true)
   }, [])
 
