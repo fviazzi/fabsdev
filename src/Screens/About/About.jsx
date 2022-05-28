@@ -20,9 +20,8 @@ import galaxyShape from './galaxy-shape.png'
 export default function About () {
 
   // Global state
-  const { state, dispatch } = React.useContext(AppContext)
+  const { state } = React.useContext(AppContext)
   const lang = state.language
-  console.log(i18n, lang)
 
   // Local state
   const [mounted, setMounted] = React.useState(false)

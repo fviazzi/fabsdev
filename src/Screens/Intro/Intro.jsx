@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 
 // Internal modules
 import './Intro.less'
-import { AppContext } from 'Context'
 
 // Components
 import AnimatedSpace from 'Components/AnimatedSpace/AnimatedSpace'
@@ -15,9 +14,6 @@ import rocket from './rocket.svg'
 
 export default function Intro () {
 
-  // Global state
-  const { dispatch } = React.useContext(AppContext)
-
   // Local state
   const [leave, setLeave]           = React.useState(false)
   const [launch, setLaunch]         = React.useState(false)
@@ -25,15 +21,6 @@ export default function Intro () {
 
   // Constants
   const navigate = useNavigate()
-
-  // Mount effect
-  React.useEffect(() => {
-
-    dispatch({
-      type: 'UPDATE_SECTION',
-      data: 'intro'
-    })
-  }, [])
 
   // Leave effect
   React.useEffect(() => {
