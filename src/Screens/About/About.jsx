@@ -38,7 +38,7 @@ export default function About () {
       unmountOnExit
       in={mounted}
     >
-      <section id='about-container'>
+      <section id='about-container' className='page-container'>
 
         {/* Background */}
         <AnimatedSpace blur />

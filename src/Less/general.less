@@ -19,6 +19,17 @@ button {
   outline: none!important;
 }
 
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 15rem 0 0;
+  transition: background-color .2s ease-in-out;
+
+  @media all and (max-width: 768px) {
+    padding: 10rem 0 0;
+  }
+}
+
 .container {
   position: relative;
   margin-right: auto;
@@ -38,4 +49,11 @@ button {
   @media (min-width: 1200px) {
     width: 1170px;
   }
+}
+
+h1 {
+  margin: 5rem 0;
+  color: var(--highlight);
+  font-family: var(--font-family);
+  font-size: 3rem;
 }
