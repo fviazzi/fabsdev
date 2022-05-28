@@ -1,6 +1,7 @@
 const initialState = {
   theme: 'light-theme',
   section: 'intro',
+  language: 'en',
   account: {}
 }
 
@@ -20,6 +21,12 @@ function reduce (prevState, action) {
       return {
         ...prevState,
         theme: action.data
+      }
+
+    case 'UPDATE_LANG':
+      return {
+        ...prevState,
+        language: action.data
       }
 
     case 'UPDATE_SECTION':

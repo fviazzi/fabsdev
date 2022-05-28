@@ -31,6 +31,14 @@ export default function App () {
       })
     }
 
+    // Recover language
+    if (localStorage.getItem('lang')) {
+      dispatch({
+        type: 'UPDATE_LANG',
+        data: localStorage.getItem('lang')
+      })
+    }
+
   }, [])
 
   return (

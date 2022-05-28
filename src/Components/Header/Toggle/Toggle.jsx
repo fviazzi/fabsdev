@@ -49,7 +49,6 @@ export default function Toggle () {
   }, [state.theme])
 
   const toggle = () => {
-    console.log('mounted')
     lottieRef.current.play()
   }
 
