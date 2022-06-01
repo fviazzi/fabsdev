@@ -7,19 +7,23 @@
       },
       {
         "label": "About",
-        "path": "about"
+        "path": "about",
+        "translate": "acerca-de-mi"
       },
       {
         "label": "Skills",
-        "path": "skills"
+        "path": "skills",
+        "translate": "habilidades"
       },
       {
         "label": "Work",
-        "path": "work"
+        "path": "work",
+        "translate": "trabajos"
       },
       {
         "label": "Contact",
-        "path": "contact"
+        "path": "contact",
+        "translate": "contacto"
       }
     ]
   },
@@ -31,19 +35,23 @@
       },
       {
         "label": "Acerca de Mi",
-        "path": "acerca-de-mi"
+        "path": "acerca-de-mi",
+        "translate": "about"
       },
       {
         "label": "Habilidades",
-        "path": "habilidades"
+        "path": "habilidades",
+        "translate": "skills"
       },
       {
         "label": "Trabajos",
-        "path": "trabajos"
+        "path": "trabajos",
+        "translate": "work"
       },
       {
         "label": "Contacto",
-        "path": "contacto"
+        "path": "contacto",
+        "translate": "contact"
       }
     ]
   }

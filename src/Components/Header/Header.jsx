@@ -85,7 +85,11 @@ export default function Header () {
               <Link
                 key={link.path}
                 to={`/${link.path}`}
-                className={state.section === link.path ? 'active' : ''}
+                className={
+                  (state.section === link.path || state.section === link.translate)
+                    ? 'active'
+                    : ''
+                }
                 onClick={e => setOpenNav(false)}
               >
                 {link.label}
