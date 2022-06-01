@@ -26,7 +26,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.9);
     opacity: 0;
     display: none;
     transition: opacity .2s ease-in-out;
@@ -41,14 +41,14 @@
     width: 320px;
     margin: 1rem;
     padding: 2rem;
-    background-color: var(--emphasis);
+    background-color: var(--normal);
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     opacity: 0;
     border-radius: 6px;
-    border: 1px solid var(--emphasis);
+    border: 1px solid var(--normal);
     transition: all .2s ease-in-out;
     transition-property: transform, opacity;
 
@@ -59,8 +59,8 @@
         position: absolute;
         width: 1rem;
         height: 1rem;
-        background-color: var(--emphasis);
-        border: 0 solid var(--emphasis)
+        background-color: var(--normal);
+        border: 0 solid var(--normal)
       }
     }
 
@@ -145,7 +145,7 @@
       svg {
         width: 100%;
         height: 100%;
-        fill: var(--normal);
+        fill: var(--mainBg);
       }
     }
 
@@ -160,14 +160,14 @@
 
       h4 {
         margin: 0 0 2rem;
-        color: var(--normal);
+        color: var(--mainBg);
         font-size: 2rem;
       }
 
       p {
         margin: 0;
         font-size: 1.6rem;
-        color: var(--normal);
+        color: var(--mainBg);
       }
     }
   }
