@@ -93,7 +93,7 @@
               "color": "#CD6799",
               "background": "#CD6799",
               "title": "Sass",
-              "description": "Used Sass in a couple of minor projects. You can achieve the same things as you whould with Less... for me, is purely a matter of preference, they are both very similar."
+              "description": "Used Sass in a couple of minor projects. You can achieve the same things as you would with Less... for me, is purely a matter of preference, they are both very similar."
             },
             {
               "code": "css",
@@ -128,7 +128,7 @@
               "color": "#3FB984",
               "background": "#31475E",
               "title": "Vue JS",
-              "description": "Used in a wordpress plugin project back in 2018. It was a reduced version of a SAAS product for their customers."
+              "description": "Used in a Wordpress plugin project back in 2018. It was a reduced version of a SAAS product for their customers."
             },
             {
               "code": "jquery",
@@ -168,7 +168,7 @@
               "color": "#0275A1",
               "background": "#0275A1",
               "title": "Wordpress",
-              "description": "With 7+ years of experience with the CMS, I feel very comfortable working with it. I had the chance to develop few custom plugins and themes with it, including woocommerce integrations."
+              "description": "With 7+ years of experience with the CMS, I feel very comfortable working with it. I had the chance to develop few custom plugins and themes with it, including Woocommerce integrations."
             }
           ]
         },
@@ -180,14 +180,14 @@
               "color": "#F05033",
               "background": "#F05033",
               "title": "Git",
-              "description": "Worked with my team to develop a comprehensive guide to use it. Over the years, I have combined git with github, gitlab, bitbucket and helix."
+              "description": "Worked with my team to develop a comprehensive guide to use it. Over the years, I have paired Git with Github, Gitlab, Bitbucket and Helix."
             },
             {
               "code": "webpack",
               "color": "#8ED5FA",
               "background": "#1C78C0",
               "title": "Webpack",
-              "description": "Been improving my developing experience with webpack for the past 5 years. I usually choose webpack over CRA for the scalability potential."
+              "description": "Been improving my developing experience with Webpack for the past 5 years. I usually choose Webpack over CRA for the scalability potential."
             },
             {
               "code": "docker",
@@ -201,14 +201,14 @@
               "color": "#FFA300",
               "background": "#FF7E22",
               "title": "Grunt",
-              "description": "Used on a 5-year long project, pretty much the same use as for webpack and gulp."
+              "description": "Used on a 5-year long project, pretty much the same use as for Webpack and Gulp."
             },
             {
               "code": "gulp",
               "color": "#D34A47",
               "background": "#D34A47",
               "title": "Gulp",
-              "description": "Used on a couple of small projects, pretty much the same use as for webpack and grunt."
+              "description": "Used on a couple of small projects, pretty much the same use as for Webpack and Grunt."
             }
           ]
         },
@@ -220,7 +220,7 @@
               "color": "#FF25C5",
               "background": "#833CFC",
               "title": "Clickup",
-              "description": "It's a fairly new PMS, similar to JIRA but less pricey and more comprehensive in my opinion. I've helped an entire company to switch from JIRA to Clickup with great results."
+              "description": "It's a fairly new PMS, similar to Jira but less pricey and more comprehensive in my opinion. I've helped an entire company to switch from Jira to Clickup with great results."
             },
             {
               "code": "jira",
@@ -295,7 +295,7 @@
               "color": "#FF2BC2",
               "background": "#2E001E",
               "title": "XD",
-              "description": "Usé XD desde su lanzamiento beta. Actualmente, prefiero a Figma como herramienta de diseño, pero todavía me siento cómodo si tengo que usar XD."
+              "description": "Lo he utilizado desde su lanzamiento beta. Actualmente, prefiero usar Figma como herramienta de diseño, pero todavía me siento cómodo si tengo que usar XD."
             },
             {
               "code": "photoshop",
