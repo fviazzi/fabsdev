@@ -48,7 +48,7 @@ export default function Popup ({ children, offsets }) {
 
         // Set values for each position
         const topVals = {
-          y: y - scrollHeight - 20,
+          y: y - scrollHeight - 30,
           x: x - (scrollWidth / 2) + (width / 2) - 10,
           test: {
             top: y - scrollHeight - 20,
@@ -59,10 +59,10 @@ export default function Popup ({ children, offsets }) {
         }
 
         const bottomVals = {
-          y: y + height,
+          y: y + height + 10,
           x: x - (scrollWidth / 2) + (width / 2) - 10,
           test: {
-            top: y + 20,
+            top: y + 10,
             left: (x + (width / 2)) - (scrollWidth / 2),
             right: x + (width / 2) + (scrollWidth / 2),
             bottom: y + height + scrollHeight + 20
@@ -71,22 +71,22 @@ export default function Popup ({ children, offsets }) {
 
         const leftVals = {
           y: y - (scrollHeight / 2) + (height / 2) - 10,
-          x: x - scrollWidth - 25,
+          x: x - scrollWidth - 30,
           test: {
             top: (y + (height / 2)) - (scrollHeight / 2),
-            left: x - scrollWidth - 20,
-            right: x - 20,
+            left: x - scrollWidth - 30,
+            right: x - 30,
             bottom: (y + (height / 2)) + (scrollHeight / 2)
           }
         }
 
         const rightVals = {
           y: y - (scrollHeight / 2) + (height / 2) - 10,
-          x: x + width + 5,
+          x: x + width + 10,
           test: {
             top: (y + (height / 2)) - (scrollHeight / 2),
-            left: x + 20,
-            right: x + width +  scrollWidth + 20,
+            left: x + 10,
+            right: x + width +  scrollWidth + 10,
             bottom: (y + (height / 2)) + (scrollHeight / 2)
           }
         }
