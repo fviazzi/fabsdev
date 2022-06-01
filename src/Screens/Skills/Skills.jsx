@@ -4,14 +4,12 @@ import { CSSTransition } from 'react-transition-group'
 
 // Internal modules
 import './Skills.less'
+import i18n from './skills.i18n.json'
 import { AppContext } from 'Context'
 
 // Components
 import AnimatedSpace from 'Components/AnimatedSpace/AnimatedSpace'
 import Popup from 'Components/Popup/Popup'
-
-// Assets
-import i18n from './skills.i18n.json'
 
 export default function Skills () {
 

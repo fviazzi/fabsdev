@@ -1,0 +1,50 @@
+{
+  "en": {
+    "links": [
+      {
+        "label": "Intro",
+        "path": ""
+      },
+      {
+        "label": "About",
+        "path": "about"
+      },
+      {
+        "label": "Skills",
+        "path": "skills"
+      },
+      {
+        "label": "Work",
+        "path": "work"
+      },
+      {
+        "label": "Contact",
+        "path": "contact"
+      }
+    ]
+  },
+  "es": {
+    "links": [
+      {
+        "label": "Intro",
+        "path": ""
+      },
+      {
+        "label": "Acerca de Mi",
+        "path": "acerca-de-mi"
+      },
+      {
+        "label": "Habilidades",
+        "path": "habilidades"
+      },
+      {
+        "label": "Trabajos",
+        "path": "trabajos"
+      },
+      {
+        "label": "Contacto",
+        "path": "contacto"
+      }
+    ]
+  }
+}

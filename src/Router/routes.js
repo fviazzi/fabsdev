@@ -8,24 +8,35 @@ const Skills = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens
 
 const routes = [
 
-  // Public routes
+  // Public routes for eng
   {
     path: '/',
-    label: 'Intro',
     exact: false,
     access: ['public'],
     component: <Intro />
   },
   {
     path: '/about',
-    label: 'About',
     exact: false,
     access: ['public'],
     component: <About />
   },
   {
     path: '/skills',
-    label: 'Skills',
+    exact: false,
+    access: ['public'],
+    component: <Skills />
+  },
+
+  // Public routes for es
+  {
+    path: '/acerca-de-mi',
+    exact: false,
+    access: ['public'],
+    component: <About />
+  },
+  {
+    path: '/habilidades',
     exact: false,
     access: ['public'],
     component: <Skills />

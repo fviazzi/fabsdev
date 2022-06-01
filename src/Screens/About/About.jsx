@@ -5,13 +5,13 @@ import Lottie from 'lottie-react'
 
 // Internal modules
 import './About.less'
+import i18n from './about.i18n.json'
 import { AppContext } from 'Context'
 
 // Components
 import AnimatedSpace from 'Components/AnimatedSpace/AnimatedSpace'
 
 // Assets
-import i18n from './about.i18n.json'
 import moon from './moon.json'
 import planet from './planet.json'
 import profile from './profile.png'

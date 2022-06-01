@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 
 // Internal modules
 import './Header.less'
+import i18n from './header.i18n.json'
 import { AppContext } from 'Context'
 
 // Components
@@ -14,13 +15,11 @@ export default function Header () {
 
   // Global state
   const { state, dispatch } = React.useContext(AppContext)
+  const lang = state.language
 
   // Local state
   const [mounted, setMounted] = React.useState(false)
   const [openNav, setOpenNav] = React.useState(false)
-
-  // Constants
-  const links = ['About', 'Skills', 'Work', 'Contact']
 
   // Mount effect
   React.useEffect(() => {
@@ -80,23 +79,16 @@ export default function Header () {
 
         {/* Menu */}
         <nav>
-          <Link
-            to='/'
-            className={state.section === 'intro' ? 'active' : ''}
-          >
-            Home
-          </Link>
-
           {/* Map links */}
           {
-            links.map(link => (
+            i18n[lang].links.map(link => (
               <Link
-                key={link.toLowerCase()}
-                to={`/${link.toLowerCase()}`}
-                className={state.section === link.toLowerCase() ? 'active' : ''}
+                key={link.path}
+                to={`/${link.path}`}
+                className={state.section === link.path ? 'active' : ''}
                 onClick={e => setOpenNav(false)}
               >
-                {link}
+                {link.label}
               </Link>
             ))
           }
