@@ -112,21 +112,27 @@ export default function Skills () {
             {/* List */}
             <ul>
               {
-                i18n[lang].hardSkills.skillSets.map((category, index) => (
+                i18n[lang].hardSkills.skillSets.map((skillSet, index) => (
                   <li
                     key={index}
                     className='skill-set'
                   >
-                    <h4>{category.title}</h4>
+                    <h4>{skillSet.title}</h4>
 
                     <hr />
 
                     <ul>
                       {
-                        category.skills.map(skill => (
+                        skillSet.skills.map((skill, index) => (
                           <li
                             key={skill.code}
-                            className={`skill skill-${skill.code}`}
+                            className={`
+                              skill
+                              skill-${skill.code}
+                            `}
+                            style={{
+                              transition: `all .2s ease-in-out ${index / 20}s`
+                            }}
                           >
                             <figure
                               dangerouslySetInnerHTML={{ __html: i18n.images[skill.code] }}

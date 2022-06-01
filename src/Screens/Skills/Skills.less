@@ -1,3 +1,5 @@
+@import (reference) 'Less/config.less';
+
 #skills-container {
 
   &.skills-enter-done {
@@ -5,7 +7,14 @@
     .container {
       
       .content {
-        h1, p {
+
+        h1, h4, p,
+        &.soft-skills ul {
+          opacity: 1;
+          transform: none;
+        }
+
+        &.hard-skills ul .skill-set ul li {
           opacity: 1;
           transform: none;
         }
@@ -37,6 +46,12 @@
         ul {
           margin: 4rem 0 0;
           padding: 0;
+          opacity: 0;
+          transform: translate(0, 1rem);
+          transition:
+            color .2s ease-in-out,
+            opacity .2s ease-in-out,
+            transform .2s ease-in-out;
 
           li {
             margin: 3rem 0 0;
@@ -91,8 +106,14 @@
 
               li {
                 margin: 1rem;
+                opacity: 0;
                 display: block;
                 cursor: pointer;
+                transform: translate(0, 1rem);
+
+                &:hover figure {
+                  transform: scale(1.2);
+                }
 
                 figure {
                   width: 6rem;
@@ -106,6 +127,7 @@
                   align-items: flex-end;
                   justify-content: flex-end;
                   border: 2px solid transparent;
+                  transition: transform .2s ease-in-out;
 
                   svg {
                     max-width: 100%;
