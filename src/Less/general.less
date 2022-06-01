@@ -12,6 +12,10 @@ p, span, a {
   font-size: 1.4rem;
 }
 
+h1, h2, h3, h4, h5, h6, p, span, a, i, strong {
+  font-family: var(--font-family);
+}
+
 button {
   background-color: transparent;
   font-size: 1.4rem;
@@ -27,6 +31,21 @@ button {
 
   @media all and (max-width: 768px) {
     padding: 10rem 0 0;
+  }
+
+  h1 {
+    margin: 5rem 0;
+    color: var(--highlight);
+    font-size: 3rem;
+  }
+
+  p, span, i, a {
+    font-size: 1.8rem;
+    line-height: 3rem;
+  }
+
+  p {
+    color: var(--normal);
   }
 }
 
@@ -49,11 +68,4 @@ button {
   @media (min-width: 1200px) {
     width: 1170px;
   }
-}
-
-h1 {
-  margin: 5rem 0;
-  color: var(--highlight);
-  font-family: var(--font-family);
-  font-size: 3rem;
 }
