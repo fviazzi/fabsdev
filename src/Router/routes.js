@@ -2,8 +2,9 @@
 import React from 'react'
 
 // Imports
-const Intro = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
-const About = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
+const Intro  = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
+const About  = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
+const Skills = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens/Skills/Skills')))
 
 const routes = [
 
@@ -21,6 +22,13 @@ const routes = [
     exact: false,
     access: ['public'],
     component: <About />
+  },
+  {
+    path: '/skills',
+    label: 'Skills',
+    exact: false,
+    access: ['public'],
+    component: <Skills />
   }
 ]
 
