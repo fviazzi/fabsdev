@@ -27,22 +27,27 @@ export default function Skills () {
   }, [])
 
   // Methods
-  const onHover = (e, newSkill) => {
+  const showPopup = (e, newSkill) => {
 
     e.stopPropagation()
 
-    if (!skill || skill.code !== newSkill.code) {
+    setSkill(null)
 
-      const rect = e.target.getBoundingClientRect()
+    if (window.innerWidth > 768 || e.type === 'click') {
 
-      newSkill.offsets = {
-        y: rect.top,
-        x: rect.left,
-        width: rect.width,
-        height: rect.height
+      if (!skill || skill.code !== newSkill.code) {
+
+        const rect = e.target.getBoundingClientRect()
+
+        newSkill.offsets = {
+          y: rect.top,
+          x: rect.left,
+          width: rect.width,
+          height: rect.height
+        }
+
+        setSkill(newSkill)
       }
-
-      setSkill(newSkill)
     }
   }
 
@@ -86,14 +91,12 @@ export default function Skills () {
                   >
 
                     <figure
-                      dangerouslySetInnerHTML={{ __html: skill.icon }}
+                      dangerouslySetInnerHTML={{ __html: i18n.images[skill.code] }}
                     />
 
                     <div>
                       <h4>{skill.title}</h4>
-                      <p>
-                        {skill.description}
-                      </p>
+                      <p dangerouslySetInnerHTML={{ __html: skill.description }} />
                     </div>
                   </li>
                 ))
@@ -132,7 +135,8 @@ export default function Skills () {
                                 color: skill.color,
                                 borderColor: skill.color
                               }}
-                              onMouseEnter={e => onHover(e, skill)}
+                              onClick={e => showPopup(e, skill)}
+                              onMouseEnter={e => showPopup(e, skill)}
                               onMouseLeave={() => setSkill(null)}
                             />
                           </li>
