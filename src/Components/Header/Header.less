@@ -17,6 +17,7 @@
   border-radius: var(--border-radius) 0 0 var(--border-radius);
   box-shadow: 0 0 45px rgba(0, 0, 0, .1);
   transition:
+    min-width .2s ease-in-out,
     background-color .2s ease-in-out,
     width .5s ease-in-out .2s,
     opacity .3s ease-in-out;
@@ -263,6 +264,23 @@
         }
       }
     }
+  }
+}
+
+#main-container.lang-es #main-header {
+  min-width: 800px;
+
+
+  @media all and (max-width: 810px) {
+    min-width: 780px;
+  }
+
+  @media all and (max-width: 790px) {
+    min-width: 770px;
+  }
+
+  @media all and (max-width: 768px) {
+    min-width: 0;
   }
 }
 

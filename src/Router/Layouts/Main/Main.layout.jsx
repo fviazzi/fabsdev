@@ -40,7 +40,10 @@ export default function MainLayout () {
 
   return (
     mounted &&
-      <main id='main-container' className={state.theme}>
+      <main
+        id='main-container'
+        className={`${state.theme} lang-${state.language}`}
+      >
         {state.section !== '' && <Header />}
         <React.Suspense fallback={<Loader />}>
           <Outlet />
