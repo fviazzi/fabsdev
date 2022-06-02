@@ -12,8 +12,8 @@ import { AppContext } from 'Context'
 import AnimatedSpace from 'Components/AnimatedSpace/AnimatedSpace'
 
 // Assets
-import moon from './moon.json'
-import planet from './planet.json'
+import moon from './moon.animation.json'
+import planet from './planet.animation.json'
 import profile from './profile.png'
 import galaxyShape from './galaxy-shape.png'
 

@@ -2,7 +2,7 @@
 import { useLottie } from 'lottie-react'
 
 // Internal modules
-import emptySpace from './empty-space.json'
+import emptySpace from './empty-space.animation.json'
 
 export default function EmptySpace () {
 

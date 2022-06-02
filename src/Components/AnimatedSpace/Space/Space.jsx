@@ -2,7 +2,7 @@
 import { useLottie } from 'lottie-react'
 
 // Internal modules
-import space from './space.json'
+import space from './space.animation.json'
 
 export default function Space () {
 

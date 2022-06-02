@@ -2,7 +2,7 @@
 import { useLottie } from 'lottie-react'
 
 // Internal modules
-import rocket from './rocket.json'
+import rocket from './rocket.animation.json'
 
 export default function Rocket () {
 
