@@ -1,11 +1,12 @@
 // External modules
 import React from 'react'
+import Lottie from 'lottie-react'
 
 // Internal modules
 import './Loader.less'
 
 // Components
-import Wave from './Wave/Wave'
+import planet from './planet.animation.json'
 
 export default function Loader ({ fade }) {
 
@@ -14,7 +15,11 @@ export default function Loader ({ fade }) {
       id='loader-container'
       className={fade ? 'fade' : ''}
     >
-      <Wave />
+      <Lottie
+        animationData={planet}
+        loop
+        autoplay
+      />
     </div>
   )
 }
