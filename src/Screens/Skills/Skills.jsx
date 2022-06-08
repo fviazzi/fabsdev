@@ -1,6 +1,5 @@
 // External modules
 import React from 'react'
-import { CSSTransition } from 'react-transition-group'
 
 // Internal modules
 import './Skills.less'
@@ -18,13 +17,7 @@ export default function Skills () {
   const lang = state.language
 
   // Local state
-  const [mounted, setMounted] = React.useState(false)
-  const [skill, setSkill]     = React.useState(null)
-
-  // Mount effect
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
+  const [skill, setSkill] = React.useState(null)
 
   // Methods
   const showPopup = (e, newSkill) => {
@@ -52,110 +45,103 @@ export default function Skills () {
   }
 
   return (
-    <CSSTransition
-      timeout={0}
-      classNames='skills'
-      unmountOnExit
-      in={mounted}
-    >
-      <section id='skills-container' className='page-container'>
+    <section id='skills-container' className='page-container'>
 
-        {/* Background */}
-        <AnimatedSpace blur />
+      {/* Background */}
+      <AnimatedSpace blur />
 
-        {/* Popup */}
-        {
-          skill &&
-            <Popup offsets={skill.offsets}>
-              <h4>{skill.title}</h4>
-              <p>{skill.description}</p>
-            </Popup>
-        }
+      {/* Popup */}
+      {
+        skill &&
+          <Popup offsets={skill.offsets}>
+            <h4>{skill.title}</h4>
+            <p>{skill.description}</p>
+          </Popup>
+      }
 
-        <div className='container'>
+      <div className='container'>
 
-          <div className='soft-skills content'>
+        <div className='soft-skills content'>
 
-            <h1>{i18n[lang].softSkills.title}</h1>
+          <h1>{i18n[lang].softSkills.title}</h1>
 
-            <p>
-              {i18n[lang].softSkills.description}
-            </p>
+          <p>
+            {i18n[lang].softSkills.description}
+          </p>
 
-            {/* List */}
-            <ul>
-              {
-                i18n[lang].softSkills.skills.map(skill => (
-                  <li
-                    key={skill.title}
-                  >
+          {/* List */}
+          <ul>
+            {
+              i18n[lang].softSkills.skills.map(skill => (
+                <li
+                  key={skill.title}
+                >
 
-                    <figure
-                      dangerouslySetInnerHTML={{ __html: i18n.images[skill.code] }}
-                    />
+                  <figure
+                    dangerouslySetInnerHTML={{ __html: i18n.images[skill.code] }}
+                  />
 
-                    <div>
-                      <h4>{skill.title}</h4>
-                      <p dangerouslySetInnerHTML={{ __html: skill.description }} />
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
+                  <div>
+                    <h4>{skill.title}</h4>
+                    <p dangerouslySetInnerHTML={{ __html: skill.description }} />
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
 
-          </div>
-
-          <div className='hard-skills content'>
-
-            <h1>{i18n[lang].hardSkills.title}</h1>
-
-            {/* List */}
-            <ul>
-              {
-                i18n[lang].hardSkills.skillSets.map((skillSet, index) => (
-                  <li
-                    key={index}
-                    className='skill-set'
-                  >
-                    <h4>{skillSet.title}</h4>
-
-                    <hr />
-
-                    <ul>
-                      {
-                        skillSet.skills.map((skill, index) => (
-                          <li
-                            key={skill.code}
-                            className={`
-                              skill
-                              skill-${skill.code}
-                            `}
-                            style={{
-                              transition: `all .2s ease-in-out ${index / 20}s`
-                            }}
-                          >
-                            <figure
-                              dangerouslySetInnerHTML={{ __html: i18n.images[skill.code] }}
-                              style={{
-                                backgroundColor: skill.background,
-                                color: skill.color,
-                                borderColor: skill.color
-                              }}
-                              onClick={e => showPopup(e, skill)}
-                              onMouseEnter={e => showPopup(e, skill)}
-                              onMouseLeave={() => setSkill(null)}
-                            />
-                          </li>
-                        ))
-                      }
-                    </ul>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
         </div>
-      </section>
-    </CSSTransition>
+
+        <div className='hard-skills content'>
+
+          <h1>{i18n[lang].hardSkills.title}</h1>
+
+          {/* List */}
+          <ul>
+            {
+              i18n[lang].hardSkills.skillSets.map((skillSet, index) => (
+                <li
+                  key={index}
+                  className='skill-set'
+                >
+                  <h4>{skillSet.title}</h4>
+
+                  <hr />
+
+                  <ul>
+                    {
+                      skillSet.skills.map((skill, index) => (
+                        <li
+                          key={skill.code}
+                          className={`
+                            skill
+                            skill-${skill.code}
+                          `}
+                          style={{
+                            animationDelay: `${index / 15}s`
+                          }}
+                        >
+                          <figure
+                            dangerouslySetInnerHTML={{ __html: i18n.images[skill.code] }}
+                            style={{
+                              backgroundColor: skill.background,
+                              color: skill.color,
+                              borderColor: skill.color
+                            }}
+                            onClick={e => showPopup(e, skill)}
+                            onMouseEnter={e => showPopup(e, skill)}
+                            onMouseLeave={() => setSkill(null)}
+                          />
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
   )
 }

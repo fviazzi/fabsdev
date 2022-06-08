@@ -2,26 +2,6 @@
 
 #skills-container {
 
-  &.skills-enter-done {
-
-    .container {
-      
-      .content {
-
-        h1, h4, p,
-        &.soft-skills ul {
-          opacity: 1;
-          transform: none;
-        }
-
-        &.hard-skills ul .skill-set ul li {
-          opacity: 1;
-          transform: none;
-        }
-      }
-    }
-  }
-
   .container {
     display: flex;
 
@@ -43,15 +23,13 @@
       }
 
       &.soft-skills {
+        .fadeInDown(@delay: .2s);
+
         ul {
           margin: 4rem 0 0;
           padding: 0;
-          opacity: 0;
           transform: translate(0, 1rem);
-          transition:
-            color .2s ease-in-out,
-            opacity .2s ease-in-out,
-            transform .2s ease-in-out;
+          transition: color .2s ease-in-out;
 
           li {
             margin: 3rem 0 0;
@@ -77,6 +55,7 @@
       }
 
       &.hard-skills {
+        .fadeInDown(@delay: .2s);
 
         ul {
           margin: 0;
@@ -106,10 +85,9 @@
 
               li {
                 margin: 1rem;
-                opacity: 0;
                 display: block;
                 cursor: pointer;
-                transform: translate(0, 1rem);
+                .fadeInDown;
 
                 &:hover figure {
                   transform: scale(1.2);
@@ -145,22 +123,12 @@
       h1 {
         font-size: 4rem;
         line-height: normal;
-        opacity: 0;
-        transform: translate(0, 1rem);
-        transition: 
-          color .2s ease-in-out,
-          opacity .2s ease-in-out .1s,
-          transform .2s ease-in-out .1s;
+        transition: color .2s ease-in-out ;
       }
 
       p {
         margin: 0 0 2rem;
-        opacity: 0;
-        transform: translate(0, 1rem);
-        transition: 
-          color .2s ease-in-out,
-          opacity .2s ease-in-out .1s,
-          transform .2s ease-in-out .1s;
+        transition: color .2s ease-in-out;
 
         span {
           color: var(--color-highlight);
