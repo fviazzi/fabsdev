@@ -1,6 +1,5 @@
 // External modules
 import React from 'react'
-import { CSSTransition } from 'react-transition-group'
 import Lottie from 'lottie-react'
 
 // Internal modules
@@ -23,67 +22,52 @@ export default function About () {
   const { state } = React.useContext(AppContext)
   const lang = state.language
 
-  // Local state
-  const [mounted, setMounted] = React.useState(false)
-
-  // Mount effect
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
-
   return (
-    <CSSTransition
-      timeout={0}
-      classNames='about'
-      unmountOnExit
-      in={mounted}
-    >
-      <section id='about-container' className='page-container'>
+    <section id='about-container' className='page-container'>
 
-        {/* Background */}
-        <AnimatedSpace blur />
+      {/* Background */}
+      <AnimatedSpace blur />
 
-        <div className='container'>
+      <div className='container'>
 
-          <div className='content'>
+        <div className='content'>
 
-            <h1>{i18n[lang].title}</h1>
+          <h1>{i18n[lang].title}</h1>
 
-            {
-              i18n[lang].content.map((content, index) => (
-                <p
-                  key={index}
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-              ))
-            }
-          </div>
-
-          <div className='graphics'>
-
-            {/* Galaxy */}
-            <img src={galaxyShape} alt='Shape Background' />
-
-            {/* Profile */}
-            <div className='profile-container'>
-
-              <Lottie
-                animationData={moon}
-                loop
-                autoplay
+          {
+            i18n[lang].content.map((content, index) => (
+              <p
+                key={index}
+                dangerouslySetInnerHTML={{ __html: content }}
               />
+            ))
+          }
+        </div>
 
-              <img src={profile} alt='My Profile picture' />
+        <div className='graphics'>
 
-              <Lottie
-                animationData={planet}
-                loop
-                autoplay
-              />
-            </div>
+          {/* Galaxy */}
+          <img src={galaxyShape} alt='Shape Background' />
+
+          {/* Profile */}
+          <div className='profile-container'>
+
+            <Lottie
+              animationData={moon}
+              loop
+              autoplay
+            />
+
+            <img src={profile} alt='My Profile picture' />
+
+            <Lottie
+              animationData={planet}
+              loop
+              autoplay
+            />
           </div>
         </div>
-      </section>
-    </CSSTransition>
+      </div>
+    </section>
   )
 }
