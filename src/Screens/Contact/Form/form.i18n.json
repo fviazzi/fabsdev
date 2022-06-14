@@ -1,0 +1,26 @@
+{
+  "en": {
+    "title": "... a message here works too",
+    "text": "Just let me know your name and why you are getting in touch. I’m happy to engage with anyone, even if it’s not to hire me!",
+    "emailText": "I need your email to reply",
+    "emailPlaceholder": "awesome.email@example.com",
+    "messageText": "Let’s write that message",
+    "messagePlaceholder": "Hey! Loved your website...",
+    "submitBtn": "Let's Go!",
+    "sentTitle": "It’s out there!",
+    "sentText1": "Thank you for getting in touch.",
+    "sentText2": "I’ll get back to you as soon as I can."
+  },
+  "es": {
+    "title": "... un mensaje aquí también va bien",
+    "text": "Solo hazme saber tu nombre y por qué te estás poniendo en contacto. Responderé felizmente, incluso si no es para contratarme!",
+    "emailText": "Necesito tu email para responder",
+    "emailPlaceholder": "email.genial@ejemplo.com",
+    "messageText": "Vamos a escribir ese mensaje",
+    "messagePlaceholder": "Hola! Me ha encantado tu sitio web...",
+    "submitBtn": "Vamos!",
+    "sentTitle": "Está en camino!",
+    "sentText1": "Gracias por ponerte en contacto.",
+    "sentText2": "Voy a responderte tan pronto como pueda."
+  }
+}

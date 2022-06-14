@@ -1,0 +1,103 @@
+@import (reference) 'Less/config.less';
+
+#contact-form {
+  position: relative;
+  width: 100%;
+
+  #form-container {
+    .fadeInDown(@delay: .2s);
+
+    &.leave {
+      .abduct;
+    }
+
+    .input-container {
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        background-color: transparent;
+        color: var(--text-normal);
+        font-family: var(--roboto-font);
+        font-size: 1.6rem;
+        outline: none!important;
+        border-radius: var(--border-radius-input);
+        border: 2px solid var(--color-highlight);
+
+        &::placeholder {
+          color: var(--text-normal-faded);
+        }
+      }
+
+      textarea {
+        min-height: 20vh;
+        resize: none;
+      }
+    }
+
+    button {
+      width: auto;
+      margin: 2rem auto 0;
+      padding: 2rem 4rem;
+      background-color: var(--color-secondary);
+      color : var(--color-primary);
+      font-family: var(--roboto-font);
+      font-size: 2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: var(--border-radius);
+      transition:
+        box-shadow .4s ease-in-out,
+        opacity .2s ease-in-out;
+
+      &.valid:hover {
+        box-shadow: 0 0 40px var(--color-secondary-faded);
+
+        svg {
+          transform: scale(1.2);
+        }
+      }
+
+      &:disabled {
+        opacity: .4;
+      }
+
+      svg {
+        width: 3rem;
+        margin: 0 0 0 1rem;
+        fill: var(--color-primary);
+        transition: transform .4s ease-in-out;
+      }
+    }
+  }
+
+  #ufo-animation-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translate(-50%, -10%);
+    pointer-events: none;
+
+    & > div {
+      height: 100%;
+
+      svg {
+        width: auto!important;
+        height: 100%!important;
+      }
+    }
+  }
+
+  #message-sent-container {
+    .fadeInDown;
+
+    @media all and (max-width: 768px) {
+      margin: 10rem 0;
+    }
+  }
+}

@@ -5,6 +5,7 @@ import React from 'react'
 const Intro  = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
 const About  = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
 const Skills = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens/Skills/Skills')))
+const Contact = React.lazy(() => (import(/* webpackChunkName: "contact" */'Screens/Contact/Contact')))
 
 const routes = [
 
@@ -27,6 +28,12 @@ const routes = [
     access: ['public'],
     component: <Skills />
   },
+  {
+    path: '/contact',
+    exact: false,
+    access: ['public'],
+    component: <Contact />
+  },
 
   // Public routes for es
   {
@@ -40,6 +47,12 @@ const routes = [
     exact: false,
     access: ['public'],
     component: <Skills />
+  },
+  {
+    path: '/contacto',
+    exact: false,
+    access: ['public'],
+    component: <Contact />
   }
 ]
 

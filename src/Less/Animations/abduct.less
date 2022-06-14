@@ -1,0 +1,28 @@
+.abduct( @duration: 1.5s, @function: ease-in-out, @delay : 1.2s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
+  animation: abduct @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes abduct {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: perspective(40rem) rotateX(30deg) scale3d(0.8, .9, 1);
+  }
+
+  50% {
+    transform: perspective(40rem) rotateX(30deg) scale3d(0.3, .6, 1);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(40rem) rotateX(30deg) scale3d(0.3, .3, 1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(40rem) rotateX(30deg) scale3d(0.1, .1, 0) translate(0, 0%);
+    opacity: 0;
+  }
+}

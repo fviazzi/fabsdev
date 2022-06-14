@@ -1,0 +1,42 @@
+@import (reference) 'Less/config.less';
+
+#contact-container {
+
+  .container {
+    padding: 0 0 3rem;
+    display: flex;
+    gap: 1rem;
+
+    @media all and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .col {
+      position: relative;
+      width: 50%;
+
+      &:last-child {
+        padding-top: 4rem;
+      }
+
+      @media all and (max-width: 768px) {
+        width: 100%;
+        padding: 0 1rem;
+
+        &:last-child {
+          padding-top: 0;
+        }
+      }
+
+      h2 {
+        color: var(--color-highlight);
+        font-size: 2rem;
+        line-height: normal;
+
+        @media all and (max-width: 768px) {
+          margin-top: 5rem;
+        }
+      }
+    }
+  }
+}
