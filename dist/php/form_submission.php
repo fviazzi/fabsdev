@@ -1,85 +1,77 @@
 <?php
 
-	/*
-		Message codes:
-		1 - False Form Validation
-		2 - Error sending Email
-		3 - Success
-	*/
+  // Get data
+  $_POST = json_decode(file_get_contents('php://input'), true);
 
-	// Declare response
-	$response = array(
-		'success' => false
-	);
+  // Declare response
+  $response = array(
+    'success' => false
+  );
 
-	// Leave if data doesn't exists
-	if (!isset($_POST['email']) || !isset($_POST['message']) ) {
-		header('Content-Type: application/json');
-		echo json_encode($response);
-	}
+  // Leave if data doesn't exists
+  if (!isset($_POST['email']) || !isset($_POST['message']) ) {
+    header('Content-Type: application/json');
+    echo json_encode($response);
+  }
 
-	// Get request data...
-	$data   = array(
-		'email'   => strip_tags( $_POST['email'] ),
-		'message' => strip_tags( $_POST['message'] )
-	);
+  // Get request data...
+  $data   = array(
+    'email'   => strip_tags( $_POST['email'] ),
+    'message' => strip_tags( $_POST['message'] )
+  );
 
-	if ( validate_data($data) ) {
+  $response['data'] = $data;
+  $response['validate'] = validate_data($data);
+  $response['post'] = $_POST;
 
-		// Email Template
-		ob_start();
-			include "templates/form_email.php";
-			$message = ob_get_contents();
-		ob_end_clean();
+  if ( validate_data($data) ) {
 
-		// Send Email
-		$to       =	'fabricioviazzi@gmail.com';
-		$subject  =	'Form Contact';
+    // Email Template
+    ob_start();
+      include "templates/form_email.php";
+      $message = ob_get_contents();
+    ob_end_clean();
 
-		$headers  = "From: Reach <reach@fabsdev.com.ar>" . "\r\n";
-		$headers .= "Reply-To: " . $data['email'] . "\r\n";
-		$headers .= "MIME-Version: 1.0\r\n";
-		$headers .= "Content-Type: text/html; charset=utf-8\r\n";
+    // Send Email
+    $to       =	'fabricioviazzi@gmail.com';
+    $subject  =	'Form Contact';
 
-		// Generate Response
-		$response['data'] = $data;
+    $headers  = "From: Reach <reach@fabsdev.com.ar>" . "\r\n";
+    $headers .= "Reply-To: " . $data['email'] . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=utf-8\r\n";
 
-		if (mail($to, $subject, $message, $headers)) {
-			$response['success'] = true;
-			$response['message'] = 3;
-		} else {
-			$response['success'] = false;
-			$response['message'] = 2;
-		}
+    // Generate Response
+    $response['data'] = $data;
 
-	} else {
-		$response['success'] = false;
-		$response['code']    = 1;
-	}
+    if (mail($to, $subject, $message, $headers)) {
+      $response['success'] = true;
+    }
+  }
 
-	function validate_data($data) {
+  function validate_data($data) {
 
-		foreach ($data as $value ) {
-			if ( !validate_field($value) ) {
-				return false;
-			}
-		}
+    foreach ($data as $value ) {
+      if ( !validate_field($value) ) {
+        return false;
+      }
+    }
 
-		return true;
-	}
+    return true;
+  }
 
-	function validate_field( $value ) {
+  function validate_field( $value ) {
 
-		$value = rtrim( $value );
+    $value = rtrim( $value );
 
-		if ( empty($value) ) {
-			return false;
-		} else {
-			return true;
-		}
+    if ( empty($value) ) {
+      return false;
+    } else {
+      return true;
+    }
 
-	}
+  }
 
-	header('Content-Type: application/json');
-	echo json_encode($response);
+  header('Content-Type: application/json');
+  echo json_encode($response);
 ?>
