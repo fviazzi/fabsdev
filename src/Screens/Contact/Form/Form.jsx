@@ -108,6 +108,8 @@ export default function Form ({ lang }) {
 
     if (isValid) {
 
+      setSendError(false)
+
       setNewState('sending')
 
       // Scroll to form position
