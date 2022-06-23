@@ -5,6 +5,7 @@ import Lottie from 'lottie-react'
 // Internal modules
 import './Form.less'
 import i18n from './form.i18n.json'
+import contactService from './contact.service'
 import initialInputs from './inputs.json'
 import ufo from './ufo.animation.json'
 
@@ -16,6 +17,7 @@ export default function Form ({ lang }) {
   const [formState, setFormState] = React.useState('ready')
   const [newState, setNewState]   = React.useState('ready')
   const [minHeight, setMinHeight] = React.useState(0)
+  const [sendError, setSendError] = React.useState(true)
 
   // Constants
   const formRef = React.useRef(null)
@@ -111,7 +113,6 @@ export default function Form ({ lang }) {
       // Scroll to form position
       setTimeout(() => {
         const container = document.getElementById('main-container')
-        console.log(formRef.current.offsetTop)
         container.scrollTo({
           top: formRef.current.offsetTop,
           left: 0,
@@ -120,14 +121,29 @@ export default function Form ({ lang }) {
       }, 0)
 
       // Do request
-      setTimeout(() => {
-        setNewState('sent')
-      }, 3000)
+      const body = {}
+
+      for (const field in inputs) {
+        body[field] = inputs[field].value
+      }
+
+      const response = await contactService(body)
+
+      if (!response.success) {
+        setSendError(true)
+      }
+
+      setNewState('sent')
 
       setTimeout(() => {
         setNewState('animated')
       }, 4000)
     }
+  }
+
+  const restartForm = () => {
+    setFormState('ready')
+    setNewState('ready')
   }
 
   return (
@@ -207,11 +223,26 @@ export default function Form ({ lang }) {
 
       {/* Sent message */}
       {
-        formState === 'done' &&
+        formState === 'done' && !sendError &&
           <div id='message-sent-container'>
             <h2>{i18n[lang].sentTitle}</h2>
             <p>{i18n[lang].sentText1}</p>
             <p>{i18n[lang].sentText2}</p>
+          </div>
+      }
+
+      {/* Error message */}
+      {
+        formState === 'done' && sendError &&
+          <div id='message-sent-container'>
+            <h2>{i18n[lang].sentError1}</h2>
+            <p>{i18n[lang].sentError2}</p>
+            <button
+              className='main-btn'
+              onClick={restartForm}
+            >
+              {i18n[lang].sentError3}
+            </button>
           </div>
       }
     </div>
