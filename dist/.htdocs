@@ -1,0 +1,6 @@
+<Directory "${SERVER_ROOT}/web_dir">
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^/$ index.html [L]
+    RewriteRule ^(dir1|dir2|dir_prefix1) ($|/) index.html [L]
+</Directory/>
