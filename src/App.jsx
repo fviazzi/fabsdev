@@ -37,6 +37,16 @@ export default function App () {
         type: 'UPDATE_LANG',
         data: localStorage.getItem('lang')
       })
+    } else {
+      // Try to detect spanish
+      const language = navigator.language || navigator.userLanguage
+
+      if (language.includes('es')) {
+        dispatch({
+          type: 'UPDATE_LANG',
+          data: 'es'
+        })
+      }
     }
 
   }, [])
