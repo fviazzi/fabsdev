@@ -154,7 +154,7 @@
               "color": "#6DA75D",
               "background": "#3B8739",
               "title": "Node",
-              "description": "I've used node mostly to improve developer experience. This website is served on Node and the contact form is handled with express."
+              "description": "I've used node mostly to improve developer experience."
             },
             {
               "code": "mysql",
@@ -410,7 +410,7 @@
               "color": "#6DA75D",
               "background": "#3B8739",
               "title": "Node",
-              "description": "Lo he utilizado principalmente para mejorar la experiencia de desarrollo. Este sitio web está servido con Node y el formulario de contacto funciona mediante Express."
+              "description": "Lo he utilizado principalmente para mejorar la experiencia de desarrollo."
             },
             {
               "code": "mysql",
