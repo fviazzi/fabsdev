@@ -20,34 +20,25 @@ export default function NotFound () {
   const lang = state.language
 
   return (
-    <main
-      id='main-container'
-      className={`${state.theme} lang-${state.language}`}
-    >
-      <section id='not-found-container' className='page-container'>
+    <section id='not-found-container' className='page-container'>
 
-        {/* Background */}
-        <AnimatedSpace blur />
+      {/* Background */}
+      <AnimatedSpace blur />
 
-        {/* Not found container */}
-        <div className='container'>
+      {/* Not found container */}
+      <div className='container'>
 
-          {/* Animation */}
-          <Lottie
-            animationData={notFound}
-            loop
-            autoplay
-          />
+        {/* Animation */}
+        <Lottie
+          animationData={notFound}
+          loop
+          autoplay
+        />
 
-          <h1>{i18n[lang].title}</h1>
+        <h1>{i18n[lang].title}</h1>
 
-          <p>{i18n[lang].content}</p>
-
-          <a className='main-btn' href='/'>
-            {i18n[lang].button}
-          </a>
-        </div>
-      </section>
-    </main>
+        <p>{i18n[lang].content}</p>
+      </div>
+    </section>
   )
 }

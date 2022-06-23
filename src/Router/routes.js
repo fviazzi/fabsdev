@@ -2,13 +2,22 @@
 import React from 'react'
 
 // Imports
-const Intro   = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
-const About   = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
-const Skills  = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens/Skills/Skills')))
-const Work    = React.lazy(() => (import(/* webpackChunkName: "work" */'Screens/Work/Work')))
-const Contact = React.lazy(() => (import(/* webpackChunkName: "contact" */'Screens/Contact/Contact')))
+const NotFound = React.lazy(() => (import(/* webpackChunkName: "not-found" */'Screens/NotFound/NotFound')))
+const Intro    = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
+const About    = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
+const Skills   = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens/Skills/Skills')))
+const Work     = React.lazy(() => (import(/* webpackChunkName: "work" */'Screens/Work/Work')))
+const Contact  = React.lazy(() => (import(/* webpackChunkName: "contact" */'Screens/Contact/Contact')))
 
 const routes = [
+
+  // Not found
+  {
+    path: '*',
+    exact: false,
+    access: ['public'],
+    component: <NotFound />
+  },
 
   // Public routes for eng
   {
