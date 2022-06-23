@@ -10,6 +10,7 @@ import { AppContext } from 'Context'
 
 // Components
 import Toggle from './Toggle/Toggle'
+import LanguageToggle from 'Components/LanguageToggle/LanguageToggle'
 
 export default function Header () {
 
@@ -37,19 +38,6 @@ export default function Header () {
     })
 
     localStorage.setItem('theme', theme)
-  }
-
-  const toggleLang = () => {
-
-    // Update global state
-    const lang = state.language === 'en' ? 'es' : 'en'
-
-    dispatch({
-      type: 'UPDATE_LANG',
-      data: lang
-    })
-
-    localStorage.setItem('lang', lang)
   }
 
   return (
@@ -110,14 +98,7 @@ export default function Header () {
           </button>
 
           {/* Language selector */}
-          <button
-            id='toggle-lang-btn'
-            className={state.language === 'en' ? '' : 'reverse'}
-            onClick={toggleLang}
-          >
-            <span>EN</span>
-            <span>ES</span>
-          </button>
+          <LanguageToggle />
         </div>
       </header>
     </CSSTransition>
