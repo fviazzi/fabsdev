@@ -74,3 +74,41 @@ button {
     width: 1170px;
   }
 }
+
+.main-btn {
+  width: auto;
+  margin: 2rem auto 0;
+  padding: 2rem 4rem;
+  background-color: var(--color-secondary);
+  color : var(--color-primary);
+  font-family: var(--roboto-font);
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition:
+    box-shadow .4s ease-in-out,
+    opacity .2s ease-in-out;
+
+  &.valid:hover {
+    box-shadow: 0 0 40px var(--color-secondary-faded);
+
+    svg {
+      transform: scale(1.2);
+    }
+  }
+
+  &:disabled {
+    opacity: .4;
+  }
+
+  svg {
+    width: 3rem;
+    margin: 0 0 0 1rem;
+    fill: var(--color-primary);
+    transition: transform .4s ease-in-out;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "en": {
+    "title": "Whoops",
+    "content": "Looks like this page doesn't exists or something went wrong.",
+    "button": "Take me home"
+  },
+  "es": {
+    "title": "Upss",
+    "content": "Parece que esta página no existe o algo salió mal.",
+    "button": "Llévame a casa"
+  }
+}

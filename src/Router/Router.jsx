@@ -8,6 +8,7 @@ import {
 
 // Components
 import MainLayout from './Layouts/Main/Main.layout'
+import NotFound from 'Screens/NotFound/NotFound'
 
 export default function Router () {
 
@@ -33,6 +34,11 @@ export default function Router () {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* Main Routes */}
+        <Route path='*' element={<NotFound />} />
+
+        {/* Main Routes */}
         <Route path='/' element={<MainLayout />}>
           {/* Public routes are always enabled */}
           {

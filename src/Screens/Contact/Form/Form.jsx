@@ -180,7 +180,9 @@ export default function Form ({ lang }) {
 
             {/* Submit btn */}
             <button
-              className={isValid ? 'valid' : ''}
+              className={
+                isValid ? 'valid main-btn' : 'main-btn'
+              }
               disabled={!isValid || formState !== 'ready'}
               onClick={submit}
             >
