@@ -22,11 +22,24 @@
     #rocket-container {
       display: block;
     }
+
+
+    #toggle-lang-btn {
+      opacity: 0;
+    }
   }
 
   &.post-launch {
     opacity: 0;
     transition: opacity 2.5s ease-in-out .1s;
+  }
+
+  #toggle-lang-btn {
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    z-index: 1;
+    transition: opacity .2s ease-in-out;
   }
 
   .container {

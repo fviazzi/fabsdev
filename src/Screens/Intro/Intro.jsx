@@ -4,15 +4,22 @@ import { useNavigate } from 'react-router-dom'
 
 // Internal modules
 import './Intro.less'
+import i18n from './intro.i18n.json'
+import { AppContext } from 'Context'
 
 // Components
 import AnimatedSpace from 'Components/AnimatedSpace/AnimatedSpace'
+import LanguageToggle from 'Components/LanguageToggle/LanguageToggle'
 import Rocket from './Rocket/Rocket'
 
 // Assets
 import rocket from './rocket.svg'
 
 export default function Intro () {
+
+  // Global state
+  const { state } = React.useContext(AppContext)
+  const lang = state.language
 
   // Local state
   const [leave, setLeave]           = React.useState(false)
@@ -58,28 +65,23 @@ export default function Intro () {
         scale={postLaunch}
       />
 
+      {/* Language toggle */}
+      <LanguageToggle />
+
       {/* Content */}
       <div className='container'>
         <div>
 
-          <h1>
-            Hey, welcome!
-          </h1>
+          <h1>{i18n[lang].title}</h1>
 
-          <p>
-            Thank you for stepping by.
-          </p>
-
-          <p>
-            I thought it could be fun to tell my story with a space themed website.
-          </p>
-
-          <p>
-            I hope you enjoy it!
-          </p>
+          {
+            i18n[lang].content.map((content, index) => (
+              <p key={index}>{content}</p>
+            ))
+          }
 
           <button onClick={() => setLeave(true)}>
-            Let's go!
+            {i18n[lang].button}
             <img src={rocket} />
           </button>
         </div>
