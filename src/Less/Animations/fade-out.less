@@ -2,6 +2,10 @@
   animation: fadeOut @duration ease-in-out @delay @iteraions @direction @fill @play_state;
 }
 
+.fadeOutUp( @duration: .2s, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+  animation: fadeOutUp @duration ease-in-out @delay @iteraions @direction @fill @play_state;
+}
+
 .fadeOutRight(@duration: .8s, @function: ease-in-out, @delay : 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running) {
   animation: fadeOutRight @duration @function @delay @iteraions @direction @fill @play_state;
 }
@@ -22,6 +26,18 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fadeOutUp {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, -20%);
   }
 }
 

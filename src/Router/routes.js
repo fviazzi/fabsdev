@@ -2,9 +2,10 @@
 import React from 'react'
 
 // Imports
-const Intro  = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
-const About  = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
-const Skills = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens/Skills/Skills')))
+const Intro   = React.lazy(() => (import(/* webpackChunkName: "intro" */'Screens/Intro/Intro')))
+const About   = React.lazy(() => (import(/* webpackChunkName: "about" */'Screens/About/About')))
+const Skills  = React.lazy(() => (import(/* webpackChunkName: "skills" */'Screens/Skills/Skills')))
+const Work    = React.lazy(() => (import(/* webpackChunkName: "work" */'Screens/Work/Work')))
 const Contact = React.lazy(() => (import(/* webpackChunkName: "contact" */'Screens/Contact/Contact')))
 
 const routes = [
@@ -29,6 +30,12 @@ const routes = [
     component: <Skills />
   },
   {
+    path: '/work',
+    exact: false,
+    access: ['public'],
+    component: <Work />
+  },
+  {
     path: '/contact',
     exact: false,
     access: ['public'],
@@ -47,6 +54,12 @@ const routes = [
     exact: false,
     access: ['public'],
     component: <Skills />
+  },
+  {
+    path: '/trabajos',
+    exact: false,
+    access: ['public'],
+    component: <Work />
   },
   {
     path: '/contacto',
