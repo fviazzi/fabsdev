@@ -20,10 +20,6 @@
     'message' => strip_tags( $_POST['message'] )
   );
 
-  $response['data'] = $data;
-  $response['validate'] = validate_data($data);
-  $response['post'] = $_POST;
-
   if ( validate_data($data) ) {
 
     // Email Template
