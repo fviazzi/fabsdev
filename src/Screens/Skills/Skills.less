@@ -145,9 +145,12 @@
       }
 
       h1 {
-        font-size: 4rem;
         line-height: normal;
         transition: color .2s ease-in-out ;
+
+        @media all and (max-width: 768px) {
+          margin-top: 0;
+        }
       }
 
       p {
