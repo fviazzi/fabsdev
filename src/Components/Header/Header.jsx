@@ -27,6 +27,7 @@ export default function Header () {
     setMounted(true)
   }, [])
 
+  // Methods
   const toggleTheme = () => {
 
     // Update global state
@@ -38,6 +39,23 @@ export default function Header () {
     })
 
     localStorage.setItem('theme', theme)
+  }
+
+  const navigate = () => {
+
+    // Close header
+    setOpenNav(false)
+
+    // Scroll to form position
+    setTimeout(() => {
+      const container = document.getElementById('main-container')
+      container.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    }, 0)
+
   }
 
   return (
@@ -78,7 +96,7 @@ export default function Header () {
                     ? 'active'
                     : ''
                 }
-                onClick={e => setOpenNav(false)}
+                onClick={navigate}
               >
                 {link.label}
               </Link>
