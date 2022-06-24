@@ -51,7 +51,11 @@
 
       img {
         width: 100%;
-        .fadeInLeft(@delay: .2s);
+        opacity: 0;
+
+        &.enter {
+          .fadeInLeft;
+        }
       }
 
       .profile-container {
@@ -60,13 +64,17 @@
         top: 6rem;
         left: 2rem;
 
+        &.enter > div {
+          .fadeInRight(@delay: .2s);
+        }
+
         @media all and (max-width: 768px) {
           width: ~"calc(60% - 4rem)";
         }
 
         & > div {
           position: absolute;
-          .fadeInRight(@delay: .2s);
+          opacity: 0;
 
           &:first-child {
             width: 90%;

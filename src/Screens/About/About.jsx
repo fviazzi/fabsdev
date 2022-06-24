@@ -22,6 +22,14 @@ export default function About () {
   const { state } = React.useContext(AppContext)
   const lang = state.language
 
+  // Local state
+  const [enter, setEnter] = React.useState(false)
+
+  // Methods
+  const showImg = e => {
+    e.target.classList.add('enter')
+  }
+
   return (
     <section id='about-container' className='page-container'>
 
@@ -47,10 +55,17 @@ export default function About () {
         <div className='graphics'>
 
           {/* Galaxy */}
-          <img src={galaxyShape} alt='Shape Background' />
+          <img
+            src={galaxyShape}
+            alt='Shape Background'
+            onLoad={e => {
+              showImg(e)
+              setEnter(true)
+            }}
+          />
 
           {/* Profile */}
-          <div className='profile-container'>
+          <div className={`profile-container ${enter ? 'enter' : ''}`}>
 
             <Lottie
               animationData={moon}
@@ -58,7 +73,11 @@ export default function About () {
               autoplay
             />
 
-            <img src={profile} alt='My Profile picture' />
+            <img
+              src={profile}
+              alt='My Profile picture'
+              onLoad={showImg}
+            />
 
             <Lottie
               animationData={planet}
