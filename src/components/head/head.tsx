@@ -20,7 +20,7 @@ export default function CustomHead({ title }: Props) {
       {/* <!-- Meta tags --> */}
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-      <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+      <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='description' content="Hey! I'm a frontend developer & mobile designer with +8 years of experience. Check out my website to read about my skillset and my experience." />
       <meta name='keywords' content='frontend, developer, ui designer' />
       <meta name='author' content='Fabricio Viazzi' />
