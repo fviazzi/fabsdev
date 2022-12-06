@@ -1,12 +1,8 @@
 // External modules
-import sendgrid from '@sendgrid/mail'
+import axios from 'axios'
 
 // Internal modules
 import ContactSchema from 'src/schemas/contactSchema'
-
-// Configurations
-const { SENDGRID_API_KEY } = process.env
-sendgrid.setApiKey(SENDGRID_API_KEY || '')
 
 export default async function handler(req:any, res:any) {
 
@@ -23,21 +19,11 @@ export default async function handler(req:any, res:any) {
 
   try {
 
-    // Send email
     const { body: { email, message } } = req
+    const response = await axios.post('https://fabsdev.cc/php/form_submission.php', { email, message })
 
-    const response = await sendgrid.send({
-      to: "reach@fabsdev.com",
-      from: "reach@fabsdev.com",
-      subject: `Fabsdev contact from ${email}`,
-      html: `<div>${message}</div>`,
-    })
-
-    console.log('success!!', response)
 
   } catch (error:any) {
-
-    console.log('errored', error)
 
     return res.status(error?.statusCode || 500).json({ error: error?.message })
 
