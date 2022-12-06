@@ -1,0 +1,15 @@
+.shrinkIn(@duration: .3s, @function: ease-in-out, @delay: 0s, @iteraions: 1, @direction: normal, @fill: both, @play_state: running ) {
+  animation: shrinkIn @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes shrinkIn {
+
+  0% {
+    transform: scaleX(1.2);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+
+}

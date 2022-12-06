@@ -1,0 +1,41 @@
+@import (reference) '/styles/config.less';
+
+#thanks-container {
+  .fadeInDown(@delay: .2s);
+
+  a {
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+}
+
+#made-container {
+  .fadeInDown(@delay: .2s);
+
+  p {
+    margin: 5rem 0 0;
+    color: var(--text-normal);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    svg {
+      height: 2rem;
+      margin: 0 .8rem;
+
+      &#love {
+        fill: #E84855;
+      }
+
+      &#react {
+        fill: var(--color-secondary);
+      }
+    }
+
+    a {
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+  }
+}

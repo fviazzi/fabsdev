@@ -1,0 +1,18 @@
+.spin {
+  .spin;
+}
+
+.spin( @duration: 1.5s, @function: ease-in-out, @delay : 0s, @iteraions: infinite, @direction: normal, @fill: both, @play_state: running) {
+  animation: doSpin @duration @function @delay @iteraions @direction @fill @play_state;
+}
+
+@keyframes doSpin {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,107 @@
+@import (reference) '/styles/config.less';
+
+#contact-form {
+  position: relative;
+  width: 100%;
+
+  #form-container {
+    .fadeInDown(@delay: .2s);
+
+    &.leave {
+      .abduct;
+    }
+
+    .input-container {
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        background-color: transparent;
+        color: var(--text-normal);
+        font-family: var(--roboto-font);
+        font-size: 1.6rem;
+        outline: none!important;
+        border-radius: var(--border-radius-input);
+        border: 2px solid var(--color-highlight);
+        transition: border-color .2s ease-in-out;
+
+        &::placeholder {
+          color: var(--text-normal-faded);
+        }
+
+        &.has-error {
+          border-color: var(--color-danger);
+        }
+      }
+
+      textarea {
+        min-height: 20vh;
+        resize: none;
+      }
+    }
+  }
+
+  .error-message {
+    margin: 0;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-input);
+    transition: margin .2s ease-in-out;
+
+    &.display {
+      margin: 1rem 0 0;
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+
+    svg {
+      width: 18px;
+      margin-right: 1rem;
+      fill: var(--color-danger);
+    }
+
+    p {
+      margin: 0;
+      color: var(--color-danger);
+      font-size: 0;
+      font-weight: bold;
+      line-height: normal;
+      transition: font-size .2s ease-in-out;
+    }
+  }
+
+  #ufo-animation-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translate(-50%, -10%);
+    pointer-events: none;
+
+    & > div {
+      height: 100%;
+
+      svg {
+        width: auto!important;
+        height: 100%!important;
+      }
+    }
+  }
+
+  #message-sent-container {
+    .fadeInDown;
+
+    @media all and (max-width: 768px) {
+      margin: 10rem 0;
+    }
+
+    
+    .error-message.display p {
+      font-size: 1.6rem;
+    }
+  }
+}

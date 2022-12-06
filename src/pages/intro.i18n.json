@@ -1,0 +1,20 @@
+{
+  "en": {
+    "title": "Hey, welcome!",
+    "content": [
+      "Thank you for stepping by.",
+      "I thought it could be fun to tell my story with a space themed website.",
+      "I hope you enjoy it!"
+    ],
+    "button": "Let's go!"
+  },
+  "es": {
+    "title": "Hola, bienvenid@!",
+    "content": [
+      "Gracias por pasarte.",
+      "Pensé que sería divertido contar mi historia a través de un sitio web de temática espacial.",
+      "Espero que lo disfrutes!"
+    ],
+    "button": "Vamos!"
+  }
+}

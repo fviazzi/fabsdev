@@ -1,0 +1,40 @@
+{
+  "en": {
+    "title": "... a message here works too",
+    "text": "Just let me know your name and why you are getting in touch. I’m happy to engage with anyone, even if it’s not to hire me!",
+    "emailText": "I need your email to reply",
+    "emailPlaceholder": "awesome.email@example.com",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Email is invalid",
+    "messageText": "Let’s write that message",
+    "messagePlaceholder": "Hi, my name is [random] and wanted to contact you...",
+    "messageRequired": "Message is required",
+    "messageInvalid": "Message is invalid",
+    "submitBtn": "Let's Go!",
+    "sentTitle": "It’s out there!",
+    "sentText1": "Thank you for getting in touch.",
+    "sentText2": "I’ll get back to you as soon as I can.",
+    "sentError1": "Upss!.",
+    "sentError2": "Looks like there was an error sending the message.",
+    "sentError3": "Try again"
+  },
+  "es": {
+    "title": "... un mensaje aquí también va bien",
+    "text": "Solo hazme saber tu nombre y por qué te estás poniendo en contacto. Responderé felizmente, incluso si no es para contratarme!",
+    "emailText": "Necesito tu email para responder",
+    "emailPlaceholder": "email.genial@ejemplo.com",
+    "emailRequired": "Debes introducir un email",
+    "emailInvalid": "El email es inválido",
+    "messageText": "Vamos a escribir ese mensaje",
+    "messagePlaceholder": "Hola, mi nombre es [aleatorio] y quería contactarte...",
+    "messageRequired": "Debes introducir un mensaje",
+    "messageInvalid": "El mensaje es inválido",
+    "submitBtn": "Vamos!",
+    "sentTitle": "Está en camino!",
+    "sentText1": "Gracias por ponerte en contacto.",
+    "sentText2": "Voy a responderte tan pronto como pueda.",
+    "sentError1": "Upss!.",
+    "sentError2": "Parece que hubo un error al enviar el mensaje.",
+    "sentError3": "Intentarlo de nuevo"
+  }
+}

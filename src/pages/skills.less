@@ -1,0 +1,172 @@
+@import (reference) '/styles/config.less';
+
+#skills-container {
+
+  .container {
+    display: flex;
+
+    @media all and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .content {
+      width: 50%;
+      padding: 0 0 0 2rem;
+
+      &:first-child {
+        padding: 0 2rem 0 0;
+      }
+
+      @media all and (max-width: 768px) {
+        width: 100%;
+        padding: 0;
+      }
+
+      &.soft-skills {
+        .fadeInDown(@delay: .2s);
+
+        @media all and (max-width: 768px) {
+          margin: 0 auto 4rem;
+        }
+
+        ul {
+          margin: 4rem 0 0;
+          padding: 0;
+          transform: translate(0, 1rem);
+          transition: color .2s ease-in-out;
+
+          li {
+            margin: 3rem 0 0;
+            display: flex;
+
+            @media all and (max-width: 768px) {
+              flex-direction: column;
+            }
+
+            figure {
+              margin: 0 2rem 0 0;
+
+              @media all and (max-width: 768px) {
+                margin: 0 auto 2rem;
+              }
+
+              svg {
+                width: 2.5rem;
+                height: 2.5rem;
+                fill: var(--color-secondary);
+
+                @media all and (max-width: 768px) {
+                  width: 5rem;
+                  height: 5rem;
+                }
+              }
+            }
+
+            h4 {
+              margin: 0 0 2rem;
+              color: var(--color-secondary);
+              font-size: 1.8rem;
+
+              @media all and (max-width: 768px) {
+                margin: 0 auto 2rem;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      &.hard-skills {
+        .fadeInDown(@delay: .2s);
+
+        ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          .skill-set {
+
+            h4 {
+              margin: 0;
+              color: var(--text-normal);
+              font-size: 1.8rem;
+              font-weight: normal;
+              line-height: normal;
+            }
+
+            hr {
+              margin: 2rem 0;
+              border: 0 solid var(--text-normal);
+              border-top-width: 1px;
+            }
+
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              margin: -1rem -1rem 2rem;
+
+              li {
+                margin: 1rem;
+                display: block;
+                cursor: pointer;
+                .fadeInDown;
+
+                &:hover figure {
+                  transform: scale(1.2);
+                }
+
+                figure {
+                  width: 6rem;
+                  height: 6rem;
+                  margin: 0;
+                  padding: 1rem;
+                  font-family: 'Lato', sans-serif;
+                  font-size: 1.6rem;
+                  font-weight: bold;
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: flex-end;
+                  border: 2px solid transparent;
+                  transition: transform .2s ease-in-out;
+
+                  svg {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                    fill: #FFF;
+                    color: #FFF;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      h1 {
+        line-height: normal;
+        transition: color .2s ease-in-out ;
+
+        @media all and (max-width: 768px) {
+          margin-top: 0;
+        }
+      }
+
+      p {
+        margin: 0 0 2rem;
+        transition: color .2s ease-in-out;
+
+        span {
+          color: var(--color-highlight);
+        }
+
+        a {
+          color: var(--color-secondary);
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
