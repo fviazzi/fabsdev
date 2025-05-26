@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fabricio Viazzi - Frontend Engineer with 10+ years of experience in modern web development">
+    <meta name="keywords" content="Frontend Engineer, JavaScript, React, TypeScript, Web Development">
+    <title>Fabricio Viazzi - Frontend Engineer</title>
+    <style>
+      :root {
+        --primary-color: #2D3436;
+        --secondary-color: #505B50;
+        --older-primary-color: #FF9F1C;
+      }
+
+      body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 2rem;
+        color: var(--primary-color);
+        background: #FEFEFE;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      header a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin: 0.5rem 0;
+        color: var(--primary-color);
+      }
+
+      h2 {
+        color: var(--secondary-color);
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+      }
+
+      .contact-info {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      section {
+        margin-bottom: 2rem;
+      }
+
+      .experience-item, .education-item {
+        margin-bottom: 1.5rem;
+      }
+
+      .job-title {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+      }
+
+      .company {
+        font-weight: 600;
+      }
+
+      .date {
+        color: var(--secondary-color);
+      }
+
+      ul {
+        padding-left: 1.2rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .skill-category {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      footer {
+        border-top: 2px solid #eee;
+        margin-top: 2rem;
+        padding-top: 3rem;
+        text-align: right;
+      }
+
+      footer a {
+        padding: 1rem 2rem;
+        background-image: url('./img/btn_bg.png');
+        background-size: cover;
+        color: var(--older-primary-color);
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+        }
+
+        .job-title {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Fabricio Viazzi</h1>
+        <div class="contact-info">
+          San Carlos de Bariloche, Argentina • fabricioviazzi@gmail.com • <a href="" target="_blank">Download PDF Resume</a>
+        </div>
+      </header>
+
+      <section aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p>
+          Results-driven frontend engineer with 10+ years of experience specializing in modern web development.<br /> I enjoy building robust solutions and collaborating with cross-functional teams.<br /> Committed to continuous learning and expanding skills towards a T-shaped profile.</p>
+      </section>
+
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills & Interests</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <ul>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>React Native</li>
+              <li>Redux</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Styling</h3>
+            <ul>
+              <li>Sass</li>
+              <li>Styled Components</li>
+              <li>Material UI</li>
+              <li>Tailwind</li>
+              <li>Semantic UI</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Testing/Tools</h3>
+            <ul>
+              <li>Jest</li>
+              <li>Cypress</li>
+              <li>Storybook</li>
+              <li>Webpack</li>
+              <li>Vite</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Backend/Other</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>PHP</li>
+              <li>SQL</li>
+              <li>Azure DevOps</li>
+            </ul>
+          </div>
+        </div>
+        <h3>Languages</h3>
+        <p>Spanish (Native), English (Advanced)</p>
+        <h3>Interests</h3>
+        <p>Hiking, video games, paddle tennis, soccer, and cooking.</p>
+      </section>
+
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Relevant Experience</h2>
+
+        <div class="experience-item">
+          <div class="job-title">
+            <span class="company">Ecovadis</span>
+            <span class="date">February 2023 – Present</span>
+          </div>
+          <div class="position">Frontend Engineer (Remote)</div>
+          <ul>
+            <li>Project: Product platform for managing sustainability ratings</li>
+            <li>Collaborated on microfrontend solution reducing pipeline execution times by ~84%</li>
+            <li>Led TypeScript adoption achieving 80% line coverage and 85% function coverage</li>
+            <li>Core member of design system guild improving UI consistency</li>
+            <li>Tech stack: TypeScript, React, Redux, Storybook, Material UI, Jest, Cypress</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">
+            <span class="company">Devias</span>
+            <span class="date">October 2020 – December 2022</span>
+          </div>
+          <div class="position">Manager / Team leader (Hybrid)</div>
+          <ul>
+            <li>Led a frontend-focused team of five members, participated in hiring processes, candidate selection, technical interviews, and final decision for hiring.</li>
+            <li>Facilitated objective-setting and monitored results, leading to bonuses upon completion for our team members.</li>
+            <li>Oversaw six projects that involved hybrid mobile applications with releases on Android and iOS, a web application with Google Maps API integration, an e-commerce platform, and a web application with a datasheet online editor.</li>
+            <li>Stacks: TypeScript, PHP, React, React native, Redux, Semantic-UI, Bootstrap, Webpack, Vite, Jest, Cypress, Git, GitHub actions, JIRA, Clickup.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="job-title">
+            <span class="company">Stim Social</span>
+            <span class="date">March 2015 – August 2020</span>
+          </div>
+          <div class="position">Frontend Engineer (Remote)</div>
+          <ul>
+            <li>Project: Saas platform to facilitate social media growth with multiple tools, specifically for Instagram and TikTok.</li>
+            <li>The main project was a web application, but I also worked on a help desk platform and a wordpress plugin.</li>
+            <li>Stack: AngularJS, Vue, PHP, Less, Bootstrap, GruntJS, Wordpress, Asana.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="education-item">
+          <div class="job-title">
+            <span class="company">Universidad Nacional de Rio Cuarto</span>
+            <span class="date">2008-2011</span>
+          </div>
+          <p>Computer Science Coursework</p>
+        </div>
+        <div class="education-item">
+          <div class="job-title">
+            <span class="company">Colegio Universitario IES Siglo 21</span>
+            <span class="date">2011–2013</span>
+          </div>
+          <p>Multimedia Design</p>
+        </div>
+      </section>
+
+      <footer>
+        <a href="/2022" target="_blank">
+          Take a space trip to my older website
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
