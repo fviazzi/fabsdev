@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+    <title>Fabricio Viazzi - Frontend Engineer</title>
     <meta charset="UTF-8">
+    <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fabricio Viazzi - Frontend Engineer with 10+ years of experience in modern web development">
     <meta name="keywords" content="Frontend Engineer, JavaScript, React, TypeScript, Web Development">
-    <title>Fabricio Viazzi - Frontend Engineer</title>
+    <meta name='author' content='Fabricio Viazzi' />
+
+    <meta name='image' content='img/meta/profile.jpg' />
+
+    <meta itemProp='name' content='Fabricio | Frontend engineer' />
+    <meta itemProp='description' content="Frontend engineer with 10+ years of experience. Check out my website to read about my skillset and my experience." />
+    <meta itemProp='image' content='img/meta/profile.jpg' />
+
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:title' content='Fabricio | Frontend engineer' />
+    <meta name='twitter:description' content="Frontend engineer with 10+ years of experience. Check out my website to read about my skillset and my experience." />
+    <meta name='twitter:site' content='@FabricioViazzi' />
+    <meta name='twitter:creator' content='@FabricioViazzi' />
+    <meta name='twitter:image:src' content='img/meta/tw.jpg' />
+
+    <link rel='apple-touch-icon' href='img/favicon/apple-touch-icon.png' />
+    <link rel='icon' type='image/png' sizes='32x32' href='img/favicon-32x32.png' />
+    <link rel='icon' type='image/png' sizes='16x16' href='img/favicon-16x16.png' />
+    <meta name='msapplication-TileColor' content='#ffffff' />
+    <meta name='msapplication-TileImage' content='img/favicon/favicon-32x32.png' />
+    <meta name='theme-color' content='#ffffff' />
+    <link rel='icon' href='img/favicon/favicon.ico' />
+
+    <link rel='manifest' href='manifest.json' />
+
     <style>
       :root {
         --primary-color: #2D3436;
@@ -22,7 +49,7 @@
         background: #FEFEFE;
       }
 
-      .container {
+      main {
         max-width: 1200px;
         margin: auto;
         padding: 1rem;
@@ -38,6 +65,7 @@
         justify-content: center;
         align-items: center;
         gap: 1.5rem;
+        padding: 0;
       }
 
       header ul li a {
@@ -66,8 +94,40 @@
         margin-bottom: 2rem;
       }
 
-      .experience-item, .education-item {
-        margin-bottom: 1.5rem;
+      #skills-section > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+        padding: 0;
+        list-style: none;
+      }
+
+      #skills-section > ul li {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      #skills-section > ul li ul {
+        padding: 0 1rem;
+        list-style-type: disc;
+      }
+
+      #skills-section > ul li li {
+        margin-bottom: 0.5rem;
+        padding: 0;
+      }
+
+      #experience > ul,
+      #education > ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      #experience > ul > li,
+      #education > ul > li {
+        margin-bottom: 3rem;
       }
 
       .job-title {
@@ -84,25 +144,14 @@
         color: var(--secondary-color);
       }
 
-      ul {
-        padding-left: 1.2rem;
-      }
-
-      li {
-        margin-bottom: 0.5rem;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+      #experience > ul > li > ul {
         margin-top: 1rem;
+        padding-left: 1.2rem;
+        list-style-type: disc;
       }
 
-      .skill-category {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 4px;
+      #experience > ul > li > ul > li {
+        margin-bottom: 0.5rem;
       }
 
       footer {
@@ -128,6 +177,12 @@
           padding: 1rem;
         }
 
+        main header ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
         .job-title {
           flex-direction: column;
         }
@@ -135,7 +190,7 @@
     </style>
   </head>
   <body>
-    <main class="container">
+    <main>
       <header>
         <h1>Fabricio Viazzi</h1>
         <ul class="contact-info">
@@ -154,7 +209,6 @@
               aria-label="Download Fabricio Viazzi's resume in PDF format (opens in a new tab)"
               download
               href="Fabricio_Viazzi_Resume.pdf"
-              target="_blank"
               >
               Download Resume (PDF)
             </a>
@@ -165,13 +219,20 @@
       <section aria-labelledby="about-heading">
         <h2 id="about-heading">About Me</h2>
         <p>
-          Results-driven frontend engineer with 10+ years of experience specializing in modern web development.<br /> I enjoy building robust solutions and collaborating with cross-functional teams.<br /> Committed to continuous learning and expanding skills towards a T-shaped profile.</p>
+          Results-driven frontend engineer with 10+ years of experience specializing in modern web development.
+        </p>
+        <p>
+          I enjoy building robust solutions and working closely with diverse teams.
+        </p>
+        <p>
+          Committed to continuous learning and expanding skills towards a T-shaped profile.
+        </p>
       </section>
 
-      <section aria-labelledby="skills-heading">
+      <section id="skills-section" aria-labelledby="skills-heading">
         <h2 id="skills-heading">Skills & Interests</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
+        <ul>
+          <li>
             <h3>Frontend</h3>
             <ul>
               <li>JavaScript</li>
@@ -181,8 +242,8 @@
               <li>React Native</li>
               <li>Redux</li>
             </ul>
-          </div>
-          <div class="skill-category">
+          </li>
+          <li>
             <h3>Styling</h3>
             <ul>
               <li>Sass</li>
@@ -191,8 +252,8 @@
               <li>Tailwind</li>
               <li>Semantic UI</li>
             </ul>
-          </div>
-          <div class="skill-category">
+          </li>
+          <li>
             <h3>Testing/Tools</h3>
             <ul>
               <li>Jest</li>
@@ -201,8 +262,8 @@
               <li>Webpack</li>
               <li>Vite</li>
             </ul>
-          </div>
-          <div class="skill-category">
+          </li>
+          <li>
             <h3>Backend/Other</h3>
             <ul>
               <li>Node.js</li>
@@ -210,76 +271,82 @@
               <li>SQL</li>
               <li>Azure DevOps</li>
             </ul>
-          </div>
-        </div>
+          </li>
+        </ul>
         <h3>Languages</h3>
         <p>Spanish (Native), English (Advanced)</p>
         <h3>Interests</h3>
         <p>Hiking, video games, paddle tennis, soccer, and cooking.</p>
       </section>
 
-      <section aria-labelledby="experience-heading">
+      <section id="experience" aria-labelledby="experience-heading">
         <h2 id="experience-heading">Relevant Experience</h2>
 
-        <div class="experience-item">
-          <div class="job-title">
-            <span class="company">Ecovadis</span>
-            <span class="date">February 2023 – Present</span>
-          </div>
-          <div class="position">Frontend Engineer (Remote)</div>
-          <ul>
-            <li>Project: Product platform for managing sustainability ratings</li>
-            <li>Collaborated on microfrontend solution reducing pipeline execution times by ~84%</li>
-            <li>Led TypeScript adoption achieving 80% line coverage and 85% function coverage</li>
-            <li>Core member of design system guild improving UI consistency</li>
-            <li>Tech stack: TypeScript, React, Redux, Storybook, Material UI, Jest, Cypress</li>
-          </ul>
-        </div>
+        <ul>
+          <li>
+            <div class="job-title">
+              <span class="company">Ecovadis</span>
+              <span class="date">February 2023 – Present</span>
+            </div>
+            <div class="position">Frontend Engineer (Remote)</div>
+            <ul>
+              <li>Project: product platform for customers to manage their sustainability ratings.</li>
+              <li>Member of a cross-functional team, mainly focused on our application's subscription and payments domain.</li>
+              <li>Collaborated on setting up a microfrontend solution, facilitating the migration of our application segment, reducing pipeline execution times by ~84%, and allowing engineers to deploy their applications ad-hoc instead of depending on a common release process.</li>
+              <li>Successfully planned and executed the adoption of TypeScript and increased test coverage up to 80% for lines of code and 85% for functions within our domain.</li>
+              <li>Member of front-end guild for our design system, which improved our UI consistency through the application and accelerated development times.</li>
+              <li>Involved in hiring processes, from candidate selection to technical interviews.</li>
+              <li>Tech stack: Typescript, React, Redux, Storybook, Material UI, Styled components, Jest, Cypress, Azure, Git.</li>
+            </ul>
+          </li>
 
-        <div class="experience-item">
-          <div class="job-title">
-            <span class="company">Devias</span>
-            <span class="date">October 2020 – December 2022</span>
-          </div>
-          <div class="position">Manager / Team leader (Hybrid)</div>
-          <ul>
-            <li>Led a frontend-focused team of five members, participated in hiring processes, candidate selection, technical interviews, and final decision for hiring.</li>
-            <li>Facilitated objective-setting and monitored results, leading to bonuses upon completion for our team members.</li>
-            <li>Oversaw six projects that involved hybrid mobile applications with releases on Android and iOS, a web application with Google Maps API integration, an e-commerce platform, and a web application with a datasheet online editor.</li>
-            <li>Stacks: TypeScript, PHP, React, React native, Redux, Semantic-UI, Bootstrap, Webpack, Vite, Jest, Cypress, Git, GitHub actions, JIRA, Clickup.</li>
-          </ul>
-        </div>
+          <li>
+            <div class="job-title">
+              <span class="company">Devias</span>
+              <span class="date">October 2020 – December 2022</span>
+            </div>
+            <div class="position">Manager / Team leader (Hybrid)</div>
+            <ul>
+              <li>Led a frontend-focused team of five members, participated in hiring processes, candidate selection, technical interviews, and final decision for hiring.</li>
+              <li>Facilitated objective-setting and monitored results, leading to bonuses upon completion for our team members.</li>
+              <li>Oversaw six projects that involved hybrid mobile applications with releases on Android and iOS, a web application with Google Maps API integration, an e-commerce platform, and a web application with a datasheet online editor.</li>
+              <li>Stacks: TypeScript, PHP, React, React native, Redux, Semantic-UI, Bootstrap, Webpack, Vite, Jest, Cypress, Git, GitHub actions, JIRA, Clickup.</li>
+            </ul>
+          </li>
 
-        <div class="experience-item">
-          <div class="job-title">
-            <span class="company">Stim Social</span>
-            <span class="date">March 2015 – August 2020</span>
-          </div>
-          <div class="position">Frontend Engineer (Remote)</div>
-          <ul>
-            <li>Project: Saas platform to facilitate social media growth with multiple tools, specifically for Instagram and TikTok.</li>
-            <li>The main project was a web application, but I also worked on a help desk platform and a wordpress plugin.</li>
-            <li>Stack: AngularJS, Vue, PHP, Less, Bootstrap, GruntJS, Wordpress, Asana.</li>
-          </ul>
-        </div>
+          <li>
+            <div class="job-title">
+              <span class="company">Stim Social</span>
+              <span class="date">March 2015 – August 2020</span>
+            </div>
+            <div class="position">Frontend Engineer (Remote)</div>
+            <ul>
+              <li>Project: Saas platform to facilitate social media growth with multiple tools, specifically for Instagram and TikTok.</li>
+              <li>The main project was a web application, but I also worked on a help desk platform and a wordpress plugin.</li>
+              <li>Stack: AngularJS, Vue, PHP, Less, Bootstrap, GruntJS, Wordpress, Asana.</li>
+            </ul>
+          </li>
+        </ul>
       </section>
 
-      <section aria-labelledby="education-heading">
+      <section id="education" aria-labelledby="education-heading">
         <h2 id="education-heading">Education</h2>
-        <div class="education-item">
-          <div class="job-title">
-            <span class="company">Universidad Nacional de Rio Cuarto</span>
-            <span class="date">2008-2011</span>
-          </div>
-          <p>Computer Science Coursework</p>
-        </div>
-        <div class="education-item">
-          <div class="job-title">
-            <span class="company">Colegio Universitario IES Siglo 21</span>
-            <span class="date">2011–2013</span>
-          </div>
-          <p>Multimedia Design</p>
-        </div>
+        <ul>
+          <li>
+            <div class="job-title">
+              <span class="company">Universidad Nacional de Rio Cuarto</span>
+              <span class="date">2008-2011</span>
+            </div>
+            <p>Computer Science Coursework</p>
+          </li>
+          <li>
+            <div class="job-title">
+              <span class="company">Colegio Universitario IES Siglo 21</span>
+              <span class="date">2011–2013</span>
+            </div>
+            <p>Multimedia Design</p>
+          </li>
+        </ul>
       </section>
     </main>
   </body>
