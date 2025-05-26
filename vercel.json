@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    {"source": "/2025/", "destination": "https://fabsdev.com/"},
+    {"source": "/2022/", "destination": "https://fabsdev.com/2022/admin"}
+  ]
+}
