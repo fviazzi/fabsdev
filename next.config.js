@@ -14,6 +14,10 @@ const nextConfig = {
 
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
 
+  basePath: '/2022',
+
+  assetPrefix: '/2022',
+
   webpack: (config, options) => {
 
     config.module.rules.push({
