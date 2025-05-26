@@ -33,10 +33,16 @@
         margin-bottom: 2rem;
       }
 
-      header a {
+      header ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      header ul li a {
         color: var(--primary-color);
         font-weight: 600;
-        text-decoration: none;
       }
 
       h1 {
@@ -132,9 +138,28 @@
     <main class="container">
       <header>
         <h1>Fabricio Viazzi</h1>
-        <div class="contact-info">
-          San Carlos de Bariloche, Argentina • fabricioviazzi@gmail.com • <a href="" target="_blank">Download PDF Resume</a>
-        </div>
+        <ul class="contact-info">
+          <li>San Carlos de Bariloche, Argentina</li>
+          <li>
+            <a
+              aria-label="Email fabricioviazzi@gmail.com (opens in a new tab)"
+              href="mailto:fabricioviazzi@gmail.com"
+              target="_blank"
+            >
+              fabricioviazzi@gmail.com
+            </a>
+          </li>
+          <li>
+              <a
+              aria-label="Download Fabricio Viazzi's resume in PDF format (opens in a new tab)"
+              download
+              href="Fabricio_Viazzi_Resume.pdf"
+              target="_blank"
+              >
+              Download Resume (PDF)
+            </a>
+          </li>
+        </ul>
       </header>
 
       <section aria-labelledby="about-heading">
