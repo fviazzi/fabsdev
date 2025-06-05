@@ -24,7 +24,6 @@ export type TI18n = {
   en: {
     softSkills: {
       title: string
-      description: string
       skills: ISkill[]
     }
     hardSkills: {
@@ -35,7 +34,6 @@ export type TI18n = {
   es: {
     softSkills: {
       title: string
-      description: string
       skills: ISkill[]
     }
     hardSkills: {

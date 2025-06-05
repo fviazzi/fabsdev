@@ -74,10 +74,6 @@ export default function Skills () {
 
               <h1>{i18n[lang].softSkills.title}</h1>
 
-              <p>
-                {i18n[lang].softSkills.description}
-              </p>
-
               {/* List */}
               <ul>
                 {

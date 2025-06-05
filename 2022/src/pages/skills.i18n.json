@@ -2,7 +2,6 @@
   "en": {
     "softSkills": {
       "title": "Soft Skills",
-      "description": "Everyone has soft skills, right? For the sake of keeping this as short as possible, I will emphasize on three of mine:",
       "skills": [
         {
           "code": "soft-skill-1",
@@ -12,12 +11,12 @@
         {
           "code": "soft-skill-2",
           "title": "Communication",
-          "description": "I think communication is the way to reach collective solutions. Just sharing where everyone is standing and what they need may be the key of success."
+          "description": "I think communication is the way to reach collective solutions. Proper information at the right time can be the key to success."
         },
         {
           "code": "soft-skill-3",
           "title": "Team building",
-          "description": "The time of one-man team is long gone, great products are built by functional teams.<br />Having a common ground and everyone pushing for the same solution is how I experienced success in product building journeys."
+          "description": "The time of one-man team is long gone, great products are built by cross-functional teams.<br />Having a common ground and everyone pushing for the same solution is how I experienced success in product building journeys."
         }
       ]
     },
@@ -161,7 +160,7 @@
               "color": "#E48F00",
               "background": "#00618B",
               "title": "MYSQL",
-              "description": "Definitely not my area, but I do undersand how querys are built and what they mean, worked with it few years ago."
+              "description": "Not my day to day area, but I do undersand how querys are built and what they mean, worked with it few years ago."
             },
             {
               "code": "wordpress",
@@ -258,7 +257,6 @@
   "es": {
     "softSkills": {
       "title": "Habilidades interpersonales",
-      "description": "Todos tenemos habilidades interpersonales, ¿verdad? Para mantener esto lo más corto posible, voy a enfatizar en solo tres de las mías:",
       "skills": [
         {
           "code": "soft-skill-1",
@@ -268,12 +266,12 @@
         {
           "code": "soft-skill-2",
           "title": "Comunicativo",
-          "description": "Creo que la comunicación es la clave para alcanzar soluciones colectivas. La forma de llegar al éxito puede ser tan simple como compartir donde está parado cada uno y qué necesitan."
+          "description": "Creo que la comunicación es la clave para alcanzar soluciones colectivas. La información correcta en el momento adecuado puede ser la clave para el éxito."
         },
         {
           "code": "soft-skill-3",
           "title": "Trabajo en equipo",
-          "description": "La era de los equipos de una sola persona se ha terminado hace tiempo, los grandes productos son hechos por equipos funcionales.<br />La forma en la que he experimentado la construcción de productos exitosos, ha sido a través de equipos que tienen una base sólida y en el que todos empujan hacia la misma dirección."
+          "description": "La era de los equipos de una sola persona se ha terminado hace tiempo, los grandes productos son hechos por equipos interdisciplinarios.<br />La forma en la que he experimentado la construcción de productos exitosos, ha sido a través de equipos que tienen una base sólida y en el que todos empujan hacia la misma dirección."
         }
       ]
     },
@@ -417,7 +415,7 @@
               "color": "#E48F00",
               "background": "#00618B",
               "title": "MYSQL",
-              "description": "Definitivamente no es mi área, pero entiendo como se hacen las querys y como funcionan, trabajé con MYSQL hace unos años."
+              "description": "No es mi área de trabajo diaria, pero entiendo como se hacen las querys y como funcionan, trabajé con MYSQL hace unos años."
             },
             {
               "code": "wordpress",
