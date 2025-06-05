@@ -8,6 +8,8 @@ const nextConfig = {
     VERCEL_EMAIL: 'fabricioviazzi@gmail.com',
   },
 
+  trailingSlash: false,
+
   reactStrictMode: true,
 
   swcMinify: true,
